@@ -1,0 +1,84 @@
+---
+import Logo from './Logo.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale);
+const year = new Date().getFullYear();
+
+const product = d.nav.items;
+const demoLinks = [
+  { label: locale === 'ar' ? 'الصفحة الرئيسية' : 'Home page', href: site.links.demo },
+  { label: locale === 'ar' ? 'قائمة العقارات' : 'Property listings', href: site.links.demoProperties },
+  { label: locale === 'ar' ? 'صفحة عقار' : 'A listing page', href: site.links.demoProperty },
+  { label: locale === 'ar' ? 'الحاسبات العقارية' : 'Calculators', href: site.links.demoCalculators },
+];
+const projectLinks = [
+  { label: locale === 'ar' ? 'المستودع على GitHub' : 'Repository on GitHub', href: site.links.repo },
+  ...(site.links.vendorSite ? [{ label: 'Novixa', href: site.links.vendorSite }] : []),
+];
+---
+
+<footer class="border-t border-slate-800 bg-ink-deep text-slate-300">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+      <div class="lg:col-span-1">
+        <div class="flex items-center gap-2.5">
+          <Logo class="h-9 w-9" />
+          <span class="text-base font-bold text-white">{site.brand.name[locale]}</span>
+        </div>
+        <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">{d.footer.tagline}</p>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{d.footer.productTitle}</h2>
+        <ul class="mt-4 space-y-2.5">
+          {product.map((l) => (
+            <li><a href={l.href} class="text-sm text-slate-400 transition hover:text-white">{l.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{d.footer.demoTitle}</h2>
+        <ul class="mt-4 space-y-2.5">
+          {demoLinks.map((l) => (
+            <li>
+              <a href={l.href} target="_blank" rel="noopener" class="text-sm text-slate-400 transition hover:text-white"
+                >{l.label}</a
+              >
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-bold uppercase tracking-[0.18em] text-slate-500">{d.footer.companyTitle}</h2>
+        <ul class="mt-4 space-y-2.5">
+          {projectLinks.map((l) => (
+            <li>
+              <a href={l.href} target="_blank" rel="noopener" class="text-sm text-slate-400 transition hover:text-white"
+                >{l.label}</a
+              >
+            </li>
+          ))}
+          <li>
+            <a href={d.nav.switchHref} class="text-sm text-slate-400 transition hover:text-white">{d.nav.switchTo}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-14 border-t border-slate-800 pt-8">
+      <p class="rounded-lg border border-slate-800 bg-slate-900/60 px-4 py-3 text-xs leading-relaxed text-slate-400">
+        {d.footer.demoDisclaimer}
+      </p>
+      <div class="mt-6 flex flex-col gap-3 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {year} {site.brand.vendor[locale]}. {d.footer.rights}</p>
+        <p>{d.footer.license}</p>
+      </div>
+    </div>
+  </div>
+</footer>

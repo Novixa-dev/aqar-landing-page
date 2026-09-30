@@ -1,0 +1,42 @@
+---
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import { t, type Locale } from '../i18n';
+import { whatsappLink, mailtoLink } from '../../site.config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).partners;
+const cta = t(locale).finalCta;
+
+const href = whatsappLink(cta.partnerWhatsappMessage) ?? mailtoLink(cta.partnerEmailSubject);
+---
+
+<Section id="partners" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="light">
+  <ol class="grid gap-6 md:grid-cols-3">
+    {d.steps.map((step, i) => (
+      <li class="relative rounded-2xl border border-slate-200 bg-white p-7">
+        <span
+          class="tabular inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink text-sm font-bold text-white"
+          >{i + 1}</span
+        >
+        <h3 class="mt-4 font-bold text-ink">{step.title}</h3>
+        <p class="mt-1.5 text-[15px] leading-relaxed text-slate-600">{step.body}</p>
+      </li>
+    ))}
+  </ol>
+
+  {href && (
+    <p class="mt-9">
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 rounded-xl border-2 border-ink px-6 py-3 font-bold text-ink transition hover:bg-ink hover:text-white"
+      >
+        {d.cta}
+        <Icon name="arrow" class="h-4 w-4 rtl:rotate-180" />
+      </a>
+    </p>
+  )}
+</Section>

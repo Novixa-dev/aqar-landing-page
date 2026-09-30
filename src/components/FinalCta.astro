@@ -1,0 +1,69 @@
+---
+import Icon from './Icon.astro';
+import { t, type Locale } from '../i18n';
+import { site, whatsappLink, mailtoLink } from '../../site.config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).finalCta;
+
+const wa = whatsappLink(d.whatsappMessage);
+const mail = mailtoLink(d.emailSubject);
+---
+
+<section class="relative overflow-hidden bg-ink-deep py-20 text-white sm:py-28">
+  <div class="grid-veil absolute inset-0" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+    <h2 class="text-balance text-3xl font-extrabold tracking-tight sm:text-4xl">{d.title}</h2>
+    <p class="mx-auto mt-5 max-w-2xl text-pretty text-lg text-slate-300">{d.lede}</p>
+
+    <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
+      <a
+        href={site.links.demo}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-brand/25 transition hover:bg-brand-bright sm:w-auto"
+      >
+        {d.primary}
+        <Icon name="external" class="h-4 w-4" />
+      </a>
+
+      {wa && (
+        <a
+          href={wa}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-600 px-7 py-3.5 text-base font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900/60 sm:w-auto"
+        >
+          <Icon name="whatsapp" class="h-4 w-4" />
+          {d.secondary}
+        </a>
+      )}
+
+      {mail && (
+        <a
+          href={mail}
+          class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-600 px-7 py-3.5 text-base font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900/60 sm:w-auto"
+        >
+          <Icon name="mail" class="h-4 w-4" />
+          {d.tertiary}
+        </a>
+      )}
+    </div>
+
+    {!wa && !mail && <p class="mt-5 text-sm text-slate-400">{d.pending}</p>}
+
+    <p class="mt-8">
+      <a
+        href={site.links.repo}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 transition hover:text-white"
+      >
+        <Icon name="github" class="h-4 w-4" />
+        {d.repo}
+      </a>
+    </p>
+  </div>
+</section>

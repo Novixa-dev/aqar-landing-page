@@ -1,0 +1,28 @@
+{
+  "name": "aqar-landing-page",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Marketing landing page for Novixa Aqar \u2014 the bilingual real-estate management platform by Novixa.",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "capture": "node scripts/capture-screenshots.mjs",
+    "build:fast": "astro build"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@fontsource-variable/cairo": "^5.2.5",
+    "astro": "^5.14.1",
+    "sharp": "^0.34.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.1.13",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.3"
+  }
+}

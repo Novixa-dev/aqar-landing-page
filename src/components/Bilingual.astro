@@ -1,0 +1,44 @@
+---
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import BrowserFrame from './BrowserFrame.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+import calculators from '../assets/screenshots/calculators.png';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).bilingual;
+---
+
+<Section id="bilingual" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="light">
+  <div class="grid items-start gap-12 lg:grid-cols-2">
+    <div>
+      <ul class="space-y-4">
+        {d.points.map((point) => (
+          <li class="flex gap-3">
+            <Icon name="check" class="mt-1 h-4 w-4 shrink-0 text-brand" />
+            <span class="text-[15px] leading-relaxed text-slate-700">{point}</span>
+          </li>
+        ))}
+      </ul>
+
+      <p
+        class="mt-8 flex gap-3 rounded-xl border border-caution-soft bg-caution-soft/40 px-5 py-4 text-sm leading-relaxed text-caution"
+      >
+        <Icon name="alert" class="mt-0.5 h-4 w-4 shrink-0" />
+        <span>{d.note}</span>
+      </p>
+    </div>
+
+    <BrowserFrame
+      src={calculators}
+      alt={locale === 'ar'
+        ? 'صفحة الحاسبات العقارية بالعربية مع تنسيق من اليمين لليسار'
+        : 'The property calculators page in Arabic with right-to-left layout'}
+      url="aqar-demo.dexal.net/calculators"
+      href={site.links.demoCalculators}
+      sizes="(min-width: 1024px) 34rem, 100vw"
+    />
+  </div>
+</Section>

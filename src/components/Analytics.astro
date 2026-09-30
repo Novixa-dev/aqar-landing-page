@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+import analytics from '../assets/screenshots/investment-analytics.png';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).analytics;
+---
+
+<Section id="analytics" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="dark">
+  <div class="grid items-center gap-12 lg:grid-cols-2">
+    <ul class="space-y-7">
+      {d.points.map((p) => (
+        <li class="flex gap-4">
+          <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand/15 text-brand-bright">
+            <Icon name="chart" class="h-5 w-5" />
+          </span>
+          <div>
+            <h3 class="font-bold text-white">{p.title}</h3>
+            <p class="mt-1 text-[15px] leading-relaxed text-slate-300">{p.body}</p>
+          </div>
+        </li>
+      ))}
+      <li>
+        <a
+          href={site.links.demoProperty}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-brand-bright transition hover:text-white"
+        >
+          {locale === 'ar' ? 'شاهدها على صفحة عقار حقيقية' : 'See it on a real listing page'}
+          <Icon name="external" class="h-4 w-4" />
+        </a>
+      </li>
+    </ul>
+
+    <figure>
+      <Image
+        src={analytics}
+        alt={locale === 'ar'
+          ? 'لوحة تحليلات الاستثمار: العائد المتوقع ومؤشر المخاطرة وتوقعات التدفق النقدي والموقع في السوق'
+          : 'The investment analytics panel: predicted return, risk score, cash-flow projection and market position'}
+        widths={[480, 620, 1240]}
+        sizes="(min-width: 1024px) 34rem, 100vw"
+        format="webp"
+        quality={88}
+        class="shot w-full rounded-xl border border-slate-700 bg-white"
+      />
+      <figcaption class="mt-3 text-xs text-slate-400">{d.caption}</figcaption>
+    </figure>
+  </div>
+</Section>

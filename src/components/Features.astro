@@ -1,0 +1,52 @@
+---
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import BrowserFrame from './BrowserFrame.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+import detail from '../assets/screenshots/property-detail.png';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).features;
+---
+
+<Section id="features" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="light">
+  <div class="space-y-14">
+    {d.groups.map((group) => (
+      <div>
+        <h3 class="flex items-center gap-3 text-sm font-bold uppercase tracking-[0.14em] text-slate-500">
+          {group.title}
+          <span class="h-px flex-1 bg-slate-200" aria-hidden="true"></span>
+        </h3>
+        <ul class="mt-7 grid gap-x-8 gap-y-7 sm:grid-cols-2 lg:grid-cols-3">
+          {group.items.map((item) => (
+            <li class="flex gap-3.5">
+              <span
+                class="mt-0.5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-verified-soft text-verified"
+              >
+                <Icon name="check" class="h-4 w-4" />
+              </span>
+              <div>
+                <h4 class="font-bold text-ink">{item.title}</h4>
+                <p class="mt-1 text-[15px] leading-relaxed text-slate-600">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-16">
+    <BrowserFrame
+      src={detail}
+      alt={locale === 'ar'
+        ? 'صفحة تفاصيل عقار: معرض الصور والسعر والمواصفات وأزرار التواصل وحجز المعاينة'
+        : 'A property detail page: photo gallery, price, specs, contact buttons and viewing booking'}
+      url="aqar-demo.dexal.net/properties/1"
+      href={site.links.demoProperty}
+      sizes="(min-width: 1024px) 72rem, 100vw"
+    />
+  </div>
+</Section>

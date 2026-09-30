@@ -1,0 +1,37 @@
+---
+interface Props {
+  id?: string;
+  eyebrow?: string;
+  title: string;
+  lede?: string;
+  tone?: 'light' | 'tint' | 'dark';
+  align?: 'start' | 'center';
+  class?: string;
+}
+const { id, eyebrow, title, lede, tone = 'light', align = 'start', class: className = '' } = Astro.props;
+
+const toneClass = {
+  light: 'bg-white text-ink',
+  tint: 'bg-slate-50 text-ink',
+  dark: 'bg-ink-deep text-white',
+}[tone];
+
+const eyebrowClass = tone === 'dark' ? 'text-brand-bright' : 'text-brand';
+const ledeClass = tone === 'dark' ? 'text-slate-300' : 'text-slate-600';
+const headWidth = align === 'center' ? 'mx-auto max-w-3xl text-center' : 'max-w-3xl';
+---
+
+<section id={id} class={`scroll-mt-20 py-20 sm:py-28 ${toneClass} ${className}`}>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class={headWidth}>
+      {eyebrow && (
+        <p class={`text-xs font-bold uppercase tracking-[0.18em] ${eyebrowClass}`}>{eyebrow}</p>
+      )}
+      <h2 class="mt-3 text-balance text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+        {title}
+      </h2>
+      {lede && <p class={`mt-5 text-pretty text-lg ${ledeClass}`}>{lede}</p>}
+    </div>
+    <div class="mt-14"><slot /></div>
+  </div>
+</section>

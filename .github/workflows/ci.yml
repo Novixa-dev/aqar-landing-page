@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # `build` runs `astro check` first, so this covers type errors, a key
+      # missing from one of the two i18n dictionaries, and the contact-
+      # placeholder guard in astro.config.mjs.
+      - run: npm run build
+
+      - name: Fail if the Arabic copy has a bidi hazard
+        # An Arabic connecting waw glued to a Latin word splits the bidi run and
+        # the browser reorders the fragments. See PLAN.md §7.
+        run: |
+          if grep -nE "و[A-Za-z]" src/i18n/ar.ts; then
+            echo "::error file=src/i18n/ar.ts::Arabic waw directly followed by a Latin word — see PLAN.md §7"
+            exit 1
+          fi
+          echo "No bidi hazards found."
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 7

@@ -1,0 +1,62 @@
+---
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import BrowserFrame from './BrowserFrame.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+import properties from '../assets/screenshots/properties.png';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).platform;
+
+const columns = [
+  { ...d.publicSide, icon: 'globe' as const, accent: 'brand' },
+  { ...d.backOffice, icon: 'layers' as const, accent: 'verified' },
+];
+---
+
+<Section id="platform" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="tint">
+  <div class="grid gap-6 lg:grid-cols-2">
+    {columns.map((col) => (
+      <div class="rounded-2xl border border-slate-200 bg-white p-7 sm:p-8">
+        <div class="flex items-center gap-3">
+          <span
+            class={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${
+              col.accent === 'brand' ? 'bg-brand-soft text-brand' : 'bg-verified-soft text-verified'
+            }`}
+          >
+            <Icon name={col.icon} />
+          </span>
+          <div>
+            <h3 class="text-xl font-bold text-ink">{col.title}</h3>
+            <p class="text-sm text-slate-500">{col.subtitle}</p>
+          </div>
+        </div>
+        <ul class="mt-6 space-y-3.5">
+          {col.items.map((line) => (
+            <li class="flex gap-3">
+              <Icon
+                name="check"
+                class={`mt-1 h-4 w-4 shrink-0 ${col.accent === 'brand' ? 'text-brand' : 'text-verified'}`}
+              />
+              <span class="text-[15px] leading-relaxed text-slate-700">{line}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <div class="mt-14">
+    <BrowserFrame
+      src={properties}
+      alt={locale === 'ar'
+        ? 'صفحة قائمة العقارات في المنصة مع حقول البحث والفلترة'
+        : 'The property listing page with its search and filter fields'}
+      url="aqar-demo.dexal.net/properties"
+      href={site.links.demoProperties}
+      sizes="(min-width: 1024px) 72rem, 100vw"
+    />
+  </div>
+</Section>

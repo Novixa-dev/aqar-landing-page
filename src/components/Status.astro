@@ -1,0 +1,73 @@
+---
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import { t, type Locale } from '../i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).status;
+---
+
+<Section id="status" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="light">
+  <div class="grid gap-6 lg:grid-cols-3">
+    <!-- Ready -->
+    <div class="rounded-2xl border-2 border-verified/25 bg-verified-soft/30 p-7">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-verified text-white">
+          <Icon name="check" class="h-4 w-4" />
+        </span>
+        <h3 class="font-bold text-ink">{d.ready.title}</h3>
+      </div>
+      <p class="mt-4 text-[15px] leading-relaxed text-slate-700">{d.ready.body}</p>
+      <a
+        href="#features"
+        class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-verified transition hover:text-ink"
+      >
+        {locale === 'ar' ? 'راجع القائمة الكاملة' : 'See the full list'}
+        <Icon name="arrow" class="h-4 w-4 rtl:rotate-180" />
+      </a>
+    </div>
+
+    <!-- Partial -->
+    <div class="rounded-2xl border-2 border-caution/25 bg-caution-soft/40 p-7">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-caution text-white">
+          <Icon name="alert" class="h-4 w-4" />
+        </span>
+        <h3 class="font-bold text-ink">{d.partial.title}</h3>
+      </div>
+      <ul class="mt-4 space-y-3">
+        {d.partial.items.map((item) => (
+          <li class="flex gap-2.5 text-[15px] leading-relaxed text-slate-700">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-caution" aria-hidden="true"></span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Not active -->
+    <div class="rounded-2xl border-2 border-slate-200 bg-slate-50 p-7">
+      <div class="flex items-center gap-2.5">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-slate-400 text-white">
+          <Icon name="minus" class="h-4 w-4" />
+        </span>
+        <h3 class="font-bold text-ink">{d.notActive.title}</h3>
+      </div>
+      <ul class="mt-4 space-y-2.5">
+        {d.notActive.items.map((item) => (
+          <li class="flex gap-2.5 text-[15px] leading-relaxed text-slate-600">
+            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-slate-400" aria-hidden="true"></span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="mt-4 border-t border-slate-200 pt-4 text-xs leading-relaxed text-slate-500">{d.notActive.note}</p>
+    </div>
+  </div>
+
+  <div class="mt-8 rounded-2xl border border-slate-200 bg-ink-deep p-7 text-white sm:p-9">
+    <h3 class="text-lg font-bold">{d.production.title}</h3>
+    <p class="mt-3 max-w-4xl text-[15px] leading-relaxed text-slate-300">{d.production.body}</p>
+  </div>
+</Section>

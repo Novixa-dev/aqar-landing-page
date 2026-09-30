@@ -1,0 +1,49 @@
+---
+import Section from './Section.astro';
+import Icon from './Icon.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).tech;
+
+const icons = ['code', 'layers', 'shield', 'sparkle'] as const;
+---
+
+<Section id="tech" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="tint">
+  <ul class="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-200 bg-slate-200 sm:grid-cols-4">
+    {d.stack.map((item) => (
+      <li class="bg-white px-5 py-6 text-center">
+        <p class="font-bold text-ink" dir="ltr">{item.name}</p>
+        <p class="mt-1 text-xs text-slate-500">{item.note}</p>
+      </li>
+    ))}
+  </ul>
+
+  <div class="mt-10 grid gap-6 sm:grid-cols-2">
+    {d.points.map((point, i) => (
+      <div class="flex gap-4 rounded-xl border border-slate-200 bg-white p-6">
+        <span class="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-600">
+          <Icon name={icons[i % icons.length]} />
+        </span>
+        <div>
+          <h3 class="font-bold text-ink">{point.title}</h3>
+          <p class="mt-1 text-[15px] leading-relaxed text-slate-600">{point.body}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <p class="mt-8">
+    <a
+      href={site.links.repo}
+      target="_blank"
+      rel="noopener"
+      class="inline-flex items-center gap-2 text-sm font-semibold text-brand transition hover:text-ink"
+    >
+      <Icon name="github" class="h-4 w-4" />
+      {locale === 'ar' ? 'تصفّح الكود على GitHub' : 'Browse the code on GitHub'}
+    </a>
+  </p>
+</Section>

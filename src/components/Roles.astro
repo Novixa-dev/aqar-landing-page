@@ -1,0 +1,23 @@
+---
+import Section from './Section.astro';
+import { t, type Locale } from '../i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale).roles;
+---
+
+<Section id="roles" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="tint">
+  <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    {d.items.map((role, i) => (
+      <li class="group relative rounded-xl border border-slate-200 bg-white p-5 transition hover:border-brand/40">
+        <span
+          class="tabular absolute top-4 end-5 text-xs font-bold text-slate-300 transition group-hover:text-brand/50"
+          aria-hidden="true">{String(i + 1).padStart(2, '0')}</span
+        >
+        <h3 class="pe-8 font-bold text-ink">{role.name}</h3>
+        <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{role.desc}</p>
+      </li>
+    ))}
+  </ul>
+</Section>

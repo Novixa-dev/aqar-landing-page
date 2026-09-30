@@ -1,0 +1,84 @@
+---
+import Icon from './Icon.astro';
+import BrowserFrame from './BrowserFrame.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+import home from '../assets/screenshots/home.png';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale);
+---
+
+<section class="relative overflow-hidden bg-ink-deep text-white">
+  <div class="grid-veil absolute inset-0" aria-hidden="true"></div>
+  <div
+    class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-bright/60 to-transparent"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="relative mx-auto max-w-7xl px-4 pb-0 pt-20 sm:px-6 sm:pt-24 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <p
+        class="inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-4 py-1.5 text-xs font-semibold text-slate-300"
+      >
+        <span class="h-1.5 w-1.5 rounded-full bg-verified" aria-hidden="true"></span>
+        {d.hero.eyebrow}
+      </p>
+
+      <h1 class="mt-7 text-balance text-4xl font-extrabold leading-[1.15] tracking-tight sm:text-5xl lg:text-6xl">
+        {d.hero.title}
+        <span class="block text-brand-bright">{d.hero.titleAccent}</span>
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-2xl text-pretty text-lg text-slate-300 sm:text-xl">{d.hero.lede}</p>
+
+      <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <a
+          href={site.links.demo}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-7 py-3.5 text-base font-bold text-white shadow-lg shadow-brand/25 transition hover:bg-brand-bright sm:w-auto"
+        >
+          {d.hero.ctaPrimary}
+          <Icon name="external" class="h-4 w-4" />
+        </a>
+        <a
+          href="#pricing"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-600 px-7 py-3.5 text-base font-semibold text-white transition hover:border-slate-400 hover:bg-slate-900/60 sm:w-auto"
+        >
+          {d.hero.ctaSecondary}
+        </a>
+      </div>
+
+      <p class="mt-4 text-sm text-slate-400">{d.hero.note}</p>
+    </div>
+
+    <dl class="mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-slate-800 bg-slate-800 lg:grid-cols-4">
+      {d.hero.stats.map((s) => (
+        <div class="bg-ink-deep px-5 py-6 text-center">
+          <dt class="sr-only">{s.label}</dt>
+          <dd>
+            <span class="tabular block text-2xl font-extrabold text-white sm:text-3xl">{s.value}</span>
+            <span class="mt-1.5 block text-xs leading-snug text-slate-400">{s.label}</span>
+          </dd>
+        </div>
+      ))}
+    </dl>
+
+    <div class="mx-auto mt-16 max-w-5xl">
+      <BrowserFrame
+        src={home}
+        alt={d.meta.ogAlt}
+        url="aqar-demo.dexal.net"
+        href={site.links.demo}
+        loading="eager"
+        sizes="(min-width: 1024px) 64rem, 100vw"
+        class="translate-y-px"
+      />
+    </div>
+  </div>
+
+  <div class="h-24 bg-gradient-to-b from-transparent to-white" aria-hidden="true"></div>
+</section>

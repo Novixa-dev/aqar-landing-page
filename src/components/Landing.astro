@@ -1,0 +1,34 @@
+---
+import Hero from './Hero.astro';
+import Problem from './Problem.astro';
+import Platform from './Platform.astro';
+import Features from './Features.astro';
+import Roles from './Roles.astro';
+import Analytics from './Analytics.astro';
+import Bilingual from './Bilingual.astro';
+import TechStack from './TechStack.astro';
+import Status from './Status.astro';
+import Pricing from './Pricing.astro';
+import Partners from './Partners.astro';
+import Faq from './Faq.astro';
+import FinalCta from './FinalCta.astro';
+import type { Locale } from '../i18n';
+import { site } from '../../site.config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+---
+
+<Hero locale={locale} />
+<Problem locale={locale} />
+<Platform locale={locale} />
+<Features locale={locale} />
+<Roles locale={locale} />
+<Analytics locale={locale} />
+<Bilingual locale={locale} />
+<TechStack locale={locale} />
+<Status locale={locale} />
+{site.pricing.show && <Pricing locale={locale} />}
+{site.partners.show && <Partners locale={locale} />}
+<Faq locale={locale} />
+<FinalCta locale={locale} />

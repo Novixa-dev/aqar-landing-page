@@ -1,0 +1,89 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { t, type Locale } from '../i18n';
+import { site } from '../../site.config';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const d = t(locale);
+
+const canonical = new URL(locale === 'ar' ? '/' : '/en', site.url).href;
+const ogImage = new URL('/images/og.png', site.url).href;
+
+// Structured data. Only facts that are independently checkable go in here:
+// the product name, its vendor, its category, the public demo URL and the
+// licence. No aggregateRating and no review markup — there are no real
+// reviews, and inventing them is exactly what the project's own content
+// rules forbid.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Novixa Aqar',
+  alternateName: 'نوفيكسا عقار',
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'Real Estate Management',
+  operatingSystem: 'Web (self-hosted, Docker)',
+  inLanguage: ['ar', 'en'],
+  license: 'https://opensource.org/licenses/MIT',
+  url: canonical,
+  sameAs: [site.links.repo],
+  description: d.meta.description,
+  author: { '@type': 'Organization', name: 'Novixa' },
+  ...(site.pricing.show && {
+    offers: {
+      '@type': 'Offer',
+      price: site.pricing.amountUsd,
+      priceCurrency: 'USD',
+      description: 'Starting price for a base source-code licence.',
+    },
+  }),
+};
+---
+
+<!doctype html>
+<html lang={d.meta.lang} dir={d.meta.dir}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{d.meta.title}</title>
+    <meta name="description" content={d.meta.description} />
+    <meta name="theme-color" content={site.brand.colors.accent} />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="ar" href={new URL('/', site.url).href} />
+    <link rel="alternate" hreflang="en" href={new URL('/en', site.url).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', site.url).href} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Novixa Aqar" />
+    <meta property="og:locale" content={d.meta.locale} />
+    <meta property="og:title" content={d.meta.title} />
+    <meta property="og:description" content={d.meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={d.meta.ogAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={d.meta.title} />
+    <meta name="twitter:description" content={d.meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+
+  <body class="font-sans antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:start-3 focus:z-50 focus:rounded-lg focus:bg-ink focus:px-4 focus:py-2 focus:text-white"
+      >{d.nav.skipToContent}</a
+    >
+    <Nav locale={locale} />
+    <main id="main"><slot /></main>
+    <Footer locale={locale} />
+  </body>
+</html>
