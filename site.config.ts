@@ -1,79 +1,89 @@
 /**
  * Single source of truth for every externally-facing detail on this site.
  *
- * ────────────────────────────────────────────────────────────────────────────
- *  BEFORE LAUNCH: every value marked `TODO` below must be replaced with a real
- *  one. Nothing else in the codebase hard-codes a phone number, an email
- *  address or a URL — change them here and they change everywhere.
+ * Nothing else in the codebase hard-codes a phone number, an email address,
+ * a URL or a price — change them here and they change everywhere.
  *
- *  Run `npm run build` after editing: the build fails loudly if a required
- *  contact channel is still a placeholder AND `requireRealContacts` is true.
- * ────────────────────────────────────────────────────────────────────────────
+ * `requireRealContacts` is on, so the build fails if any contact value is
+ * reverted to a `TODO:` placeholder.
  */
 
 export type ContactPlaceholder = `TODO:${string}`;
 
 export const site = {
   /** Canonical origin of this landing page. Used for sitemap + og:url. */
-  url: 'https://aqar.novixa.dev', // TODO: confirm the real domain before launch.
+  url: 'https://aqar.novixa.dev', // TODO: confirm once the domain is pointed.
 
-  /** Set to true once every TODO below is filled in; the build then verifies it. */
-  requireRealContacts: false,
+  /** Build fails if any `contact` value below is still a TODO placeholder. */
+  requireRealContacts: true,
 
   brand: {
     name: { ar: 'نوفيكسا عقار', en: 'Novixa Aqar' },
     vendor: { ar: 'نوفيكسا', en: 'Novixa' },
+    tagline: { ar: 'نبني التقنية التي تجعل أعمالك أقوى.', en: 'Engineered for Growth.' },
     /** The colours come straight from the product's own logo.svg. */
     colors: { ink: '#0F172A', blue: '#3B82F6', emerald: '#10B981', accent: '#2563eb' },
   },
 
-  /** Live, verified links — these are real and safe to publish. */
   links: {
     demo: 'https://aqar-demo.dexal.net',
     demoProperties: 'https://aqar-demo.dexal.net/properties',
     demoProperty: 'https://aqar-demo.dexal.net/properties/1',
     demoCalculators: 'https://aqar-demo.dexal.net/calculators',
+    demoAdmin: 'https://aqar-demo.dexal.net/admin',
+    demoLogin: 'https://aqar-demo.dexal.net/login',
     repo: 'https://github.com/Novixa-dev/novixa-aqar',
-    /** `novixa.dev` did not resolve at build time — left null on purpose. */
-    vendorSite: null as string | null, // TODO: set once the Novixa site is live.
+    /**
+     * The Novixa site's own canonical URL is https://novixa.dev/ar, but that
+     * domain does not resolve yet — link the live Vercel deployment until it
+     * does, then swap both of these over.
+     */
+    vendorSite: 'https://novixa-cyan.vercel.app/ar' as string | null,
+    vendorProduct: 'https://novixa-cyan.vercel.app/ar/products/aqar' as string | null,
   },
 
-  /**
-   * Contact channels. Digits only for `whatsapp` (international format, no +).
-   * These are PLACEHOLDERS — the numbers in the public demo belong to the
-   * fictional demo agency "دار حضرموت العقارية", not to Novixa, and are
-   * deliberately NOT reused here.
-   */
+  /** Digits only for `whatsapp` (international format, no `+`). */
   contact: {
-    whatsapp: 'TODO:WHATSAPP_NUMBER' as string | ContactPlaceholder,
-    email: 'TODO:SALES_EMAIL' as string | ContactPlaceholder,
-    phone: 'TODO:PHONE_NUMBER' as string | ContactPlaceholder,
+    whatsapp: '967776248526' as string | ContactPlaceholder,
+    email: 'ak01redwan@gmail.com' as string | ContactPlaceholder,
+    phone: '+967776248526' as string | ContactPlaceholder,
     /** Optional Calendly/Cal.com link for "book a walkthrough". */
     booking: null as string | null,
   },
 
   /**
-   * Pricing. Shown as a *starting* price, per the product owner's decision.
-   * `amountUsd` is the anchor; `amountSar` is the regional equivalent quoted
-   * in the original commercial brief, not a live FX conversion.
+   * Pricing. Shown as a *starting* price. `amountUsd` is the anchor;
+   * `amountSar` is the regional equivalent quoted in the commercial brief,
+   * not a live FX conversion.
    */
-  pricing: {
-    show: true,
-    amountUsd: 500,
-    amountSar: 2000,
-    /** Displayed beneath the figure so the anchor can't be read as a fixed price. */
-    variesBy: ['market', 'companySize', 'customization', 'deployment', 'support'] as const,
-  },
+  pricing: { show: true, amountUsd: 500, amountSar: 2000 },
 
-  /** Partner programme: recruit resellers, but the rate stays off the page. */
-  partners: { show: true, publishCommissionRate: false },
+  /** Partner programme. The commission rate is published, per the launch post. */
+  partners: { show: true, publishCommissionRate: true, commissionPercent: 30 },
 
   /**
-   * Demo access. The 8 seeded role logins are NOT published here by decision —
-   * they are shared one-to-one during a sales conversation so demo data stays
-   * intact for the next prospect.
+   * Demo access. The seeded accounts are published deliberately — the launch
+   * post shares them openly so a prospect can self-serve into the panels.
+   * They are demo-only accounts on throwaway data.
    */
-  demoAccess: { publishLogins: false },
+  demoAccess: {
+    publishLogins: true,
+    password: 'password',
+    accounts: [
+      {
+        email: 'admin@darhadhramaut.ye',
+        role: { ar: 'حساب الإدارة', en: 'Administrator' },
+        note: { ar: 'إشراف كامل على النظام', en: 'Full oversight of the system' },
+        panel: 'https://aqar-demo.dexal.net/admin',
+      },
+      {
+        email: 'agent@darhadhramaut.ye',
+        role: { ar: 'الوكيل العقاري', en: 'Real-estate agent' },
+        note: { ar: 'العقارات والمواعيد والعملاء', en: 'Properties, appointments and clients' },
+        panel: 'https://aqar-demo.dexal.net/login',
+      },
+    ],
+  },
 } as const;
 
 /** True when a contact value is still an unfilled placeholder. */
@@ -92,4 +102,10 @@ export function mailtoLink(subject: string): string | null {
   const e = site.contact.email;
   if (isPlaceholder(e)) return null;
   return `mailto:${e}?subject=${encodeURIComponent(subject)}`;
+}
+
+/** Builds a tel: link, or null when the number has not been set yet. */
+export function telLink(): string | null {
+  const p = site.contact.phone;
+  return isPlaceholder(p) ? null : `tel:${p}`;
 }

@@ -1,7 +1,8 @@
 ---
 import Icon from './Icon.astro';
 import { t, type Locale } from '../i18n';
-import { site, whatsappLink, mailtoLink } from '../../site.config';
+import DemoAccess from './DemoAccess.astro';
+import { site, whatsappLink, mailtoLink, telLink } from '../../site.config';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -9,6 +10,7 @@ const d = t(locale).finalCta;
 
 const wa = whatsappLink(d.whatsappMessage);
 const mail = mailtoLink(d.emailSubject);
+const tel = telLink();
 ---
 
 <section class="relative overflow-hidden bg-ink-deep py-20 text-white sm:py-28">
@@ -50,9 +52,21 @@ const mail = mailtoLink(d.emailSubject);
           {d.tertiary}
         </a>
       )}
+
+      {tel && (
+        <a
+          href={tel}
+          dir="ltr"
+          class="inline-flex w-full items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-base font-semibold text-slate-300 transition hover:text-white sm:w-auto"
+        >
+          {site.contact.phone}
+        </a>
+      )}
     </div>
 
     {!wa && !mail && <p class="mt-5 text-sm text-slate-400">{d.pending}</p>}
+
+    {site.demoAccess.publishLogins && <DemoAccess locale={locale} />}
 
     <p class="mt-8">
       <a

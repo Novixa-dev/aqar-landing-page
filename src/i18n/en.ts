@@ -43,7 +43,7 @@ export const en: Dict = {
     lede: 'Properties, owners, tenants, agents, leases, maintenance and viewings — in one platform instead of WhatsApp threads, spreadsheets and paper. Arabic-first, a dashboard per role, and source code you own.',
     ctaPrimary: 'Open the live demo',
     ctaSecondary: 'Request a walkthrough',
-    note: 'The demo is open to browse — no sign-up needed.',
+    note: 'Browse it without signing up — or use the ready demo accounts to get inside the panels.',
     stats: [
       { value: '9', label: 'Role-specific dashboards' },
       { value: 'AR / EN', label: 'Bilingual with real RTL' },
@@ -266,6 +266,14 @@ export const en: Dict = {
     note: 'The figure shown is a starting point for a base licence, not a fixed price for every case.',
   },
 
+  demoAccess: {
+    title: 'Demo accounts, ready to use',
+    lede: 'Start on the public site, then sign in and see what the work looks like from inside the system.',
+    passwordLabel: 'Password',
+    openPanel: 'Open the panel',
+    note: 'Demonstration accounts only, running on entirely fictional data.',
+  },
+
   partners: {
     eyebrow: 'Marketing partners',
     title: 'Know agencies that need this system?',
@@ -273,8 +281,11 @@ export const en: Dict = {
     steps: [
       { title: 'Introduce the platform', body: 'Send the demo link and explain what it solves.' },
       { title: 'Hand the client to us', body: 'We take the technical walkthrough, the questions, the customization and the pricing.' },
-      { title: 'Earn your commission', body: 'A commission on every deal closed through you, agreed with you directly.' },
+      { title: 'Earn your commission', body: 'Paid when the client you referred completes their purchase.' },
     ],
+    commissionLabel: 'Referral commission',
+    commissionNote: 'of the value of every client you refer who completes a purchase',
+    audience: 'A fit for anyone with relationships among business owners, companies and real-estate offices who wants a second income from introducing technical solutions.',
     cta: 'Talk to us about partnering',
   },
 
@@ -331,6 +342,7 @@ export const en: Dict = {
     primary: 'Open the live demo',
     secondary: 'Message us on WhatsApp',
     tertiary: 'Email us',
+    call: 'Call us',
     repo: 'Browse the repository on GitHub',
     whatsappMessage: 'Hello, I would like to know more about the Novixa Aqar platform and running it for our real-estate office.',
     partnerWhatsappMessage: 'Hello, I would like to ask about the Novixa Aqar marketing partner programme.',
@@ -346,6 +358,7 @@ export const en: Dict = {
     demoTitle: 'Try it',
     rights: 'All rights reserved.',
     license: 'The platform is MIT-licensed and built on the open-source Liberu Real Estate project.',
+    vendorLink: 'Novixa website',
     demoDisclaimer:
       'The demo runs under a fictional agency identity with entirely fictional data — it does not represent real clients or real transactions.',
   },

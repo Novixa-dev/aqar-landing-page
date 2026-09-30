@@ -44,13 +44,17 @@ Everything on the page traces to something verifiable. Nothing was invented.
 | `docs/TEST_USERS.md` | The 9 roles and what each one does |
 | `aqar-demo.dexal.net` (live) | Every screenshot on the page |
 
-### Things that turned out not to be true
-- `novixa.dev` — listed as `homepage` in both `composer.json` and
-  `package.json` — **does not resolve.** No link to it anywhere on this site
-  until the domain is live (`site.config.ts` → `links.vendorSite` is `null`).
-- The contact details in the demo's footer (`+967 776 248 526`,
-  `info@darhadhramaut.ye`) belong to the **fictional** demo agency. They are
-  deliberately not reused as Novixa's contact details.
+### Corrections made after the first pass
+- **`novixa.dev` still does not resolve**, though it is the `homepage` in both
+  `composer.json` and `package.json` and the Novixa site's own canonical
+  `og:url`. The site itself is live at `novixa-cyan.vercel.app`, so
+  `links.vendorSite` points there; swap both once DNS is pointed.
+- **The demo footer's phone number is real.** `+967 776 248 526` is Novixa's
+  own number, confirmed by the product owner — the first pass assumed it
+  belonged to the fictional demo agency. The email in that footer
+  (`info@darhadhramaut.ye`) *is* fictional and is not reused.
+- The Novixa site has its own Aqar product page at `/ar/products/aqar`.
+  See §10 for a claims mismatch between it and this page.
 
 ---
 
@@ -111,10 +115,17 @@ Per `BRAND_POSITIONING.md`, Aqar's lane is **data-and-insight-led**, not
 ### Decisions taken with the product owner
 | Question | Decision |
 |---|---|
-| Contact channels | Placeholders in `site.config.ts`; CTAs hide themselves until filled |
-| Pricing | Show a starting price ($500 / ≈2,000 SAR), framed as a floor |
-| Demo logins | Public demo link only — the 8 role accounts are shared 1:1 in a sales call |
-| Partner programme | Included, commission rate **not** published |
+| Contact channels | WhatsApp `+967776248526`, email, and a `tel:` link — live in `site.config.ts` |
+| Pricing | Starting price ($500 / ≈2,000 SAR), framed as a floor |
+| Demo logins | **Published** — admin + agent accounts, in the closing CTA (*reversed:* was "sales call only") |
+| Partner programme | **30% commission stated on the page** (*reversed:* was "rate not published") |
+
+Two of those were reversed by the public launch post, which shares the demo
+logins and the commission rate openly. The page follows the launch post — a
+landing page that hid what the announcement already published would only add
+friction. `site.demoAccess.publishLogins` and
+`site.partners.publishCommissionRate` switch both back off without touching a
+component, should that change again.
 
 ---
 
@@ -189,22 +200,32 @@ not Arabic-Indic.
 
 ---
 
-## 8. Before launch — required
+## 8. Before launch
 
 The build warns about the first group on every run and **fails** once
 `requireRealContacts: true` is set in `site.config.ts`.
 
-- [ ] `contact.whatsapp` — digits only, international format, no `+`
-- [ ] `contact.email`
-- [ ] `contact.phone`
-- [ ] `url` — the real domain (currently `https://aqar.novixa.dev`)
-- [ ] Set `requireRealContacts: true` so the build enforces the above
-- [ ] `links.vendorSite` — once the Novixa site resolves
+**Done.** `requireRealContacts: true` is set, so the build now *fails* if any
+of these is reverted to a placeholder:
 
-Until those are set, the WhatsApp / email / "request a quote" CTAs **hide
-themselves** rather than render dead links, and a visible note points the
-visitor at the demo instead. The page is fully usable in that state — the demo
-CTA is the primary one — but it is not the intended launch state.
+- [x] `contact.whatsapp` → `967776248526`
+- [x] `contact.email` → `ak01redwan@gmail.com`
+- [x] `contact.phone` → `+967776248526`
+- [x] `links.vendorSite` → the live Novixa deployment
+
+**Still open:**
+
+- [ ] `url` — currently `https://aqar.novixa.dev`. Canonical tags, `og:url` and
+      the sitemap all derive from it, so point the domain (or change the value)
+      before launch, or search engines index the wrong origin.
+- [ ] Swap `links.vendorSite` / `links.vendorProduct` to `novixa.dev` once it resolves.
+- [ ] Consider a business-domain sales address. `ak01redwan@gmail.com` works and
+      is what the launch post uses, but a `@novixa.dev` address reads stronger on
+      a B2B page and keeps a personal inbox away from scrapers.
+
+The placeholder machinery stays in place regardless: if a contact value is ever
+cleared, its CTA hides itself rather than rendering a dead link, and the page
+falls back to the demo CTA.
 
 Also worth doing:
 - [ ] Re-run `npm run capture` against the demo if its UI has changed
@@ -222,7 +243,7 @@ Not oversights — scoped out of v1 with a reason.
 | Case studies / testimonials | No real customers yet. Inventing them is forbidden by the project's own rules. |
 | Blog / market-content section | Belongs to the wider content system (`content/PLAN.md`, Phase 4) — not a landing-page concern. |
 | Pricing tiers | Needs real numbers per tier from the business. The starting anchor ships instead. |
-| Dashboard screenshots | The panels need an authenticated session. `npm run capture` takes them once credentials are supplied; this environment's network policy blocked the demo host. |
+| Dashboard screenshots | The panels need an authenticated session. `npm run capture` takes them once credentials are supplied; this environment's network policy blocked the demo host. The published demo logins now let a visitor reach the panels themselves in the meantime. |
 | Dark mode | See §6. |
 
 ---
@@ -238,3 +259,21 @@ Every prospect sent to the demo from this landing page will scroll past it. It
 belongs in `novixa-dev/novixa-aqar` (the seeder), not here, but it undercuts
 the credibility this page is built to establish. Worth fixing before any push
 on the demo link.
+
+### The Novixa site claims Aqar features this page cannot verify
+
+`novixa-cyan.vercel.app` describes Novixa Aqar as including:
+
+- **بوابة مخصصة للوسطاء العقاريين مع نظام إدارة العمولات** — a broker portal with commission management
+- **تنبيهات مواعيد تجديد العقود** — automatic lease-renewal alerts
+- **أتمتة دورة التحصيل** — collection-cycle automation
+
+None of these appear under *Available now* in
+`FEATURE_REALITY_CLASSIFICATION.md`, and I did not find them while reading the
+codebase. They are **deliberately absent from this landing page**, per §3.
+
+Two pages describing the same product differently is a real risk once a
+prospect reads both. Either verify them against the code and add them to the
+classification file — then they can be sold here too — or bring the corporate
+site's Aqar copy in line with it. The mismatch is the problem, not the
+direction of the fix.

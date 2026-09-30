@@ -34,27 +34,35 @@ Node 20+ (CI uses 22).
 
 ## Before you deploy
 
-Open **`site.config.ts`**. It is the only file holding contact details, URLs
-and pricing — nothing else in the codebase hard-codes them.
+**`site.config.ts`** is the only file holding contact details, URLs, pricing and
+the content switches — nothing else in the codebase hard-codes them.
+
+Contacts are filled in and `requireRealContacts: true` is set, so the build
+**fails** if any of them is reverted to a `TODO:` placeholder. One thing is
+still outstanding:
 
 ```ts
-contact: {
-  whatsapp: 'TODO:WHATSAPP_NUMBER',  // digits only, international, no '+'
-  email:    'TODO:SALES_EMAIL',
-  phone:    'TODO:PHONE_NUMBER',
-},
-url: 'https://aqar.novixa.dev',      // the real domain
-requireRealContacts: false,          // → true once the above are filled in
+url: 'https://aqar.novixa.dev',   // ← point this domain, or change it
 ```
 
-While a value is still `TODO:`, the CTA that needs it **hides itself** instead
-of rendering a dead link, and the page falls back to pointing at the demo. Every
-build prints a warning listing what is unset. Flipping `requireRealContacts` to
-`true` turns that warning into a build failure, so a half-configured site can't
-reach production.
+Canonical tags, `og:url` and the sitemap all derive from `url`. Get it right
+before launch or search engines index the wrong origin.
 
-> The phone number and email in the demo's footer belong to the **fictional**
-> demo agency ("دار حضرموت العقارية"), not to Novixa. Don't reuse them.
+The placeholder machinery stays in place: clear a contact value and its CTA
+hides itself rather than rendering a dead link, with the page falling back to
+the demo CTA.
+
+### Content switches
+
+| Switch | Effect |
+|---|---|
+| `demoAccess.publishLogins` | Shows the seeded demo accounts in the closing CTA |
+| `partners.publishCommissionRate` | Shows the 30% figure in the partner section |
+| `pricing.show` / `partners.show` | Drop either section entirely |
+
+> `links.vendorSite` points at the live Vercel deployment. The Novixa site's own
+> canonical URL is `novixa.dev`, which does not resolve yet — swap it over once
+> DNS is pointed.
 
 ---
 

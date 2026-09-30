@@ -17,7 +17,7 @@ const demoLinks = [
 ];
 const projectLinks = [
   { label: locale === 'ar' ? 'المستودع على GitHub' : 'Repository on GitHub', href: site.links.repo },
-  ...(site.links.vendorSite ? [{ label: 'Novixa', href: site.links.vendorSite }] : []),
+  ...(site.links.vendorSite ? [{ label: d.footer.vendorLink, href: site.links.vendorSite }] : []),
 ];
 ---
 
@@ -30,6 +30,12 @@ const projectLinks = [
           <span class="text-base font-bold text-white">{site.brand.name[locale]}</span>
         </div>
         <p class="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">{d.footer.tagline}</p>
+        <p class="mt-4 text-sm font-semibold text-slate-300">{site.brand.tagline[locale]}</p>
+        {/* The English tagline IS "Engineered for Growth", so only the Arabic
+            locale gets it as a second line. */}
+        {locale === 'ar' && (
+          <p class="mt-0.5 text-xs uppercase tracking-[0.18em] text-slate-600">Engineered for Growth</p>
+        )}
       </div>
 
       <div>

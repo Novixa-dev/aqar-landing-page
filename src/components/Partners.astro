@@ -2,7 +2,7 @@
 import Section from './Section.astro';
 import Icon from './Icon.astro';
 import { t, type Locale } from '../i18n';
-import { whatsappLink, mailtoLink } from '../../site.config';
+import { site, whatsappLink, mailtoLink } from '../../site.config';
 
 interface Props { locale: Locale }
 const { locale } = Astro.props;
@@ -13,6 +13,21 @@ const href = whatsappLink(cta.partnerWhatsappMessage) ?? mailtoLink(cta.partnerE
 ---
 
 <Section id="partners" eyebrow={d.eyebrow} title={d.title} lede={d.lede} tone="light">
+  {site.partners.publishCommissionRate && (
+    <div class="mb-8 flex flex-col items-center gap-4 rounded-2xl border-2 border-verified/25 bg-verified-soft/30 p-7 sm:flex-row sm:p-8">
+      <!-- One LTR run: a separate `%` span gets reordered away from its number
+           by the bidi algorithm in the Arabic locale. -->
+      <p dir="ltr" class="flex shrink-0 items-baseline text-verified">
+        <span class="tabular text-5xl font-extrabold tracking-tight">{site.partners.commissionPercent}</span>
+        <span class="text-2xl font-extrabold">%</span>
+      </p>
+      <div>
+        <p class="font-bold text-ink">{d.commissionLabel}</p>
+        <p class="mt-0.5 text-[15px] leading-relaxed text-slate-600">{d.commissionNote}</p>
+      </div>
+    </div>
+  )}
+
   <ol class="grid gap-6 md:grid-cols-3">
     {d.steps.map((step, i) => (
       <li class="relative rounded-2xl border border-slate-200 bg-white p-7">
@@ -26,8 +41,10 @@ const href = whatsappLink(cta.partnerWhatsappMessage) ?? mailtoLink(cta.partnerE
     ))}
   </ol>
 
+  <p class="mt-8 max-w-3xl text-[15px] leading-relaxed text-slate-600">{d.audience}</p>
+
   {href && (
-    <p class="mt-9">
+    <p class="mt-6">
       <a
         href={href}
         target="_blank"
