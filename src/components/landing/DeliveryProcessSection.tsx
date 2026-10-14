@@ -18,11 +18,11 @@ export function DeliveryProcessSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="delivery-heading"
-            className="font-display text-2xl sm:text-4xl font-bold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
-              'كيف نستلم متطلباتك ونسلّمك نظامك العقاري جاهزاً للعمل؟',
-              'How We Configure and Launch Your Platform in 4 Clear Steps'
+              'نظامك العقاري جاهزاً للعمل',
+              'Your Real-Estate Platform Ready to Operate'
             )}
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">

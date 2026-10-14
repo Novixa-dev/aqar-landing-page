@@ -72,15 +72,9 @@ export function MenassatAuctionsShowcase() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-slate-200">
           <div>
-            <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-slate-900">
+            <h2 className="font-display text-xl sm:text-4xl lg:text-3xl font-black text-slate-900 leading-tight">
               {t('إدارة وتنظيم المزادات العقارية المعتمدة', 'Organized Real-Estate Auctions System')}
             </h2>
-            <p className="mt-2 text-xs sm:text-sm text-slate-600 max-w-2xl">
-              {t(
-                'تنظيم المزادات الحضورية والإلكترونية مع إدارة شيكات الضمان البنكية، تسجيل المزايدين المعتمدين، وحوكمة محاضر الترسية والإفراغ العدلي.',
-                'Orchestrating physical & digital auctions with bank escrow guarantees, verified bidder onboarding, and judicial closing minutes.'
-              )}
-            </p>
           </div>
 
           <a
@@ -123,7 +117,7 @@ export function MenassatAuctionsShowcase() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors">
+                    <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors leading-snug">
                       {pick(auc.title)}
                     </h3>
 

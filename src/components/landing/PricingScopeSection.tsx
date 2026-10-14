@@ -41,7 +41,7 @@ export function PricingScopeSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="pricing-heading"
-            className="font-display text-2xl sm:text-4xl font-bold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {pick(PRICING_SCOPE_CONTENT.headline)}
           </h2>

@@ -4,7 +4,6 @@ import React from 'react';
 import {
   CheckCircle2,
   ExternalLink,
-  Eye,
   Info,
   Palette,
   Sliders,
@@ -27,7 +26,7 @@ export function CustomizationSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="customization-heading"
-            className="font-display text-2xl sm:text-4xl font-bold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
               'نفس المحرك العقاري القوي — بهوية شركتك وإعدادات سوقك المحلي',
@@ -84,30 +83,19 @@ export function CustomizationSection() {
         <div className="mt-16">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
             <div>
-              <div className="inline-flex items-center gap-2 text-xs font-bold text-[#008f7a] uppercase tracking-wider">
-                <Eye className="h-4 w-4" aria-hidden="true" />
-                <span>{t('روابط المعاينة الحية', 'Interactive Live Demo Environments')}</span>
-              </div>
-              <h3 className="mt-1 font-display text-2xl sm:text-3xl font-bold text-slate-900 leading-snug">
+              <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-extrabold text-slate-900 leading-snug">
                 {t(
                   'جرّب النظام بنفسك: النسخة المرجعية وأمثلة تخصيص الهوية',
                   'Try It Live: Primary Reference Demo & Brand Customization Showcases'
                 )}
               </h3>
             </div>
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md">
-              {t(
-                'افتح أي نسخة أدناه لتصفح الواجهة الحية وتجربة البحث والفلترة ونماذج الطلبات في المتصفح.',
-                'Open any environment below to inspect the live interface, search filters, and intake workflows directly in your browser.'
-              )}
-            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {DEMO_OPTIONS.map((demo) => {
               const highlights =
                 lang === 'ar' ? demo.highlights.ar : demo.highlights.en;
-              const hostname = new URL(demo.url).host;
 
               return (
                 <article
@@ -128,12 +116,6 @@ export function CustomizationSection() {
                         }`}
                       >
                         {pick(demo.badge)}
-                      </span>
-                      <span
-                        dir="ltr"
-                        className="font-latin text-xs font-semibold text-slate-700 bg-slate-100 border border-slate-200 rounded-xl px-2.5 py-1"
-                      >
-                        {hostname}
                       </span>
                     </div>
 

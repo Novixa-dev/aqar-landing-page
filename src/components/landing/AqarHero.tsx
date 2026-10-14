@@ -185,7 +185,7 @@ export function AqarHero() {
             {/* Main Headline */}
             <h1
               id="hero-heading"
-              className="font-display text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.3] sm:leading-[1.25] drop-shadow-lg"
+              className="font-display text-3xl sm:text-5xl lg:text-5xl font-black tracking-tight text-white leading-[1.3] sm:leading-[1.25] drop-shadow-lg"
             >
               {pick(HERO_CONTENT.headline)}
             </h1>
@@ -232,8 +232,8 @@ export function AqarHero() {
             <div className="mt-6 text-xs sm:text-sm text-slate-200 drop-shadow">
               <span>
                 {t(
-                  'تريد رؤية كيف يتغير الشكل حسب هوية كل شركة؟ ',
-                  'Want to see how the interface adapts to different company brands? '
+                  'تريد رؤية كيف يتغير الشكل حسب هوية كل شركة: ',
+                  'Want to see how the interface adapts to different company brands: '
                 )}
               </span>
               <a
@@ -276,7 +276,7 @@ export function AqarHero() {
           <div className="mx-auto max-w-3xl text-center mb-12">
             <h2
               id="guarantees-heading"
-              className="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 leading-tight"
+              className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
             >
               {t('بنية عقارية متكاملة تُسلّم جاهزة بهوية شركتك', 'Complete PropTech Stack Delivered Ready Under Your Brand')}
             </h2>

@@ -24,7 +24,6 @@ import { CustomizationSection } from '@/components/landing/CustomizationSection'
 import { PricingScopeSection } from '@/components/landing/PricingScopeSection';
 import { DeliveryProcessSection } from '@/components/landing/DeliveryProcessSection';
 import { FaqSection } from '@/components/landing/FaqSection';
-import { MenassatHeadOfficeContact } from '@/components/landing/MenassatHeadOfficeContact';
 import { DemoRequestForm } from '@/components/landing/DemoRequestForm';
 import { MenassatCorporateConcierge } from '@/components/landing/MenassatCorporateConcierge';
 import { Language } from '@/types';
@@ -96,7 +95,7 @@ export default async function LocalizedLandingPage({
       {/* Hero Section with Integrated Menassat Real Estate Search Bar & Product Preview */}
       <AqarHero />
 
-      {/* Menassat Feature Boxes: ماذا تجد في منصات العقارية؟ */}
+      {/* Menassat Feature Boxes: ماذا تجد في منصات العقارية */}
       <div className="defer-offscreen">
         <MenassatServicesGrid />
       </div>
@@ -169,11 +168,6 @@ export default async function LocalizedLandingPage({
       {/* FAQ Section (Preserved 100%) */}
       <div className="defer-offscreen">
         <FaqSection />
-      </div>
-
-      {/* Menassat Head Office, Location & Working Hours Section */}
-      <div className="defer-offscreen">
-        <MenassatHeadOfficeContact />
       </div>
 
       {/* Demo Request & Custom Setup Form (Preserved 100%) */}

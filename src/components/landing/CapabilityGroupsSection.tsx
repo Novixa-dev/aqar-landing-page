@@ -49,19 +49,13 @@ export function CapabilityGroupsSection() {
         <div className="mx-auto max-w-3xl text-center mb-14 sm:mb-20">
           <h2
             id="capabilities-heading"
-            className="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
               'أربع ركائز تغطي رحلة العقار من العرض والتسويق حتى التعاقد والصيانة',
               'Four Core Pillars Covering Discovery, Intake, Leasing & Governance'
             )}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
-            {t(
-              'جميع المزايا التالية مبنية وموجودة فعلياً في قاعدة الكود الأساسية لنظام نوفكسا عقار، مع توضيح صريح لما يعمل افتراضياً وما يُهيأ حسب نطاقك.',
-              'Every capability listed below is grounded in the verified Novixa Aqar codebase, with transparent badges distinguishing core baseline features from scoped configurations.'
-            )}
-          </p>
         </div>
 
         {/* Alternating Zigzag Layout: Image on one side, text on the other, alternating each row */}

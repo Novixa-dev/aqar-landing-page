@@ -39,7 +39,7 @@ export function AqarProductPreview() {
 
           <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700 font-latin" dir="ltr">
             <span className="h-2 w-2 rounded-full bg-[#00b399]" aria-hidden="true" />
-            <span>aqar-demo.novixa.dev</span>
+            <span>aqar-demo2.novixa.dev</span>
           </div>
 
           <a

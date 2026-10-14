@@ -23,7 +23,7 @@ export function MenassatStatsWhyUs() {
                   : 'border-transparent text-slate-500 hover:text-slate-900'
               }`}
             >
-              {t('لماذا تختار منصتنا؟', 'Why Choose Our Platform?')}
+              {t('لماذا تختار منصتنا', 'Why Choose Our Platform')}
             </button>
             <button
               type="button"
@@ -50,7 +50,7 @@ export function MenassatStatsWhyUs() {
               {/* 4 Large Stats Counters */}
               <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
-                  <span className="font-display text-3xl sm:text-5xl font-black text-[#008f7a] font-latin">
+                  <span className="font-display text-3xl sm:text-4xl font-black text-[#008f7a] font-latin">
                     99,000+
                   </span>
                   <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
@@ -59,7 +59,7 @@ export function MenassatStatsWhyUs() {
                 </div>
 
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
-                  <span className="font-display text-3xl sm:text-5xl font-black text-slate-900 font-latin">
+                  <span className="font-display text-3xl sm:text-4xl font-black text-slate-900 font-latin">
                     9,514+
                   </span>
                   <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
@@ -68,7 +68,7 @@ export function MenassatStatsWhyUs() {
                 </div>
 
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
-                  <span className="font-display text-3xl sm:text-5xl font-black text-[#008f7a] font-latin">
+                  <span className="font-display text-3xl sm:text-4xl font-black text-[#008f7a] font-latin">
                     2,200+
                   </span>
                   <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
@@ -77,7 +77,7 @@ export function MenassatStatsWhyUs() {
                 </div>
 
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
-                  <span className="font-display text-3xl sm:text-5xl font-black text-slate-900 font-latin">
+                  <span className="font-display text-3xl sm:text-4xl font-black text-slate-900 font-latin">
                     384+
                   </span>
                   <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">

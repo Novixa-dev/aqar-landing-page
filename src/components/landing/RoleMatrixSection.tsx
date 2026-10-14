@@ -18,19 +18,13 @@ export function RoleMatrixSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="roles-heading"
-            className="font-display text-2xl sm:text-4xl font-bold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
               '8 لوحات تشغيل مستقلة — كل طرف يرى ويدير ما يخصه فقط',
               '8 Purpose-Built Role Panels — Every Stakeholder Gets the Right Workspace'
             )}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            {t(
-              'إلى جانب البوابة العقارية العامة للزوار، يوفّر النظام 8 لوحات Filament مستقلة بصلاحياتها ومساراتها لضمان تنظيم العمل وحماية خصوصية البيانات.',
-              'Alongside the public property portal, Novixa Aqar ships with 8 isolated Filament panels so internal teams, property owners, tenants, and contractors each operate in a dedicated environment.'
-            )}
-          </p>
         </div>
 
         {/* Role Cards Grid */}

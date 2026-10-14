@@ -18,19 +18,13 @@ export function WorkflowProblemSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="problem-outcomes-heading"
-            className="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
               'ودّع تشتت العروض والطلبات بين المحادثات والجداول',
               'Replace Scattered Chats and Spreadsheets with One Connected System'
             )}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            {t(
-              'نعالج الاختناقات اليومية التي تضيع الصفقات وتستنزف وقت الوكلاء والإدارة في المكاتب العقارية.',
-              'We solve the daily operational bottlenecks that cause missed deals and drain agent and back-office productivity.'
-            )}
-          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-6">

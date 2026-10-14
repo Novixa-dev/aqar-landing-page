@@ -3,14 +3,23 @@
 import React, { useState } from 'react';
 import {
   AlertCircle,
+  ArrowLeft,
+  ArrowRight,
+  Building2,
+  Check,
   CheckCircle2,
+  Clock,
   Copy,
   ExternalLink,
   Loader2,
+  Lock,
   Mail,
+  MapPin,
   MessageSquare,
   Send,
   ShieldCheck,
+  User,
+  Zap,
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import { FORM_SECTION_CONTENT } from '@/content/aqar-content';
@@ -156,7 +165,7 @@ export function DemoRequestForm() {
       setCopiedRef(true);
       setTimeout(() => setCopiedRef(false), 2500);
     } catch {
-      // Clipboard API fallback not required
+      // Fallback
     }
   };
 
@@ -164,73 +173,117 @@ export function DemoRequestForm() {
     <section
       id="demo-form"
       aria-labelledby="demo-form-heading"
-      className="py-16 sm:py-24 border-b border-slate-200 bg-[#f8fafc]"
+      className="relative py-20 sm:py-28 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200 overflow-hidden"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-          {/* Left/Start Column: Pitch & Direct Channels */}
-          <div className="lg:col-span-5">
-            <h2
-              id="demo-form-heading"
-              className="font-display text-2xl sm:text-4xl font-bold text-slate-900 leading-snug"
-            >
-              {pick(FORM_SECTION_CONTENT.headline)}
-            </h2>
-            <p className="mt-4 text-base text-slate-600 leading-relaxed">
-              {pick(FORM_SECTION_CONTENT.subheadline)}
-            </p>
+      {/* Subtle Background Glows */}
+      <div
+        className="absolute top-0 right-1/4 -mt-16 h-96 w-96 rounded-full bg-[#00b399]/10 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute bottom-0 left-10 -mb-20 h-96 w-96 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"
+        aria-hidden="true"
+      />
 
-            {/* Key Assurances */}
-            <div className="mt-8 rounded-3xl border border-slate-200 bg-white p-6 space-y-4 shadow-sm">
-              <div className="flex items-start gap-3">
-                <CheckCircle2
-                  className="h-5 w-5 shrink-0 text-[#00b399] mt-0.5"
-                  aria-hidden="true"
-                />
-                <div>
-                  <h3 className="text-sm font-bold text-slate-900">
-                    {t(
-                      'توضيح كامل للنطاق والسعر قبل البدء',
-                      'Clear Scope & Fixed Proposal Before Kickoff'
-                    )}
-                  </h3>
-                  <p className="mt-1 text-xs text-slate-600 leading-relaxed">
-                    {t(
-                      'نحدد معك ما يدخل ضمن الإطلاق الأساسي (500$) وأي إضافات مطلوبة، بدون أي التزامات مخفية.',
-                      'We confirm what fits inside the $500 baseline setup and quote any custom add-ons transparently.'
-                    )}
-                  </p>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          {/* Left Column: Pitch, Value Guarantees & Direct Channels */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-8">
+            <div>
+
+              {/* Headline */}
+              <h2
+                id="demo-form-heading"
+                className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
+              >
+                {pick(FORM_SECTION_CONTENT.headline)}
+              </h2>
+            </div>
+
+            {/* Premium Guarantee & Value Cards */}
+            <div className="space-y-3.5">
+              <div className="group rounded-2xl border border-slate-200/90 bg-white/90 p-4 sm:p-5 shadow-xs hover:border-[#00b399]/40 hover:shadow-md transition-all duration-300">
+                <div className="flex items-start gap-3.5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#008f7a]/10 text-[#008f7a] border border-[#00b399]/20 shadow-2xs">
+                    <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-900">
+                      {t(
+                        'توضيح كامل للنطاق والسعر قبل البدء',
+                        'Clear Scope & Fixed Proposal Before Kickoff'
+                      )}
+                    </h3>
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                      {t(
+                        'نحدد معك بدقة ما يدخل ضمن الإطلاق الأساسي (500$) وأي إضافات مطلوبة، بعقد واضح وبدون أي التزامات مخفية.',
+                        'We confirm what fits inside the $500 baseline setup and quote any custom add-ons transparently.'
+                      )}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <ShieldCheck
-                  className="h-5 w-5 shrink-0 text-[#00b399] mt-0.5"
-                  aria-hidden="true"
-                />
-                <div>
-                  <h3 className="text-sm font-bold text-slate-900">
-                    {t(
-                      'مراجعة عملية على النسخة الحية',
-                      'Guided Walkthrough on the Live System'
-                    )}
-                  </h3>
-                  <p className="mt-1 text-xs text-slate-600 leading-relaxed">
-                    {t(
-                      'نستعرض معك البوابة العامة ولوحات الأدوار الـ 8 لترى كيف سيعمل فريقك يومياً.',
-                      'We walk through the public portal and 8 role panels tailored to your agency’s workflow.'
-                    )}
-                  </p>
+              <div className="group rounded-2xl border border-slate-200/90 bg-white/90 p-4 sm:p-5 shadow-xs hover:border-[#00b399]/40 hover:shadow-md transition-all duration-300">
+                <div className="flex items-start gap-3.5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#008f7a]/10 text-[#008f7a] border border-[#00b399]/20 shadow-2xs">
+                    <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-900">
+                      {t(
+                        'مراجعة عملية وتدريب على النسخة الحية',
+                        'Guided Walkthrough on the Live System'
+                      )}
+                    </h3>
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                      {t(
+                        'نستعرض معك البوابة العامة ولوحات الأدوار الـ 8 المخصصة لترى كيف سيعمل فريقك وملاكك ومستأجروك يومياً.',
+                        'We walk through the public portal and 8 role panels tailored to your agency’s daily workflow.'
+                      )}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group rounded-2xl border border-slate-200/90 bg-white/90 p-4 sm:p-5 shadow-xs hover:border-[#00b399]/40 hover:shadow-md transition-all duration-300">
+                <div className="flex items-start gap-3.5">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#008f7a]/10 text-[#008f7a] border border-[#00b399]/20 shadow-2xs">
+                    <Zap className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-bold text-slate-900">
+                      {t(
+                        'تسليم سريع وجاهزية كاملة للتشغيل',
+                        'Rapid Turnkey Deployment'
+                      )}
+                    </h3>
+                    <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                      {t(
+                        'تجهيز وضبط هويتك البصرية والبيانات خلال 3 إلى 5 أيام عمل، مع دعم تقني مستمر لضمان انطلاقة ناجحة.',
+                        'Branding and setup configured within 3-5 business days, backed by dedicated technical support.'
+                      )}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Direct Channels */}
-            <div className="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="text-xs font-bold text-slate-700 mb-3">
-                {pick(FORM_SECTION_CONTENT.directChannelsTitle)}
+            {/* Direct Channels Hub */}
+            <div className="rounded-3xl border border-slate-200/80 bg-white/95 p-5 sm:p-6 shadow-sm">
+              <div className="flex items-center justify-between mb-3.5">
+                <span className="text-xs font-bold text-slate-800">
+                  {pick(FORM_SECTION_CONTENT.directChannelsTitle)}
+                </span>
+                <span className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  {t('رد سريع', 'Fast Response')}
+                </span>
               </div>
+
               <div className="flex flex-col gap-2.5">
+                {/* Live Demo Link */}
                 <a
                   href={EXTERNAL_ROUTES.primaryDemo}
                   target="_blank"
@@ -241,80 +294,96 @@ export function DemoRequestForm() {
                       demo_id: 'primary_generic',
                     })
                   }
-                  className="flex min-h-11 items-center justify-between rounded-full border border-[#00b399]/40 bg-[#00b399]/10 px-4 py-2.5 text-xs sm:text-sm font-bold text-[#008f7a] hover:bg-[#00b399] hover:text-white transition-all"
-                >
-                  <span>{t('فتح النسخة التجريبية الحية الآن', 'Open Live Interactive Demo')}</span>
-                  <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                </a>
-
-                <a
-                  href={`mailto:${CONTACT_EMAIL}`}
-                  className="flex min-h-11 items-center justify-between rounded-full border border-slate-200 bg-slate-50 px-4 py-2.5 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#00b399] hover:text-[#008f7a] transition-colors"
+                  className="group flex min-h-11 items-center justify-between rounded-2xl border border-[#00b399]/40 bg-gradient-to-r from-[#00b399]/10 via-[#00b399]/5 to-transparent px-4 py-2.5 text-xs sm:text-sm font-bold text-[#008f7a] hover:bg-[#00b399] hover:text-white transition-all shadow-2xs"
                 >
                   <span className="flex items-center gap-2">
-                    <Mail className="h-4 w-4 text-[#00b399]" aria-hidden="true" />
-                    <span>{t('مراسلة عبر البريد الرسمي', 'Email Us Directly')}</span>
+                    <ExternalLink className="h-4 w-4 shrink-0 transition-transform group-hover:scale-110" aria-hidden="true" />
+                    <span>{t('تجربة النسخة التفاعلية الحية الآن', 'Open Live Interactive Demo')}</span>
                   </span>
-                  <span className="font-latin text-xs text-slate-600" dir="ltr">
-                    {CONTACT_EMAIL}
-                  </span>
+                  {lang === 'ar' ? (
+                    <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" aria-hidden="true" />
+                  ) : (
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  )}
                 </a>
 
+                {/* Direct WhatsApp */}
                 {WHATSAPP_URL && (
                   <a
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex min-h-11 items-center justify-between rounded-full border border-emerald-300 bg-emerald-50 px-4 py-2.5 text-xs sm:text-sm font-semibold text-emerald-800 hover:bg-emerald-100 transition-colors"
+                    className="flex min-h-11 items-center justify-between rounded-2xl border border-emerald-300/80 bg-emerald-50/70 px-4 py-2.5 text-xs sm:text-sm font-bold text-emerald-800 hover:bg-emerald-100/90 transition-colors shadow-2xs"
                   >
                     <span className="flex items-center gap-2">
-                      <MessageSquare className="h-4 w-4" aria-hidden="true" />
-                      <span>{t('تواصل مباشرة عبر واتساب', 'Chat on WhatsApp')}</span>
+                      <MessageSquare className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                      <span>{t('محادثة فورية عبر واتساب', 'Direct Chat on WhatsApp')}</span>
                     </span>
-                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                    <ExternalLink className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
                   </a>
                 )}
+
+                {/* Email Direct */}
+                <a
+                  href={`mailto:${CONTACT_EMAIL}`}
+                  className="flex min-h-11 items-center justify-between rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#00b399] hover:text-[#008f7a] hover:bg-white transition-colors"
+                >
+                  <span className="flex items-center gap-2">
+                    <Mail className="h-4 w-4 text-[#00b399]" aria-hidden="true" />
+                    <span>{t('البريد الإلكتروني المباشر', 'Direct Business Email')}</span>
+                  </span>
+                  <span className="font-latin text-xs font-semibold text-slate-600" dir="ltr">
+                    {CONTACT_EMAIL}
+                  </span>
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right/End Column: Interactive Form Card */}
+          {/* Right Column: Premium Form Card */}
           <div className="lg:col-span-7">
-            <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 lg:p-10 shadow-xl">
+            <div className="relative rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-9 lg:p-10 shadow-xl shadow-slate-200/70 overflow-hidden">
+              {/* Top Accent Gradient Line */}
+              <div
+                className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#008f7a] via-[#00b399] to-emerald-400"
+                aria-hidden="true"
+              />
+
               {submitState === 'success' ? (
+                /* Success Status Display */
                 <div
                   role="status"
                   aria-live="polite"
-                  className="py-6 text-center space-y-5"
+                  className="py-8 text-center space-y-6"
                 >
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#00b399]/15 border border-[#00b399]/40 text-[#008f7a]">
-                    <CheckCircle2 className="h-8 w-8" aria-hidden="true" />
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-tr from-[#00b399]/20 to-emerald-100 border border-[#00b399]/40 text-[#008f7a] shadow-lg shadow-[#00b399]/20">
+                    <CheckCircle2 className="h-10 w-10 text-[#008f7a]" aria-hidden="true" />
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="font-display text-2xl font-bold text-slate-900">
+                  <div className="space-y-2 max-w-md mx-auto">
+                    <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 leading-snug">
                       {t(
                         'تم تسجيل طلبك بنجاح!',
                         'Your Demo & Scope Request Has Been Recorded!'
                       )}
                     </h3>
-                    <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {t(
-                        'شكراً لتواصلك مع نوفكسا. تم حفظ تفاصيل نشاطك العقاري، وسيتواصل معك فريقنا عبر وسيلة التواصل المفضلة لديك.',
+                        'شكراً لتواصلك مع نوفكسا. تم حفظ تفاصيل نشاطك العقاري، وسيتواصل معك مستشارنا المختص لتنسيق العرض التوضيحي وتحديد النطاق الأنسب.',
                         'Thank you for reaching out to Novixa. Your business requirements have been recorded and our team will follow up via your preferred contact channel.'
                       )}
                     </p>
                   </div>
 
-                  {/* Reference ID Box */}
-                  <div className="mx-auto max-w-md rounded-2xl border border-[#00b399]/40 bg-slate-50 p-4 flex items-center justify-between gap-3">
+                  {/* Reference Ticket Box */}
+                  <div className="mx-auto max-w-md rounded-2xl border-2 border-dashed border-[#00b399]/40 bg-[#00b399]/5 p-5 flex items-center justify-between gap-4">
                     <div className="text-start">
-                      <div className="text-xs text-slate-500">
-                        {t('رقم مرجع الطلب', 'Request Reference ID')}
+                      <div className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                        {t('رقم مرجع الطلب الخاص بك', 'Your Request Reference ID')}
                       </div>
                       <div
                         dir="ltr"
-                        className="font-latin text-base font-bold text-[#008f7a]"
+                        className="font-latin text-lg sm:text-xl font-extrabold text-[#008f7a] tracking-wider mt-0.5"
                       >
                         {referenceId}
                       </div>
@@ -322,27 +391,46 @@ export function DemoRequestForm() {
                     <button
                       type="button"
                       onClick={handleCopyReference}
-                      className="inline-flex min-h-10 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 hover:border-[#00b399] hover:text-[#008f7a]"
+                      className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-800 shadow-2xs hover:border-[#00b399] hover:text-[#008f7a] transition-all"
                     >
-                      <Copy className="h-3.5 w-3.5" aria-hidden="true" />
-                      <span>
-                        {copiedRef
-                          ? t('تم النسخ', 'Copied!')
-                          : t('نسخ المرجع', 'Copy ID')}
-                      </span>
+                      {copiedRef ? (
+                        <>
+                          <Check className="h-4 w-4 text-emerald-600" aria-hidden="true" />
+                          <span className="text-emerald-600">{t('تم النسخ', 'Copied!')}</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="h-4 w-4 text-slate-500" aria-hidden="true" />
+                          <span>{t('نسخ المرجع', 'Copy ID')}</span>
+                        </>
+                      )}
                     </button>
                   </div>
 
-                  <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  {/* Next Steps Guide */}
+                  <div className="mx-auto max-w-md rounded-2xl bg-slate-50 border border-slate-200/80 p-4 text-start text-xs text-slate-600 space-y-2">
+                    <div className="font-bold text-slate-800 flex items-center gap-1.5">
+                      <Clock className="h-3.5 w-3.5 text-[#00b399]" />
+                      <span>{t('ماذا سيحدث بعد ذلك', 'What happens next')}</span>
+                    </div>
+                    <ul className="space-y-1.5 list-disc list-inside text-slate-600">
+                      <li>{t('مراجعة متطلبات مكتبك ونوع العقارات.', 'Review of your agency requirements and property portfolio.')}</li>
+                      <li>{t('إعداد ملف نطاق العمل والتسعير الدقيق.', 'Preparation of your tailored scope and fixed pricing.')}</li>
+                      <li>{t('التواصل معك لعقد جلسة استعراض حي مخصصة.', 'Direct follow-up to schedule your personalized live walkthrough.')}</li>
+                    </ul>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
                       href={buildMailtoHref(referenceId)}
-                      className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-[#00b399]/40 bg-[#00b399]/10 px-5 py-2.5 text-xs sm:text-sm font-semibold text-[#008f7a] hover:bg-[#00b399] hover:text-white transition-all"
+                      className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-[#00b399]/40 bg-[#00b399]/10 px-5 py-2.5 text-xs sm:text-sm font-bold text-[#008f7a] hover:bg-[#00b399] hover:text-white transition-all shadow-xs"
                     >
                       <Mail className="h-4 w-4" aria-hidden="true" />
                       <span>
                         {t(
-                          'إرسال نسخة إضافية عبر بريدك الآن',
-                          'Send Copy via Your Email Client'
+                          'إرسال نسخة إضافية عبر تطبيق البريد',
+                          'Send Copy via Email Client'
                         )}
                       </span>
                     </a>
@@ -353,15 +441,32 @@ export function DemoRequestForm() {
                         setSubmitState('idle');
                         setReferenceId('');
                       }}
-                      className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs sm:text-sm font-medium text-slate-700 hover:bg-slate-50"
+                      className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                     >
                       {t('إرسال طلب آخر', 'Submit Another Request')}
                     </button>
                   </div>
                 </div>
               ) : (
+                /* Interactive Request Form */
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
-                  {/* Honeypot field */}
+                  {/* Form Header Inside Card */}
+                  <div className="border-b border-slate-100 pb-4 mb-2 flex items-center justify-between flex-wrap gap-2">
+                    <div>
+                      <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900">
+                        {t('بيانات الطلب وتخصيص المنصة', 'Platform Specification Details')}
+                      </h3>
+                      <p className="text-xs text-slate-500 mt-0.5">
+                        {t('املأ التفاصيل وسيتواصل معك مستشارنا العقاري والتقني.', 'Fill in your details and our specialist will reach out shortly.')}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">
+                      <Clock className="h-3.5 w-3.5 text-[#00b399]" />
+                      <span>{t('يستغرق دقيقة واحدة', 'Takes 1 min')}</span>
+                    </div>
+                  </div>
+
+                  {/* Honeypot field (Anti-spam) */}
                   <div className="sr-only" aria-hidden="true">
                     <label htmlFor="website_url">Website URL</label>
                     <input
@@ -375,14 +480,16 @@ export function DemoRequestForm() {
                     />
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {/* Row 1: Name & Company */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     {/* Full Name */}
                     <div>
                       <label
                         htmlFor="lead-name"
-                        className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                        className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                       >
-                        {t('الاسم الكامل *', 'Full Name *')}
+                        <User className="h-3.5 w-3.5 text-[#00b399]" />
+                        <span>{t('الاسم الكامل *', 'Full Name *')}</span>
                       </label>
                       <input
                         id="lead-name"
@@ -395,14 +502,19 @@ export function DemoRequestForm() {
                         aria-invalid={Boolean(fieldErrors.name)}
                         aria-describedby={fieldErrors.name ? 'lead-name-error' : undefined}
                         placeholder={t('مثال: أحمد القاصدي', 'e.g., Ahmed Al-Kasadi')}
-                        className="w-full min-h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
+                        className={`w-full min-h-11 rounded-2xl border px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-all ${
+                          fieldErrors.name
+                            ? 'border-rose-300 bg-rose-50/50 focus:border-rose-500 focus:ring-3 focus:ring-rose-200'
+                            : 'border-slate-200 bg-slate-50/70 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15'
+                        } focus:outline-none`}
                       />
                       {fieldErrors.name && (
                         <p
                           id="lead-name-error"
-                          className="mt-1.5 text-xs font-medium text-rose-500"
+                          className="mt-1.5 text-xs font-semibold text-rose-600 flex items-center gap-1"
                         >
-                          {fieldErrors.name}
+                          <AlertCircle className="h-3 w-3 shrink-0" />
+                          <span>{fieldErrors.name}</span>
                         </p>
                       )}
                     </div>
@@ -411,9 +523,10 @@ export function DemoRequestForm() {
                     <div>
                       <label
                         htmlFor="lead-company"
-                        className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                        className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                       >
-                        {t('اسم المكتب أو الشركة العقارية *', 'Company / Agency Name *')}
+                        <Building2 className="h-3.5 w-3.5 text-[#00b399]" />
+                        <span>{t('اسم المكتب أو الشركة العقارية *', 'Company / Agency Name *')}</span>
                       </label>
                       <input
                         id="lead-company"
@@ -431,79 +544,92 @@ export function DemoRequestForm() {
                           'مثال: شركة الأفق العقارية',
                           'e.g., Horizon Real Estate'
                         )}
-                        className="w-full min-h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
+                        className={`w-full min-h-11 rounded-2xl border px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-all ${
+                          fieldErrors.companyName
+                            ? 'border-rose-300 bg-rose-50/50 focus:border-rose-500 focus:ring-3 focus:ring-rose-200'
+                            : 'border-slate-200 bg-slate-50/70 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15'
+                        } focus:outline-none`}
                       />
                       {fieldErrors.companyName && (
                         <p
                           id="lead-company-error"
-                          className="mt-1.5 text-xs font-medium text-rose-500"
+                          className="mt-1.5 text-xs font-semibold text-rose-600 flex items-center gap-1"
                         >
-                          {fieldErrors.companyName}
+                          <AlertCircle className="h-3 w-3 shrink-0" />
+                          <span>{fieldErrors.companyName}</span>
                         </p>
                       )}
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  {/* Row 2: Business Type & City */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
                     {/* Business Type */}
                     <div>
                       <label
                         htmlFor="lead-business-type"
-                        className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                        className="block text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                       >
                         {t('طبيعة النشاط العقاري *', 'Business Type *')}
                       </label>
-                      <select
-                        id="lead-business-type"
-                        name="businessType"
-                        required
-                        value={businessType}
-                        onChange={(e) =>
-                          setBusinessType(e.target.value as BusinessTypeOption)
-                        }
-                        aria-invalid={Boolean(fieldErrors.businessType)}
-                        aria-describedby={
-                          fieldErrors.businessType ? 'lead-business-type-error' : undefined
-                        }
-                        className="w-full min-h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
-                      >
-                        <option value="">
-                          {t('— اختر نوع النشاط —', '— Select Business Type —')}
-                        </option>
-                        <option value="brokerage">
-                          {t(
-                            'مكتب عقاري / وساطة بيع وتأجير',
-                            'Real-Estate Brokerage (Sales & Leasing)'
-                          )}
-                        </option>
-                        <option value="property_management">
-                          {t(
-                            'شركة إدارة أملاك وعقود وصيانة',
-                            'Property & Lease Management Firm'
-                          )}
-                        </option>
-                        <option value="mixed_agency">
-                          {t(
-                            'شركة عقارية شاملة (وساطة + إدارة أملاك)',
-                            'Full-Service Agency (Brokerage + Management)'
-                          )}
-                        </option>
-                        <option value="developer_marketing">
-                          {t(
-                            'تسويق مشاريع / تطوير عقاري',
-                            'Real-Estate Developer / Project Marketing'
-                          )}
-                        </option>
-                        <option value="other">
-                          {t('نشاط عقاري آخر', 'Other Real-Estate Business')}
-                        </option>
-                      </select>
+                      <div className="relative">
+                        <select
+                          id="lead-business-type"
+                          name="businessType"
+                          required
+                          value={businessType}
+                          onChange={(e) =>
+                            setBusinessType(e.target.value as BusinessTypeOption)
+                          }
+                          aria-invalid={Boolean(fieldErrors.businessType)}
+                          aria-describedby={
+                            fieldErrors.businessType ? 'lead-business-type-error' : undefined
+                          }
+                          className={`w-full min-h-11 rounded-2xl border px-4 py-2.5 text-sm text-slate-900 transition-all appearance-none cursor-pointer ${
+                            fieldErrors.businessType
+                              ? 'border-rose-300 bg-rose-50/50 focus:border-rose-500 focus:ring-3 focus:ring-rose-200'
+                              : 'border-slate-200 bg-slate-50/70 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15'
+                          } focus:outline-none`}
+                        >
+                          <option value="">
+                            {t('— اختر نوع النشاط —', '— Select Business Type —')}
+                          </option>
+                          <option value="brokerage">
+                            {t(
+                              'مكتب عقاري / وساطة بيع وتأجير',
+                              'Real-Estate Brokerage (Sales & Leasing)'
+                            )}
+                          </option>
+                          <option value="property_management">
+                            {t(
+                              'شركة إدارة أملاك وعقود وصيانة',
+                              'Property & Lease Management Firm'
+                            )}
+                          </option>
+                          <option value="mixed_agency">
+                            {t(
+                              'شركة عقارية شاملة (وساطة + إدارة أملاك)',
+                              'Full-Service Agency (Brokerage + Management)'
+                            )}
+                          </option>
+                          <option value="developer_marketing">
+                            {t(
+                              'تسويق مشاريع / تطوير عقاري',
+                              'Real-Estate Developer / Project Marketing'
+                            )}
+                          </option>
+                          <option value="other">
+                            {t('نشاط عقاري آخر', 'Other Real-Estate Business')}
+                          </option>
+                        </select>
+                      </div>
                       {fieldErrors.businessType && (
                         <p
                           id="lead-business-type-error"
-                          className="mt-1.5 text-xs font-medium text-rose-500"
+                          className="mt-1.5 text-xs font-semibold text-rose-600 flex items-center gap-1"
                         >
-                          {fieldErrors.businessType}
+                          <AlertCircle className="h-3 w-3 shrink-0" />
+                          <span>{fieldErrors.businessType}</span>
                         </p>
                       )}
                     </div>
@@ -512,9 +638,10 @@ export function DemoRequestForm() {
                     <div>
                       <label
                         htmlFor="lead-city"
-                        className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                        className="flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                       >
-                        {t('المدينة / الدولة *', 'City / Country *')}
+                        <MapPin className="h-3.5 w-3.5 text-[#00b399]" />
+                        <span>{t('المدينة / الدولة *', 'City / Country *')}</span>
                       </label>
                       <input
                         id="lead-city"
@@ -528,28 +655,33 @@ export function DemoRequestForm() {
                           fieldErrors.cityCountry ? 'lead-city-error' : undefined
                         }
                         placeholder={t(
-                          'مثال: الرياض / صنعاء / عدن / مسقط',
-                          'e.g., Riyadh / Sana’a / Aden / Dubai'
+                          'مثال: الرياض / صنعاء / دبي / مسقط',
+                          'e.g., Riyadh / Sana’a / Dubai / Muscat'
                         )}
-                        className="w-full min-h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
+                        className={`w-full min-h-11 rounded-2xl border px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 transition-all ${
+                          fieldErrors.cityCountry
+                            ? 'border-rose-300 bg-rose-50/50 focus:border-rose-500 focus:ring-3 focus:ring-rose-200'
+                            : 'border-slate-200 bg-slate-50/70 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15'
+                        } focus:outline-none`}
                       />
                       {fieldErrors.cityCountry && (
                         <p
                           id="lead-city-error"
-                          className="mt-1.5 text-xs font-medium text-rose-500"
+                          className="mt-1.5 text-xs font-semibold text-rose-600 flex items-center gap-1"
                         >
-                          {fieldErrors.cityCountry}
+                          <AlertCircle className="h-3 w-3 shrink-0" />
+                          <span>{fieldErrors.cityCountry}</span>
                         </p>
                       )}
                     </div>
                   </div>
 
-                  {/* Contact Method & Contact Value */}
-                  <div className="grid grid-cols-1 sm:grid-cols-12 gap-5">
+                  {/* Row 3: Contact Method & Value */}
+                  <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 sm:gap-5">
                     <div className="sm:col-span-5">
                       <label
                         htmlFor="lead-contact-method"
-                        className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                        className="block text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                       >
                         {t('وسيلة التواصل المفضلة *', 'Preferred Contact *')}
                       </label>
@@ -560,7 +692,7 @@ export function DemoRequestForm() {
                         onChange={(e) =>
                           setContactMethod(e.target.value as ContactMethodOption)
                         }
-                        className="w-full min-h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
+                        className="w-full min-h-11 rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15 focus:outline-none transition-all cursor-pointer"
                       >
                         <option value="whatsapp">
                           {t('واتساب (WhatsApp)', 'WhatsApp')}
@@ -577,12 +709,12 @@ export function DemoRequestForm() {
                     <div className="sm:col-span-7">
                       <label
                         htmlFor="lead-contact-value"
-                        className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                        className="block text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                       >
                         {contactMethod === 'email'
                           ? t('البريد الإلكتروني الرسمي *', 'Business Email Address *')
                           : t(
-                              'رقم الهاتف أو الواتساب (مع رمز الدولة) *',
+                              'رقم الجوال / الواتساب مع رمز الدولة *',
                               'Phone / WhatsApp Number (with country code) *'
                             )}
                       </label>
@@ -603,35 +735,40 @@ export function DemoRequestForm() {
                         placeholder={
                           contactMethod === 'email'
                             ? 'name@company.com'
-                            : '+966 5X XXX XXXX'
+                            : '+966 50 XXX XXXX'
                         }
-                        className="w-full min-h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 font-latin text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
+                        className={`w-full min-h-11 rounded-2xl border px-4 py-2.5 font-latin text-sm text-slate-900 placeholder:text-slate-400 transition-all ${
+                          fieldErrors.contactValue
+                            ? 'border-rose-300 bg-rose-50/50 focus:border-rose-500 focus:ring-3 focus:ring-rose-200'
+                            : 'border-slate-200 bg-slate-50/70 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15'
+                        } focus:outline-none`}
                       />
                       {fieldErrors.contactValue && (
                         <p
                           id="lead-contact-value-error"
-                          className="mt-1.5 text-xs font-medium text-rose-500"
+                          className="mt-1.5 text-xs font-semibold text-rose-600 flex items-center gap-1"
                         >
-                          {fieldErrors.contactValue}
+                          <AlertCircle className="h-3 w-3 shrink-0" />
+                          <span>{fieldErrors.contactValue}</span>
                         </p>
                       )}
                     </div>
                   </div>
 
-                  {/* Scope Tier Selection */}
+                  {/* Row 4: Scope Tier Selection */}
                   <div>
                     <label
                       htmlFor="lead-scope-tier"
-                      className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                      className="block text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                     >
-                      {t('النطاق المبدئي المطلوب', 'Estimated Setup Scope')}
+                      {t('النطاق المبدئي المطلوب لنسختك', 'Estimated Setup Scope')}
                     </label>
                     <select
                       id="lead-scope-tier"
                       name="scopeTier"
                       value={scopeTier}
                       onChange={(e) => setScopeTier(e.target.value as ScopeTierOption)}
-                      className="w-full min-h-11 rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
+                      className="w-full min-h-11 rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-2.5 text-sm text-slate-900 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15 focus:outline-none transition-all cursor-pointer"
                     >
                       <option value="baseline_500">
                         {t(
@@ -652,13 +789,31 @@ export function DemoRequestForm() {
                         )}
                       </option>
                     </select>
+
+                    <p className="mt-1.5 text-[11px] text-slate-500">
+                      {scopeTier === 'baseline_500' &&
+                        t(
+                          'يشمل تخصيص الشعار والألوان وتهيئة لوحات التحكم الـ 8 وتسليم النظام جاهزاً للتشغيل.',
+                          'Includes logo/color branding, configuring all 8 panels, and turnkey deployment.'
+                        )}
+                      {scopeTier === 'custom_workflow' &&
+                        t(
+                          'يشمل دراسة التعديلات البرمجية وتكامل بوابات الدفع أو رسائل SMS وعقود الإيجار الخاصة.',
+                          'Includes tailoring custom features, payment gateways, SMS gateways, or bespoke leases.'
+                        )}
+                      {scopeTier === 'Need_consultation' &&
+                        t(
+                          'سنقوم بدراسة حجم أعمالك وتحديد الميزات الأساسية التي تمنحك أفضل عائد بأقل تكلفة.',
+                          'We will analyze your transaction volume and advise the most cost-effective package.'
+                        )}
+                    </p>
                   </div>
 
-                  {/* Notes */}
+                  {/* Row 5: Notes & Requirements */}
                   <div>
                     <label
                       htmlFor="lead-notes"
-                      className="block text-xs sm:text-sm font-semibold text-slate-700 mb-2"
+                      className="block text-xs sm:text-sm font-bold text-slate-800 mb-1.5"
                     >
                       {t(
                         'ملاحظات حول متطلباتك أو الأدوار التي تهمك (اختياري)',
@@ -672,10 +827,10 @@ export function DemoRequestForm() {
                       value={notes}
                       onChange={(e) => setNotes(e.target.value)}
                       placeholder={t(
-                        'مثال: نركز على إدارة عقود الإيجار والصيانة لـ 150 وحدة سكنية، ونريد العملة بالريال...',
-                        'e.g., We manage 150 rental units and want Landlord, Tenant, and Contractor panels enabled...'
+                        'مثال: ندير 150 وحدة سكنية وتجارية، ونرغب بالتركيز على عقود الإيجار وطلبات الصيانة والملاك...',
+                        'e.g., We manage 150 units and focus on tenant leasing, maintenance requests, and landlord reports...'
                       )}
-                      className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-[#00b399] focus:outline-none transition-colors"
+                      className="w-full rounded-2xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:bg-white focus:border-[#00b399] focus:ring-3 focus:ring-[#00b399]/15 focus:outline-none transition-all"
                     />
                   </div>
 
@@ -683,7 +838,7 @@ export function DemoRequestForm() {
                   {submitState === 'error' && serverError && (
                     <div
                       role="alert"
-                      className="rounded-2xl border border-rose-200 bg-rose-50 p-4 text-xs sm:text-sm text-rose-800 space-y-2"
+                      className="rounded-2xl border border-rose-200 bg-rose-50/90 p-4 text-xs sm:text-sm text-rose-800 space-y-2"
                     >
                       <div className="flex items-start gap-2 font-semibold">
                         <AlertCircle className="h-4 w-4 shrink-0 mt-0.5 text-rose-500" />
@@ -692,12 +847,12 @@ export function DemoRequestForm() {
                       <div>
                         <a
                           href={buildMailtoHref()}
-                          className="inline-flex items-center gap-1.5 font-semibold text-[#008f7a] underline underline-offset-4 hover:text-[#00b399]"
+                          className="inline-flex items-center gap-1.5 font-bold text-[#008f7a] underline underline-offset-4 hover:text-[#00b399]"
                         >
                           <Mail className="h-3.5 w-3.5" aria-hidden="true" />
                           <span>
                             {t(
-                              'اضغط هنا لإرسال بياناتك مباشرة عبر تطبيق البريد',
+                              'اضغط هنا لإرسال تفاصيل طلبك مباشرة عبر تطبيق البريد',
                               'Click here to send your details directly via your email client'
                             )}
                           </span>
@@ -706,36 +861,42 @@ export function DemoRequestForm() {
                     </div>
                   )}
 
-                  {/* Submit Button (Menassat 3D Rounded) */}
-                  <button
-                    type="submit"
-                    disabled={submitState === 'submitting'}
-                    className="flex min-h-12 w-full items-center justify-center gap-2.5 rounded-full btn-menassat-teal px-8 py-3.5 text-base font-bold text-white shadow-xl shadow-[#00b399]/30 disabled:opacity-60 transition-transform"
-                  >
-                    {submitState === 'submitting' ? (
-                      <>
-                        <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
-                        <span>{t('جاري تسجيل طلبك...', 'Submitting Request...')}</span>
-                      </>
-                    ) : (
-                      <>
-                        <Send className="h-4 w-4" aria-hidden="true" />
-                        <span>
-                          {t(
-                            'إرسال طلب العرض التوضيحي وتحديد النطاق',
-                            'Submit Demo & Scope Request'
-                          )}
-                        </span>
-                      </>
-                    )}
-                  </button>
+                  {/* Submit Button */}
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={submitState === 'submitting'}
+                      className="flex min-h-[52px] w-full items-center justify-center gap-2.5 rounded-full btn-menassat-teal px-8 py-3.5 text-base font-bold text-white shadow-xl shadow-[#00b399]/25 hover:shadow-2xl hover:shadow-[#00b399]/40 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:hover:scale-100 transition-all cursor-pointer"
+                    >
+                      {submitState === 'submitting' ? (
+                        <>
+                          <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
+                          <span>{t('جاري تسجيل طلبك...', 'Submitting Request...')}</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="h-4 w-4" aria-hidden="true" />
+                          <span>
+                            {t(
+                              'إرسال طلب العرض التوضيحي وتحديد النطاق',
+                              'Submit Demo & Scope Request'
+                            )}
+                          </span>
+                        </>
+                      )}
+                    </button>
+                  </div>
 
-                  <p className="text-center text-xs text-slate-500">
-                    {t(
-                      'بإرسال هذا النموذج، تستخدم بياناتك حصرياً للتواصل معك حول نظام نوفكسا عقار وفق سياسة الخصوصية.',
-                      'By submitting this form, your details are used solely to respond regarding Novixa Aqar under our Privacy Policy.'
-                    )}
-                  </p>
+                  {/* Trust Microcopy */}
+                  <div className="flex items-center justify-center gap-1.5 text-center text-[11px] text-slate-500 pt-1">
+                    <Lock className="h-3.5 w-3.5 text-[#00b399] shrink-0" />
+                    <span>
+                      {t(
+                        'بياناتك مشفرة ومحمية بالكامل — تُستخدم حصرياً للتواصل معك وفق سياسة الخصوصية.',
+                        'Your details are encrypted and private — strictly used to respond under our Privacy Policy.'
+                      )}
+                    </span>
+                  </div>
                 </form>
               )}
             </div>

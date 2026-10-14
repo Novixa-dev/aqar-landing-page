@@ -26,19 +26,13 @@ export function ProductWalkthroughSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="walkthrough-heading"
-            className="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
-              'كيف تعمل دورة العقار داخل نوفكسا عقار من الإدراج حتى ما بعد التعاقد؟',
+              'كيف تعمل دورة العقار داخل نوفكسا عقار من الإدراج حتى ما بعد التعاقد',
               'How a Property Moves Through Novixa Aqar from Listing to Post-Lease'
             )}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            {t(
-              'أربع مراحل مترابطة تضمن عدم ضياع أي عرض أو عميل، مع توزيع واضح للمهام بين البوابة العامة ولوحات التشغيل.',
-              'Four connected stages ensure no listing or prospect falls through the cracks across the public portal and role workspaces.'
-            )}
-          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">

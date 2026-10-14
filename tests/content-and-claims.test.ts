@@ -34,7 +34,7 @@ describe('Novixa Aqar Content & Verified Claims Integrity', () => {
     expect(DEMO_OPTIONS).toHaveLength(3);
     const primary = DEMO_OPTIONS.find((d) => d.isPrimary);
     expect(primary).toBeDefined();
-    expect(primary?.url).toBe('https://aqar-demo.novixa.dev/');
+    expect(primary?.url).toBe('https://aqar-demo2.novixa.dev/');
 
     for (const demo of DEMO_OPTIONS) {
       expect(demo.disclaimer.ar.length).toBeGreaterThan(20);

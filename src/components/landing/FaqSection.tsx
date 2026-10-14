@@ -19,11 +19,11 @@ export function FaqSection() {
         <div className="text-center">
           <h2
             id="faq-heading"
-            className="font-display text-2xl sm:text-4xl font-bold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
-              'الأسئلة الشائعة حول نوفكسا عقار، التخصيص، والتسعير',
-              'Common Questions About Novixa Aqar, Scope & Pricing'
+              'الأسئلة الشائعة حول نوفكسا',
+              'Frequently Asked Questions About Novixa'
             )}
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">

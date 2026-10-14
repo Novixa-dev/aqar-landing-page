@@ -20,19 +20,13 @@ export function BusinessAudienceSection() {
         <div className="mx-auto max-w-3xl text-center">
           <h2
             id="audience-heading"
-            className="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 leading-snug"
+            className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
               'مصمم ليتكيف مع نموذج عملك العقاري — من الوساطة إلى إدارة الأملاك',
               'Tailored to Your Real-Estate Business Model — Brokerage to Property Management'
             )}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            {t(
-              'لا تفرض عليك المنصة قالب عمل جامد؛ بل تتشكل لتخدم المكاتب العقارية وشركات الوساطة وإدارة الأملاك حسب حجم الفريق والمسارات المطلوبة.',
-              'Instead of forcing a rigid template, Novixa Aqar adapts to agencies, brokerages, and property managers based on your team structure and active workflows.'
-            )}
-          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -91,14 +91,13 @@ export function MenassatServicesGrid() {
   return (
     <section className="py-16 sm:py-24 border-b border-slate-200 bg-[#f8fafc] relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Centered Heading Matching Menassat "ماذا تجد في منصات العقارية؟" */}
+        {/* Centered Heading Matching Menassat "ماذا تجد في منصات العقارية" */}
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+          <h2 className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight">
             {t('ماذا تجد في ', 'What Do You Find in ')}
             <span className="text-[#008f7a]">
               {t('منصة عقار المتكاملة', 'Our Real-Estate Platform')}
             </span>
-            ؟
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {t(

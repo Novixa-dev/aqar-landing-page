@@ -207,18 +207,12 @@ export function MenassatPropertiesShowcase() {
         {/* Section Header: Corporate Reference Portfolio */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 pb-6 border-b border-slate-200">
           <div className="max-w-3xl">
-            <h2 className="font-display text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 leading-tight">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight">
               {t(
-                'أصول عقارية ومشاريع تُدار عبر منظومتنا',
-                'Landmark Real-Estate Assets Governed by Our System'
+                'أصول عقارية ومشاريع',
+                'Landmark Real-Estate Assets & Projects'
               )}
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-              {t(
-                'نماذج حقيقية لمجمعات سكنية، أبراج مكتبية، ومخططات استثمارية تعمل فيها لوحات التحكم المستقلة لحوكمة الإيجارات، الصيانة، المزادات، والوساطة المعتمدة برخص فال.',
-                'Reference architectural developments where our 8 role panels orchestrate leasing, facility maintenance, regulated auctions, and Fal-licensed brokerage workflows.'
-              )}
-            </p>
           </div>
 
           <a

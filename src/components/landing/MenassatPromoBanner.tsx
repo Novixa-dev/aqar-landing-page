@@ -18,10 +18,10 @@ export function MenassatPromoBanner() {
 
         <div className="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <h3 className="font-display text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-snug">
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-snug">
               {t(
-                'عملاء موثوقون، ضمان كامل وثقة، وأقل تكلفة انطلاق في السوق العقاري.',
-                'Trusted clients, complete guarantee, and the most competitive platform setup in the market.'
+                'عملاء موثوقون، ضمان كامل وثقة.',
+                'Trusted clients, complete guarantee, and verified reliability.'
               )}
             </h3>
             <p className="mt-2 text-sm sm:text-base text-white/80 leading-relaxed">

@@ -25,7 +25,7 @@ export const PARENT_BRAND: LocalizedText = {
 
 export const NAV_LINKS: LandingLink[] = [
   {
-    label: { ar: 'لماذا عقار؟', en: 'Why Aqar' },
+    label: { ar: 'لماذا عقار', en: 'Why Aqar' },
     href: '#problem-outcomes',
   },
   {
@@ -33,7 +33,7 @@ export const NAV_LINKS: LandingLink[] = [
     href: '#capabilities',
   },
   {
-    label: { ar: 'الأدوار (8)', en: 'Roles (8)' },
+    label: { ar: 'الأدوار', en: 'Roles' },
     href: '#roles',
   },
   {
@@ -45,7 +45,7 @@ export const NAV_LINKS: LandingLink[] = [
     href: '#customization',
   },
   {
-    label: { ar: 'التسعير ($500+)', en: 'Pricing ($500+)' },
+    label: { ar: 'التسعير', en: 'Pricing' },
     href: '#pricing',
   },
   {
@@ -799,8 +799,8 @@ export const PRICING_SCOPE_CONTENT = {
   },
   includedInBaseline: {
     title: {
-      ar: 'ماذا يشمل الإطلاق الأساسي (ابتداءً من 500$)؟',
-      en: 'What Is Included in the $500 Baseline Setup?',
+      ar: 'ماذا يشمل الإطلاق الأساسي (ابتداءً من 500$)',
+      en: 'What Is Included in the $500 Baseline Setup',
     },
     items: {
       ar: [
@@ -823,8 +823,8 @@ export const PRICING_SCOPE_CONTENT = {
   },
   scopedAddons: {
     title: {
-      ar: 'ما الذي يُسعّر بشكل مستقل حسب نطاق شركتك؟',
-      en: 'What Is Scoped & Quoted Separately?',
+      ar: 'ما الذي يُسعّر بشكل مستقل حسب نطاق شركتك',
+      en: 'What Is Scoped & Quoted Separately',
     },
     items: {
       ar: [
@@ -843,8 +843,8 @@ export const PRICING_SCOPE_CONTENT = {
   },
   explicitExclusions: {
     title: {
-      ar: 'ما الذي لا يشمله سعر الـ 500$ الأساسي؟ (شفافية كاملة)',
-      en: 'What Is Explicitly Excluded from the $500 Baseline Price?',
+      ar: 'ما الذي لا يشمله سعر الـ 500$ الأساسي (شفافية كاملة)',
+      en: 'What Is Explicitly Excluded from the $500 Baseline Price',
     },
     notice: {
       ar: 'لتجنب أي التباس، التكاليف التشغيلية للبنية التحتية والاشتراكات الخارجية تكون باسم العميل أو تُرتب كخدمة مستقلة:',
@@ -935,8 +935,8 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'what_is_aqar',
     category: 'product',
     question: {
-      ar: 'هل نوفكسا عقار موقع إعلانات عقارية مفتوح للجمهور أم نظام خاص بشركتي؟',
-      en: 'Is Novixa Aqar a public classifieds marketplace or a dedicated system for my company?',
+      ar: 'هل نوفكسا عقار موقع إعلانات عقارية مفتوح للجمهور أم نظام خاص بشركتي',
+      en: 'Is Novixa Aqar a public classifieds marketplace or a dedicated system for my company',
     },
     answer: {
       ar: 'نوفكسا عقار هو نظام برمجي متكامل (B2B) يُجهّز ويُسلّم خصيصاً لشركتك العقارية بهويتك واسمك ونطاقك الخاص. تحصل فيه على بوابة عقارية عامة لعملائك، بالإضافة إلى لوحات تشغيل داخلية لإدارة فريقك وعقاراتك وعقودك.',
@@ -947,8 +947,8 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'what_500_includes',
     category: 'pricing',
     question: {
-      ar: 'ماذا يشمل سعر الـ 500$ الأساسي تحديداً؟',
-      en: 'What exactly does the $500 starting price include?',
+      ar: 'ماذا يشمل سعر الـ 500$ الأساسي تحديداً',
+      en: 'What exactly does the $500 starting price include',
     },
     answer: {
       ar: 'يشمل تجهيز النسخة الأساسية من النظام بهوية شركتك (الشعار، الألوان، بيانات التواصل)، وتفعيل البوابة العامة باللغتين العربية والإنجليزية، وتفعيل لوحات الأدوار الـ 8، وضبط المدن وتصنيفات العقارات والعملة، وتسليم النظام جاهزاً للتشغيل.',
@@ -959,8 +959,8 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'what_500_excludes',
     category: 'pricing',
     question: {
-      ar: 'هل يشمل سعر الـ 500$ الاستضافة (Hosting) أو الخادم (Server) أو النطاق (Domain)؟',
-      en: 'Does the $500 price include cloud hosting, servers, or domain registration?',
+      ar: 'هل يشمل سعر الـ 500$ الاستضافة (Hosting) أو الخادم (Server) أو النطاق (Domain)',
+      en: 'Does the $500 price include cloud hosting, servers, or domain registration',
     },
     answer: {
       ar: 'لا. سعر الـ 500$ يخص تجهيز وتخصيص البرمجية الأساسية فقط، ولا يشمل تكاليف الاستضافة أو الخوادم أو اسم النطاق أو أي اشتراكات خارجية مدفوعة (مثل رسائل SMS أو WhatsApp API). يمكننا إرشادك لأفضل خيارات الاستضافة المناسبة لميزانيتك أو ترتيبها لك بشكل منفصل.',
@@ -971,8 +971,8 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'roles_customization',
     category: 'customization',
     question: {
-      ar: 'نحن نعمل في الوساطة العقارية فقط ولا ندير صيانة، هل يمكن تبسيط النظام؟',
-      en: 'We only operate as a sales/leasing brokerage and do not manage maintenance. Can the system be simplified?',
+      ar: 'نحن نعمل في الوساطة العقارية فقط ولا ندير صيانة، هل يمكن تبسيط النظام',
+      en: 'We only operate as a sales/leasing brokerage and do not manage maintenance. Can the system be simplified',
     },
     answer: {
       ar: 'نعم بالتأكيد. النظام معياري؛ إذا كان نشاطك يقتصر على التسويق والوساطة وحجز المعاينات، نركز تهيئة النظام على البوابة العامة ولوحات الإدارة والوكلاء والعملاء دون إرباك فريقك بأدوات الصيانة أو المقاولين، مع بقاء الإمكانية متاحة لتفعيلها مستقبلاً.',
@@ -983,8 +983,8 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'currencies_and_languages',
     category: 'technical',
     question: {
-      ar: 'كيف يعمل دعم اللغات والعملات داخل النظام؟',
-      en: 'How do languages and currencies work inside the platform?',
+      ar: 'كيف يعمل دعم اللغات والعملات داخل النظام',
+      en: 'How do languages and currencies work inside the platform',
     },
     answer: {
       ar: 'يدعم النظام اللغتين العربية (RTL) والإنجليزية (LTR) بشكل أصيل في كل من البوابة العامة ولوحات التحكم. أما العملات فيمكن تحديد رمز العملة لكل عقار أو عقد (يأتي مهيأً افتراضياً بالريال اليمني YER والريال السعودي SAR والدولار USD، ويمكن ضبط عملة بلدك عند التجهيز). علماً أن النظام يعرض العملة المحددة لكل سجل ولا يقوم بتحويل آلي فوري لأسعار الصرف.',
@@ -995,20 +995,20 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'demo_data_disclaimer',
     category: 'product',
     question: {
-      ar: 'هل الأرقام والعقارات الموجودة في النسخ التجريبية الحية حقيقية؟',
-      en: 'Are the properties and statistics shown in the live demo links real?',
+      ar: 'هل الأرقام والعقارات الموجودة في النسخ التجريبية الحية حقيقية',
+      en: 'Are the properties and statistics shown in the live demo links real',
     },
     answer: {
-      ar: 'لا. جميع العقارات والأسماء التجارية والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo.novixa.dev` والنسخ المستعرضة للهوية) هي بيانات افتراضية لأغراض التجربة وتوضيح قابلية التخصيص فقط.',
-      en: 'No. All listings, company names, and figures inside the live demo environments (`aqar-demo.novixa.dev` and the branded showcase presets) are illustrative sample data created strictly to demonstrate product workflows and visual customization.',
+      ar: 'لا. جميع العقارات والأسماء التجارية والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo2.novixa.dev` والنسخ المستعرضة للهوية) هي بيانات افتراضية لأغراض التجربة وتوضيح قابلية التخصيص فقط.',
+      en: 'No. All listings, company names, and figures inside the live demo environments (`aqar-demo2.novixa.dev` and the branded showcase presets) are illustrative sample data created strictly to demonstrate product workflows and visual customization.',
     },
   },
   {
     id: 'tech_stack_and_ownership',
     category: 'technical',
     question: {
-      ar: 'ما هي التقنيات المبني عليها النظام؟ وأين يتم استضافته؟',
-      en: 'What technology stack powers Novixa Aqar, and where can it be hosted?',
+      ar: 'ما هي التقنيات المبني عليها النظام وأين يتم استضافته',
+      en: 'What technology stack powers Novixa Aqar, and where can it be hosted',
     },
     answer: {
       ar: 'بُني النظام باستخدام إطار العمل الحديث Laravel 13 مع لوحات تشغيل Filament 5 وواجهة Tailwind CSS، مما يضمن سرعة عالية وأماناً وقابلية ممتازة للتوسع والصيانة. يمكن استضافته على أي خادم سحابي قياسي يدعم PHP وقاعدة بيانات MySQL/PostgreSQL تحت تحكم شركتك.',

@@ -52,7 +52,7 @@ export function MenassatDistrictsShowcase() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-slate-200">
           <div>
-            <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-slate-900">
+            <h2 className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight">
               {t('استكشف العقارات حسب مناطق المملكة', 'Explore Listings by Kingdom Regions')}
             </h2>
           </div>
@@ -92,7 +92,7 @@ export function MenassatDistrictsShowcase() {
                   <Building2 className="h-4 w-4" aria-hidden="true" />
                   <span>{pick(region.count)}</span>
                 </span>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-white group-hover:text-[#00cbb0] transition-colors">
+                <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold text-white group-hover:text-[#00cbb0] transition-colors leading-snug">
                   {pick(region.name)}
                 </h3>
               </div>

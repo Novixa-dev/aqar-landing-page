@@ -38,7 +38,7 @@ export function absoluteUrl(path = ''): string {
 }
 
 export const EXTERNAL_ROUTES = {
-  primaryDemo: process.env.NEXT_PUBLIC_AQAR_PRIMARY_DEMO_URL || 'https://aqar-demo.novixa.dev/',
+  primaryDemo: process.env.NEXT_PUBLIC_AQAR_PRIMARY_DEMO_URL || 'https://aqar-demo2.novixa.dev/',
   brandedDemoDexal: process.env.NEXT_PUBLIC_AQAR_BRANDED_DEMO_DEXAL_URL || 'https://aqar-demo.dexal.net/',
   brandedDemoRusu: process.env.NEXT_PUBLIC_AQAR_BRANDED_DEMO_RUSU_URL || 'https://aqar-demo2.novixa.dev/',
   novixaHome: process.env.NEXT_PUBLIC_NOVIXA_HOME_URL || 'https://novixa.dev',
