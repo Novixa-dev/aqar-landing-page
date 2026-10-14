@@ -92,85 +92,85 @@ export default async function LocalizedLandingPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
-      {/* Hero Section with Integrated Menassat Real Estate Search Bar & Product Preview */}
-      <AqarHero />
+      {/* Hero Section with Server-rendered H1 & Background Slider */}
+      <AqarHero lang={lang} />
 
       {/* Menassat Feature Boxes: ماذا تجد في منصات العقارية */}
       <div className="defer-offscreen">
-        <MenassatServicesGrid />
+        <MenassatServicesGrid lang={lang} />
       </div>
 
       {/* Menassat Latest Properties Showcase with Riyal Currency */}
       <div className="defer-offscreen">
-        <MenassatPropertiesShowcase />
+        <MenassatPropertiesShowcase lang={lang} />
       </div>
 
       {/* Menassat Dark Teal Promo Banner */}
       <div className="defer-offscreen">
-        <MenassatPromoBanner />
+        <MenassatPromoBanner lang={lang} />
       </div>
 
       {/* Menassat Kingdom Regions Showcase */}
       <div className="defer-offscreen">
-        <MenassatDistrictsShowcase />
+        <MenassatDistrictsShowcase lang={lang} />
       </div>
 
       {/* Menassat Stats & Why Us / About Us Tabs */}
       <div className="defer-offscreen">
-        <MenassatStatsWhyUs />
+        <MenassatStatsWhyUs lang={lang} />
       </div>
 
-      {/* Core Business Audiences Section (Preserved 100%) */}
+      {/* Core Business Audiences Section */}
       <div className="defer-offscreen">
-        <BusinessAudienceSection />
+        <BusinessAudienceSection lang={lang} />
       </div>
 
       {/* Menassat Real Estate Auctions Showcase with Live Countdown */}
       <div className="defer-offscreen">
-        <MenassatAuctionsShowcase />
+        <MenassatAuctionsShowcase lang={lang} />
       </div>
 
-      {/* Core Workflow & Problem Outcomes (Preserved 100%) */}
+      {/* Core Workflow & Problem Outcomes */}
       <div className="defer-offscreen">
-        <WorkflowProblemSection />
+        <WorkflowProblemSection lang={lang} />
       </div>
 
-      {/* Core 4 Capability Groups (Preserved 100%) */}
+      {/* Core 4 Capability Groups */}
       <div className="defer-offscreen">
-        <CapabilityGroupsSection />
+        <CapabilityGroupsSection lang={lang} />
       </div>
 
-      {/* Role Matrix: 8 Verified Filament Panels (Preserved 100%) */}
+      {/* Role Matrix: 8 Verified Filament Panels */}
       <div className="defer-offscreen">
-        <RoleMatrixSection />
+        <RoleMatrixSection lang={lang} />
       </div>
 
-      {/* Product Walkthrough 4 Steps (Preserved 100%) */}
+      {/* Product Walkthrough 4 Steps */}
       <div className="defer-offscreen">
-        <ProductWalkthroughSection />
+        <ProductWalkthroughSection lang={lang} />
       </div>
 
-      {/* Customization Pillars & 3 Live Branded Demos (Preserved 100%) */}
+      {/* Customization Pillars & 3 Live Branded Demos */}
       <div className="defer-offscreen">
-        <CustomizationSection />
+        <CustomizationSection lang={lang} />
       </div>
 
-      {/* Pricing & Scope: Starting at $500 with Clear Exclusions (Preserved 100%) */}
+      {/* Pricing & Scope: Starting at $500 with Clear Exclusions */}
       <div className="defer-offscreen">
-        <PricingScopeSection />
+        <PricingScopeSection lang={lang} />
       </div>
 
-      {/* 5-Step Delivery Process (Preserved 100%) */}
+      {/* 5-Step Delivery Process */}
       <div className="defer-offscreen">
-        <DeliveryProcessSection />
+        <DeliveryProcessSection lang={lang} />
       </div>
 
-      {/* FAQ Section (Preserved 100%) */}
+      {/* FAQ Section */}
       <div className="defer-offscreen">
-        <FaqSection />
+        <FaqSection lang={lang} />
       </div>
 
-      {/* Demo Request & Custom Setup Form (Preserved 100%) */}
+      {/* Demo Request & Custom Setup Form */}
       <div className="defer-offscreen">
         <DemoRequestForm />
       </div>

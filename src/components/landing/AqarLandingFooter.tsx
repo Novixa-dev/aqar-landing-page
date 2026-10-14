@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import {
@@ -12,9 +10,10 @@ import {
   Phone,
   ShieldCheck,
 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { BRAND_NAME, DEMO_OPTIONS, NAV_LINKS, PARENT_BRAND } from '@/content/aqar-content';
 import { CONTACT_EMAIL } from '@/lib/site';
+import { Language } from '@/types';
 
 const FAL_LICENSES = [
   {
@@ -35,8 +34,8 @@ const FAL_LICENSES = [
   },
 ];
 
-export function AqarLandingFooter() {
-  const { lang, t, pick } = useLanguage();
+export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
   const otherLang = lang === 'ar' ? 'en' : 'ar';
 
   return (

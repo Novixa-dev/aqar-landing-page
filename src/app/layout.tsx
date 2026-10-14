@@ -6,7 +6,7 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: 'نوفكسا عقار | Novixa Aqar — نظام عقاري متكامل يُشكَّل على مقاس شركتك',
+    default: 'نوفكسا عقار | Novixa Aqar — نظام عقاري متكامل يشكل على مقاس شركتك',
     template: '%s | Novixa Aqar',
   },
   applicationName: 'Novixa Aqar',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#ffffff',
+  themeColor: '#008f7a',
 };
 
 const SET_LANG_DIR_SCRIPT = `

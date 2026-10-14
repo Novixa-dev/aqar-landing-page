@@ -60,7 +60,7 @@ export const HERO_CONTENT = {
     en: 'Configurable B2B Real-Estate Platform for Agencies & Property Managers',
   },
   headline: {
-    ar: 'نظام عقاري متكامل يُشكَّل على مقاس شركتك',
+    ar: 'نظام عقاري متكامل يشكل على مقاس شركتك',
     en: 'A Complete Real-Estate Platform Shaped Around Your Company',
   },
   subheadline: {

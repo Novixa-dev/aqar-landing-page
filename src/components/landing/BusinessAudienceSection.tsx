@@ -1,14 +1,13 @@
-'use client';
-
 import React from 'react';
 import { Building, Briefcase, Compass, Layers } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { AUDIENCE_ITEMS } from '@/content/aqar-content';
+import { Language } from '@/types';
 
 const AUDIENCE_ICONS = [Building, Briefcase, Layers, Compass];
 
-export function BusinessAudienceSection() {
-  const { t, pick } = useLanguage();
+export function BusinessAudienceSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section

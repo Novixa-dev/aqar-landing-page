@@ -34,11 +34,11 @@ export default async function LocalizedLayout({
         }`}
         dir={dir}
       >
-        <AqarLandingHeader />
+        <AqarLandingHeader lang={lang} />
         <main id="main-content" tabIndex={-1} className="flex-grow focus:outline-none">
           {children}
         </main>
-        <AqarLandingFooter />
+        <AqarLandingFooter lang={lang} />
       </div>
     </LanguageProvider>
   );

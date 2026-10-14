@@ -1,10 +1,9 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Building2, ExternalLink } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { EXTERNAL_ROUTES } from '@/lib/site';
+import { Language } from '@/types';
 
 const REGIONS = [
   {
@@ -44,8 +43,8 @@ const REGIONS = [
   },
 ];
 
-export function MenassatDistrictsShowcase() {
-  const { t, pick } = useLanguage();
+export function MenassatDistrictsShowcase({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section className="py-16 sm:py-24 border-b border-slate-200 bg-[#f8fafc] relative">
@@ -53,7 +52,7 @@ export function MenassatDistrictsShowcase() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 pb-4 border-b border-slate-200">
           <div>
             <h2 className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight">
-              {t('استكشف العقارات حسب مناطق المملكة', 'Explore Listings by Kingdom Regions')}
+              {t('استكشف العقارات', 'Explore Listings by Kingdom Regions')}
             </h2>
           </div>
 

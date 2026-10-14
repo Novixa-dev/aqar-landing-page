@@ -1,6 +1,4 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import {
   Building2,
@@ -8,8 +6,10 @@ import {
   Clock,
   ExternalLink,
 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { EXTERNAL_ROUTES } from '@/lib/site';
+import { AuctionCountdownTimer } from './AuctionCountdownTimer';
+import { Language } from '@/types';
 
 const AUCTIONS = [
   {
@@ -47,25 +47,8 @@ const AUCTIONS = [
   },
 ];
 
-export function MenassatAuctionsShowcase() {
-  const { t, pick } = useLanguage();
-  const [secondsLeft, setSecondsLeft] = useState(86400 * 4 + 3600 * 6 + 1200);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSecondsLeft((prev) => (prev > 0 ? prev - 1 : 86400 * 5));
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const formatCountdown = (totalSec: number, offsetDays = 0) => {
-    const sec = totalSec + offsetDays * 86400;
-    const days = Math.floor(sec / 86400);
-    const hours = Math.floor((sec % 86400) / 3600);
-    const minutes = Math.floor((sec % 3600) / 60);
-    const seconds = sec % 60;
-    return { days, hours, minutes, seconds };
-  };
+export function MenassatAuctionsShowcase({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section className="py-16 sm:py-24 border-b border-slate-200 bg-white relative">
@@ -91,68 +74,52 @@ export function MenassatAuctionsShowcase() {
         {/* Auction Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {AUCTIONS.map((auc, idx) => {
-            const time = formatCountdown(secondsLeft, idx * 3);
-
             return (
               <article
                 key={auc.id}
                 className="group rounded-3xl border border-slate-200 bg-white shadow-sm overflow-hidden hover:border-[#00b399] hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
+                  {/* Photo Header */}
                   <div className="relative h-56 w-full overflow-hidden bg-slate-100">
                     <Image
                       src={auc.imageUrl}
                       alt={pick(auc.title)}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-center group-hover:scale-108 transition-transform duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
 
+                    {/* Status Badge */}
                     <div className="absolute top-4 start-4">
                       <span className={`rounded-full ${auc.statusBadge} px-3.5 py-1 text-xs font-bold text-white shadow-md`}>
                         {pick(auc.status)}
                       </span>
                     </div>
+
+                    <div className="absolute bottom-3 start-4 end-4 text-white">
+                      <span className="text-[11px] font-semibold text-teal-300 block mb-0.5">
+                        {t('مدة المزاد: ', 'Duration: ')}{auc.daysCount}
+                      </span>
+                      <h3 className="font-display text-lg font-bold text-white leading-snug">
+                        {pick(auc.title)}
+                      </h3>
+                    </div>
                   </div>
 
+                  {/* Body Content */}
                   <div className="p-6">
-                    <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors leading-snug">
-                      {pick(auc.title)}
-                    </h3>
+                    {/* Live Countdown Island */}
+                    <div className="rounded-2xl border border-slate-200 bg-slate-50 p-3.5 mb-4">
+                      <div className="flex items-center justify-between text-xs font-bold text-slate-700 mb-2">
+                        <span className="flex items-center gap-1.5 text-[#008f7a]">
+                          <Clock className="h-4 w-4 animate-spin-slow" aria-hidden="true" />
+                          <span>{t('الوقت المتبقي لانتهاء المزاد', 'Time Remaining Until Close')}</span>
+                        </span>
+                      </div>
 
-                    {/* Menassat Countdown Flip Box */}
-                    <div className="mt-5 rounded-2xl bg-slate-50 p-4 border border-slate-200">
-                      <div className="text-[11px] font-bold text-slate-600 mb-2 flex items-center gap-1.5">
-                        <Clock className="h-3.5 w-3.5 text-[#008f7a]" aria-hidden="true" />
-                        <span>{t('العداد التنازلي للمزاد:', 'Auction Countdown:')}</span>
-                      </div>
-                      <div className="grid grid-cols-4 gap-2 text-center" dir="ltr">
-                        <div className="rounded-xl bg-white p-2 border border-slate-200 shadow-2xs">
-                          <span className="font-display text-lg font-black text-slate-900 font-latin">
-                            {time.days}
-                          </span>
-                          <span className="block text-[10px] text-slate-500 font-semibold">{t('يوم', 'Days')}</span>
-                        </div>
-                        <div className="rounded-xl bg-white p-2 border border-slate-200 shadow-2xs">
-                          <span className="font-display text-lg font-black text-slate-900 font-latin">
-                            {time.hours}
-                          </span>
-                          <span className="block text-[10px] text-slate-500 font-semibold">{t('ساعة', 'Hours')}</span>
-                        </div>
-                        <div className="rounded-xl bg-white p-2 border border-slate-200 shadow-2xs">
-                          <span className="font-display text-lg font-black text-slate-900 font-latin">
-                            {time.minutes}
-                          </span>
-                          <span className="block text-[10px] text-slate-500 font-semibold">{t('دقيقة', 'Mins')}</span>
-                        </div>
-                        <div className="rounded-xl bg-white p-2 border border-slate-200 shadow-2xs">
-                          <span className="font-display text-lg font-black text-[#008f7a] font-latin">
-                            {time.seconds}
-                          </span>
-                          <span className="block text-[10px] text-[#008f7a] font-semibold">{t('ثانية', 'Secs')}</span>
-                        </div>
-                      </div>
+                      <AuctionCountdownTimer offsetDays={idx * 3} lang={lang} />
                     </div>
 
                     {/* Auction Specs */}

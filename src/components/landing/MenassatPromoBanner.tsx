@@ -1,12 +1,11 @@
-'use client';
-
 import React from 'react';
 import { ArrowLeft, ArrowRight, Briefcase } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
-import { trackEvent } from '@/lib/analytics';
+import { getDictionary } from '@/lib/i18n';
+import { TrackedLink } from '@/components/common/TrackedLink';
+import { Language } from '@/types';
 
-export function MenassatPromoBanner() {
-  const { t, isRtl } = useLanguage();
+export function MenassatPromoBanner({ lang = 'ar' }: { lang?: Language }) {
+  const { t, isRtl } = getDictionary(lang);
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
   return (
@@ -33,20 +32,19 @@ export function MenassatPromoBanner() {
           </div>
 
           <div className="shrink-0 flex flex-col sm:flex-row gap-3">
-            <a
+            <TrackedLink
               href="#demo-form"
-              onClick={() =>
-                trackEvent('aqar_cta_click', {
-                  source: 'promo_banner',
-                  target: 'demo_form',
-                })
-              }
+              eventName="aqar_cta_click"
+              eventParams={{
+                source: 'promo_banner',
+                target: 'demo_form',
+              }}
               className="inline-flex min-h-12 items-center justify-center gap-2.5 rounded-full bg-slate-950 px-8 py-3.5 text-sm sm:text-base font-bold text-white shadow-xl hover:bg-slate-900 hover:scale-105 transition-all"
             >
               <Briefcase className="h-4 w-4 text-[#00b399]" aria-hidden="true" />
               <span>{t('طلب استشارة وعرض توضيحي للمنظومة', 'Request Live Presentation')}</span>
               <ArrowIcon className="h-4 w-4" aria-hidden="true" />
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </div>

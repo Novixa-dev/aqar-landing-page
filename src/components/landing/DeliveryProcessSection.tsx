@@ -1,12 +1,11 @@
-'use client';
-
 import React from 'react';
 import { CheckCircle2 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { DELIVERY_STEPS } from '@/content/aqar-content';
+import { Language } from '@/types';
 
-export function DeliveryProcessSection() {
-  const { t, pick } = useLanguage();
+export function DeliveryProcessSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section

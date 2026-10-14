@@ -52,9 +52,38 @@ export function constructMetadata({
       tag: isAr ? 'نظام عقاري قابل للتخصيص' : 'Configurable Real-Estate Platform',
     });
 
+  const keywords = isAr
+    ? [
+        'نوفكسا عقار',
+        'منصة عقارية متكاملة',
+        'نظام عقاري',
+        'برنامج إدارة أملاك',
+        'وساطة عقارية',
+        'مزادات عقارية',
+        'رخصة فال',
+        'تسويق عقاري',
+        'منصات العقارية',
+        'فلترة وبحث عقاري',
+        'نظام وساطة وإيجار',
+        'السعودية',
+        'الرياض',
+      ]
+    : [
+        'Novixa Aqar',
+        'Real Estate Platform',
+        'PropTech Software',
+        'Property Management System',
+        'Real Estate Auctions',
+        'Brokerage CRM',
+        'Fal License Compliant',
+        'Saudi Arabia Real Estate',
+        'Rental and Leasing Management',
+      ];
+
   return {
     title: fullTitle,
     description,
+    keywords,
     metadataBase: new URL(baseUrl),
     alternates: {
       canonical: url,
@@ -74,7 +103,17 @@ export function constructMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
+          type: 'image/png',
           alt: title,
+        },
+        {
+          url: `${baseUrl}/images/aqar-portal-screenshot.png`,
+          width: 1280,
+          height: 800,
+          type: 'image/png',
+          alt: isAr
+            ? 'لقطة شاشة حقيقية لبوابة نوفكسا عقار'
+            : 'Authentic screenshot of Novixa Aqar portal',
         },
       ],
       locale: isAr ? 'ar_SA' : 'en_US',
@@ -86,6 +125,8 @@ export function constructMetadata({
       title: fullTitle,
       description,
       images: [ogImage],
+      creator: '@novixa',
+      site: '@novixa',
     },
     robots: {
       index: !noIndex,

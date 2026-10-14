@@ -1,13 +1,17 @@
-'use client';
-
-import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import React from 'react';
+import { getDictionary } from '@/lib/i18n';
 import { FAQ_ITEMS } from '@/content/aqar-content';
+import { FaqAccordion } from './FaqAccordion';
+import { Language } from '@/types';
 
-export function FaqSection() {
-  const { t, pick } = useLanguage();
-  const [openId, setOpenId] = useState<string | null>(FAQ_ITEMS[0]?.id ?? null);
+export function FaqSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
+
+  const formattedItems = FAQ_ITEMS.map((faq) => ({
+    id: faq.id,
+    question: pick(faq.question),
+    answer: pick(faq.answer),
+  }));
 
   return (
     <section
@@ -34,53 +38,7 @@ export function FaqSection() {
           </p>
         </div>
 
-        <div className="mt-10 space-y-4">
-          {FAQ_ITEMS.map((faq) => {
-            const isOpen = openId === faq.id;
-            const buttonId = `faq-btn-${faq.id}`;
-            const panelId = `faq-panel-${faq.id}`;
-
-            return (
-              <div
-                key={faq.id}
-                className={`rounded-3xl border overflow-hidden transition-all duration-300 ${
-                  isOpen
-                    ? 'border-[#00b399] bg-white shadow-md'
-                    : 'border-slate-200 bg-slate-50 hover:border-slate-300'
-                }`}
-              >
-                <h3>
-                  <button
-                    id={buttonId}
-                    type="button"
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                    onClick={() => setOpenId(isOpen ? null : faq.id)}
-                    className="flex w-full min-h-14 items-center justify-between gap-4 px-6 py-5 text-start font-display text-base sm:text-lg font-bold text-slate-900 transition-colors"
-                  >
-                    <span className="leading-snug">{pick(faq.question)}</span>
-                    <ChevronDown
-                      className={`h-5 w-5 shrink-0 text-[#00b399] transition-transform duration-300 ${
-                        isOpen ? 'rotate-180' : ''
-                      }`}
-                      aria-hidden="true"
-                    />
-                  </button>
-                </h3>
-                {isOpen && (
-                  <div
-                    id={panelId}
-                    role="region"
-                    aria-labelledby={buttonId}
-                    className="border-t border-slate-200 bg-white px-6 py-5 text-sm sm:text-base text-slate-700 leading-relaxed"
-                  >
-                    {pick(faq.answer)}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+        <FaqAccordion items={formattedItems} />
       </div>
     </section>
   );

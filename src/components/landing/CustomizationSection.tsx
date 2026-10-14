@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import {
   CheckCircle2,
@@ -8,12 +6,13 @@ import {
   Palette,
   Sliders,
 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { CUSTOMIZATION_PILLARS, DEMO_OPTIONS } from '@/content/aqar-content';
-import { trackEvent } from '@/lib/analytics';
+import { TrackedLink } from '@/components/common/TrackedLink';
+import { Language } from '@/types';
 
-export function CustomizationSection() {
-  const { lang, t, pick } = useLanguage();
+export function CustomizationSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section
@@ -152,16 +151,15 @@ export function CustomizationSection() {
                       <span>{pick(demo.disclaimer)}</span>
                     </div>
 
-                    <a
+                    <TrackedLink
                       href={demo.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() =>
-                        trackEvent('aqar_demo_click', {
-                          source: 'customization_hub',
-                          demo_id: demo.id,
-                        })
-                      }
+                      eventName="aqar_demo_click"
+                      eventParams={{
+                        source: 'customization_hub',
+                        demo_id: demo.id,
+                      }}
                       className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-bold transition-all ${
                         demo.isPrimary
                           ? 'btn-menassat-teal text-white shadow-lg shadow-[#00b399]/20'
@@ -174,7 +172,7 @@ export function CustomizationSection() {
                           : t('استعراض مثال تخصيص الهوية', 'Open Brand Showcase')}
                       </span>
                       <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                    </a>
+                    </TrackedLink>
                   </div>
                 </article>
               );

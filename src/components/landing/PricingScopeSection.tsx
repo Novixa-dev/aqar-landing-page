@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import {
   AlertTriangle,
@@ -8,12 +6,13 @@ import {
   CheckCircle2,
   SlidersHorizontal,
 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { PRICING_SCOPE_CONTENT } from '@/content/aqar-content';
-import { trackEvent } from '@/lib/analytics';
+import { TrackedLink } from '@/components/common/TrackedLink';
+import { Language } from '@/types';
 
-export function PricingScopeSection() {
-  const { lang, t, pick, isRtl } = useLanguage();
+export function PricingScopeSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick, isRtl } = getDictionary(lang);
   const ArrowIcon = isRtl ? ArrowUpLeft : ArrowUpRight;
 
   const includedItems =
@@ -72,14 +71,13 @@ export function PricingScopeSection() {
                 {pick(PRICING_SCOPE_CONTENT.startingPriceCard.summary)}
               </p>
               <div className="mt-6 w-full sm:w-auto">
-                <a
+                <TrackedLink
                   href="#demo-form"
-                  onClick={() =>
-                    trackEvent('aqar_cta_click', {
-                      source: 'pricing_card',
-                      target: 'demo_form',
-                    })
-                  }
+                  eventName="aqar_cta_click"
+                  eventParams={{
+                    source: 'pricing_card',
+                    target: 'demo_form',
+                  }}
                   className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-full btn-menassat-teal px-8 py-3.5 text-sm sm:text-base font-bold text-white shadow-lg shadow-[#00b399]/25 transition-transform"
                 >
                   <span>
@@ -89,7 +87,7 @@ export function PricingScopeSection() {
                     )}
                   </span>
                   <ArrowIcon className="h-4 w-4" aria-hidden="true" />
-                </a>
+                </TrackedLink>
               </div>
             </div>
 

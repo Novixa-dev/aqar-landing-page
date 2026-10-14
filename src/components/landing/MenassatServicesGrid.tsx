@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import {
@@ -12,8 +10,9 @@ import {
   ArrowLeft,
   ArrowRight,
 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { EXTERNAL_ROUTES } from '@/lib/site';
+import { Language } from '@/types';
 
 const SERVICES = [
   {
@@ -84,8 +83,8 @@ const SERVICES = [
   },
 ];
 
-export function MenassatServicesGrid() {
-  const { t, pick, isRtl } = useLanguage();
+export function MenassatServicesGrid({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick, isRtl } = getDictionary(lang);
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
   return (

@@ -1,12 +1,11 @@
-'use client';
-
 import React from 'react';
 import { CheckCircle2, Shield, Users } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { ROLE_MATRIX_ITEMS } from '@/content/aqar-content';
+import { Language } from '@/types';
 
-export function RoleMatrixSection() {
-  const { lang, t, pick } = useLanguage();
+export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section

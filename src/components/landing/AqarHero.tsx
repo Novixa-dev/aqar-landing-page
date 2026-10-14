@@ -1,34 +1,22 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
+import React from 'react';
 import {
   ArrowUpLeft,
   ArrowUpRight,
   CheckCircle2,
   ChevronDown,
-  ChevronLeft,
-  ChevronRight,
   ExternalLink,
   Globe,
   Layers,
   ShieldCheck,
   Sliders,
 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { HERO_CONTENT } from '@/content/aqar-content';
 import { EXTERNAL_ROUTES } from '@/lib/site';
-import { trackEvent } from '@/lib/analytics';
+import { TrackedLink } from '@/components/common/TrackedLink';
+import { HeroBackgroundSlider, HeroBackgroundSlide } from './HeroBackgroundSlider';
 import { AqarProductPreview } from './AqarProductPreview';
-
-interface HeroBackgroundSlide {
-  id: string;
-  name: { ar: string; en: string };
-  location: { ar: string; en: string };
-  badge: { ar: string; en: string };
-  scopeTag: { ar: string; en: string };
-  imageUrl: string;
-}
+import { Language } from '@/types';
 
 const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
   {
@@ -89,34 +77,9 @@ const GUARANTEE_TITLES = [
   { ar: 'تخصيص الهوية والعملات وسير العمل', en: 'Brand, Currencies & Workflow Setup' },
 ];
 
-export function AqarHero() {
-  const { t, pick, isRtl } = useLanguage();
+export function AqarHero({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick, isRtl } = getDictionary(lang);
   const ArrowIcon = isRtl ? ArrowUpLeft : ArrowUpRight;
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  // Auto-play background photo slideshow every 6.5 seconds unless hovered
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setCurrentSlideIndex(
-        (prev) => (prev + 1) % HERO_BACKGROUND_SLIDES.length
-      );
-    }, 6500);
-    return () => clearInterval(interval);
-  }, [isPaused]);
-
-  const handleNextSlide = () => {
-    setCurrentSlideIndex(
-      (prev) => (prev + 1) % HERO_BACKGROUND_SLIDES.length
-    );
-  };
-
-  const handlePrevSlide = () => {
-    setCurrentSlideIndex((prev) =>
-      prev === 0 ? HERO_BACKGROUND_SLIDES.length - 1 : prev - 1
-    );
-  };
 
   return (
     <>
@@ -127,54 +90,9 @@ export function AqarHero() {
         id="overview"
         aria-labelledby="hero-heading"
         className="relative overflow-hidden min-h-[calc(100vh-5rem)] min-h-[calc(100dvh-5rem)] flex flex-col justify-between pt-8 pb-4 sm:pt-14 sm:pb-6 border-b border-slate-200"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
       >
-        {/* Full-Bleed Real-Estate Background Photo Slideshow ONLY on this section */}
-        <div className="absolute inset-0 z-0 overflow-hidden bg-slate-950">
-          {HERO_BACKGROUND_SLIDES.map((slide, idx) => (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                idx === currentSlideIndex
-                  ? 'opacity-100 scale-100'
-                  : 'opacity-0 scale-105 pointer-events-none'
-              } transition-transform duration-[7000ms]`}
-            >
-              <Image
-                src={slide.imageUrl}
-                alt={pick(slide.name)}
-                fill
-                priority={idx === 0}
-                quality={90}
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-            </div>
-          ))}
-
-          {/* Elegant Architectural Tint for perfect white text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/60 to-slate-950/90" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(2,6,23,0.5)_100%)]" />
-        </div>
-
-        {/* Background Slideshow Navigation Arrows */}
-        <button
-          type="button"
-          onClick={handlePrevSlide}
-          aria-label={t('المشروع السابق في الخلفية', 'Previous background project')}
-          className="hidden md:flex absolute top-1/2 start-4 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 hover:bg-[#00b399] transition-all shadow-lg"
-        >
-          <ChevronRight className="h-5 w-5 rtl:rotate-0 ltr:rotate-180" />
-        </button>
-        <button
-          type="button"
-          onClick={handleNextSlide}
-          aria-label={t('المشروع التالي في الخلفية', 'Next background project')}
-          className="hidden md:flex absolute top-1/2 end-4 -translate-y-1/2 z-20 h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md border border-white/20 hover:bg-[#00b399] transition-all shadow-lg"
-        >
-          <ChevronLeft className="h-5 w-5 rtl:rotate-0 ltr:rotate-180" />
-        </button>
+        {/* Full-Bleed Real-Estate Background Photo Slideshow Island */}
+        <HeroBackgroundSlider slides={HERO_BACKGROUND_SLIDES} lang={lang} />
 
         {/* Top Spacer for vertical balance */}
         <div className="hidden sm:block h-2" aria-hidden="true" />
@@ -197,35 +115,33 @@ export function AqarHero() {
 
             {/* Primary & Secondary CTAs */}
             <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
+              <TrackedLink
                 href="#demo-form"
-                onClick={() =>
-                  trackEvent('aqar_cta_click', {
-                    source: 'hero_primary',
-                    target: 'demo_form',
-                  })
-                }
+                eventName="aqar_cta_click"
+                eventParams={{
+                  source: 'hero_primary',
+                  target: 'demo_form',
+                }}
                 className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full btn-menassat-teal px-8 py-3.5 text-base font-bold text-white shadow-2xl shadow-[#00b399]/50 hover:scale-105 transition-all"
               >
                 <span>{pick(HERO_CONTENT.primaryCta)}</span>
                 <ArrowIcon className="h-5 w-5" aria-hidden="true" />
-              </a>
+              </TrackedLink>
 
-              <a
+              <TrackedLink
                 href={EXTERNAL_ROUTES.primaryDemo}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() =>
-                  trackEvent('aqar_demo_click', {
-                    source: 'hero_secondary',
-                    demo_id: 'primary_generic',
-                  })
-                }
+                eventName="aqar_demo_click"
+                eventParams={{
+                  source: 'hero_secondary',
+                  demo_id: 'primary_generic',
+                }}
                 className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full border border-white/30 bg-black/40 backdrop-blur-md px-8 py-3.5 text-base font-bold text-white hover:bg-black/60 hover:border-[#00b399] hover:scale-105 transition-all shadow-lg"
               >
                 <span>{pick(HERO_CONTENT.secondaryCta)}</span>
                 <ExternalLink className="h-4 w-4" aria-hidden="true" />
-              </a>
+              </TrackedLink>
             </div>
 
             {/* Quick Jump to Showcase Examples */}

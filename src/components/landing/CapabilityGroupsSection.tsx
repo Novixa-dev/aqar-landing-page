@@ -1,10 +1,9 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { CAPABILITY_GROUPS } from '@/content/aqar-content';
+import { Language } from '@/types';
 
 const CAPABILITY_VISUALS: Record<
   string,
@@ -36,8 +35,8 @@ const CAPABILITY_VISUALS: Record<
   },
 };
 
-export function CapabilityGroupsSection() {
-  const { lang, t, pick } = useLanguage();
+export function CapabilityGroupsSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section

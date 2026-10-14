@@ -1,10 +1,9 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { WALKTHROUGH_STEPS } from '@/content/aqar-content';
+import { Language } from '@/types';
 
 const STEP_IMAGES: Record<string, string> = {
   'step-1': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
@@ -13,8 +12,8 @@ const STEP_IMAGES: Record<string, string> = {
   'step-4': 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
 };
 
-export function ProductWalkthroughSection() {
-  const { lang, t, pick } = useLanguage();
+export function ProductWalkthroughSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section

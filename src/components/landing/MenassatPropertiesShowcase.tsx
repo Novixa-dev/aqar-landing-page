@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import {
@@ -8,11 +6,11 @@ import {
   Layers,
   MapPin,
   ShieldCheck,
-  TrendingUp,
 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { EXTERNAL_ROUTES } from '@/lib/site';
-import { trackEvent } from '@/lib/analytics';
+import { TrackedLink } from '@/components/common/TrackedLink';
+import { Language } from '@/types';
 
 interface ReferenceProject {
   id: string;
@@ -98,105 +96,105 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
     },
     managementScope: {
       ar: 'تسويق حصري برخص فال، فحص الجودة المعمارية، وإفراغ فوري',
-      en: 'Fal exclusive mandate, architectural audit, and deed execution',
+      en: 'Exclusive brokerage, quality audit inspection, & immediate deed handover',
     },
     metrics: {
-      unitsCount: '8 فلل VIP',
+      unitsCount: '8 فلل مستقلة',
       area: '3,600 م²',
-      occupancyOrValuation: 'تم البيع والإفراغ 100%',
+      occupancyOrValuation: 'قيمة 32 مليون ر.س',
     },
     operationalHighlights: [
-      { ar: 'عقود وساطة حصرية موثقة إلكترونياً', en: 'Regulated electronic agency mandates' },
-      { ar: 'توجيه طلبات المشترين لوكلاء محددين', en: 'Direct lead routing to vetted agents' },
+      { ar: 'توثيق تراخيص الإعلانات العقارية', en: 'Compliant Fal ad license verification' },
+      { ar: 'حجز مواعيد المعاينة عبر المنصة', en: 'Direct inspection booking scheduling' },
     ],
-    complianceBadge: { ar: 'رخصة فال للوساطة 1200021345', en: 'Fal Brokerage Lic 1200021345' },
-    imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
+    complianceBadge: { ar: 'رخصة إعلان فال: 72001844', en: 'Fal Ad License: 72001844' },
+    imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'ref-project-4',
     title: {
-      ar: 'كمباوند النرجس السكني المغلق',
-      en: 'Al-Narjis Gated Residential Community',
+      ar: 'مستودعات وواحات الخدمات اللوجستية',
+      en: 'Oasis Logistics & Industrial Yards',
     },
-    category: { ar: 'تشغيل مجمعات وصيانة', en: 'Compound & Community Operations' },
+    category: { ar: 'إدارة أصول لوجستية وصناعية', en: 'Industrial Asset Management' },
     location: {
-      ar: 'شمال الرياض، حي النرجس',
-      en: 'North Riyadh, Al-Narjis',
+      ar: 'جنوب الرياض، المدينة الصناعية',
+      en: 'South Riyadh, Industrial City',
     },
     managementScope: {
-      ar: 'تشغيل الحراسات والخدمات المشتركة، تحصيل الرسوم، وبوابة المستأجرين',
-      en: 'Common facility services, dues collection, & tenant self-service portal',
+      ar: 'تأجير مستودعات طويلة الأجل، إدارة عقود السلامة والصيانة الوقائية',
+      en: 'Long-term warehouse leasing, safety compliance & preventative upkeep',
     },
     metrics: {
-      unitsCount: '64 تاون هاوس',
-      area: '22,000 م²',
-      occupancyOrValuation: 'عقود موحدة 100%',
+      unitsCount: '18 مستودعاً',
+      area: '28,000 م²',
+      occupancyOrValuation: 'نسبة إشغال 100%',
     },
     operationalHighlights: [
-      { ar: 'تذاكر صيانة آلية للمستأجرين والمقاولين', en: 'Automated tenant ticketing & dispatch' },
-      { ar: 'تقارير مالية دورية للملاك', en: 'Comprehensive financial reporting' },
+      { ar: 'مطابقة لمعايير الدفاع المدني', en: 'Civil Defense safety certified' },
+      { ar: 'فوترة إلكترونية ونظام دفعات دوري', en: 'Automated periodic invoicing & zatca' },
     ],
-    complianceBadge: { ar: 'حوكمة مجتمعات سكنية معتمدة', en: 'Certified Community Governance' },
-    imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
+    complianceBadge: { ar: 'معتمد دفاع مدني وصناعي', en: 'Safety & Industrial Certified' },
+    imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'ref-project-5',
     title: {
-      ar: 'مخطط درة الشرق الاستثماري',
-      en: 'Durra Al-Sharq Masterplan Plots',
+      ar: 'مجمع دانة الياسمين السكني',
+      en: 'Dana Al-Yasmin Residential Complex',
     },
-    category: { ar: 'مزادات ومخططات عمرانية', en: 'Auctions & Masterplan Plots' },
+    category: { ar: 'اتحاد ملاك وإدارة مجمعات', en: 'HOA & Community Management' },
     location: {
-      ar: 'المنطقة الشرقية، الخبر والدمام',
-      en: 'Eastern Province, Khobar & Dammam',
+      ar: 'شمال الرياض، حي الياسمين',
+      en: 'North Riyadh, Al-Yasmin',
     },
     managementScope: {
-      ar: 'إدارة المزادات المعتمدة، تسجيل المزايدين، وتوثيق الإفراغ العدلي',
-      en: 'Regulated auction engine, bidder verification, & deed documentation',
+      ar: 'إدارة جمعية الملاك، متابعة اشتراكات الصيانة والنظافة والأمن والحراسة',
+      en: 'Owners association governance, subscription collections, and 24/7 security',
     },
     metrics: {
-      unitsCount: '42 قطعة أرض',
-      area: '85,000 م²',
-      occupancyOrValuation: 'قيمة مزاد 62 مليون ر.س',
+      unitsCount: '48 شقة',
+      area: '7,200 م²',
+      occupancyOrValuation: 'محفظة تشغيلية كاملة',
     },
     operationalHighlights: [
-      { ar: 'حسابات ضمان ومزايدة إلكترونية موثقة', en: 'Escrow verification & live bids' },
-      { ar: 'مطابقة للأنظمة القضائية والتجارية', en: 'Judicial & commercial auction rules' },
+      { ar: 'لوحة تفاعلية لجمعية الملاك', en: 'Owners association management dashboard' },
+      { ar: 'سندات قبض وصرف فورية ومؤتمتة', en: 'Automated receipts and expenditure ledgers' },
     ],
-    complianceBadge: { ar: 'منظومة مزادات معتمدة نظامياً', en: 'Certified Auction Governance' },
-    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80',
+    complianceBadge: { ar: 'معتمد ملاك • الهيئة العامة للعقار', en: 'Mullak Certified • REGA' },
+    imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
   },
   {
     id: 'ref-project-6',
     title: {
-      ar: 'قصور حطين واليمامة التراثية',
-      en: 'Hittin & Yamama Heritage Mansions',
+      ar: 'مخطط ربوة الشرق الاستثماري',
+      en: 'Rabwat Al-Sharq Masterplan Estates',
     },
-    category: { ar: 'إدارة الأصول الخاصة VIP', en: 'Private VIP Asset Management' },
+    category: { ar: 'تنظيم مزادات ومخططات أراضي', en: 'Auctions & Masterplan Lands' },
     location: {
-      ar: 'شمال الرياض، حي حطين',
-      en: 'North Riyadh, Hittin',
+      ar: 'المنطقة الشرقية، الدمام',
+      en: 'Eastern Province, Dammam',
     },
     managementScope: {
-      ar: 'إشراف على الصيانة الوقائية، العقود الحصرية، وسرية التعامل المالي',
-      en: 'Preventive maintenance, confidential mandates, & financial governance',
+      ar: 'طرح القطع السكنية والتجارية عبر منصة المزادات العلنية المنظمة إلكترونياً',
+      en: 'Subdivided land plots offered via compliant electronic public auction engine',
     },
     metrics: {
-      unitsCount: '6 قصور خاصة',
-      area: '14,200 م²',
-      occupancyOrValuation: 'أصول خاصة مدارة',
+      unitsCount: '62 قطعة أرض',
+      area: '45,000 م²',
+      occupancyOrValuation: 'مزاد بقيمة 54 مليون',
     },
     operationalHighlights: [
-      { ar: 'عزل بيانات الصلاحيات والخصوصية التامة', en: 'Strict multi-tier data privacy' },
-      { ar: 'إشراف مباشر من إدارة المنظومة', en: 'Direct executive oversight' },
+      { ar: 'إشراف لجنة المزادات المعتمدة', en: 'Supervised by licensed auction board' },
+      { ar: 'توثيق المزايدات والتأمين المالي', en: 'Bidding assurance & bank guarantee flow' },
     ],
-    complianceBadge: { ar: 'أعلى معايير حوكمة الخصوصية', en: 'High-Standard Data Security' },
-    imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80',
+    complianceBadge: { ar: 'ترخيص مزاد فال: 44000136', en: 'Fal Auction Permit: 44000136' },
+    imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
-export function MenassatPropertiesShowcase() {
-  const { t, pick } = useLanguage();
+export function MenassatPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section
@@ -215,21 +213,20 @@ export function MenassatPropertiesShowcase() {
             </h2>
           </div>
 
-          <a
+          <TrackedLink
             href={EXTERNAL_ROUTES.primaryDemo}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() =>
-              trackEvent('aqar_demo_click', {
-                source: 'reference_portfolio_header',
-                demo_id: 'primary_generic',
-              })
-            }
+            eventName="aqar_demo_click"
+            eventParams={{
+              source: 'reference_portfolio_header',
+              demo_id: 'primary_generic',
+            }}
             className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:border-[#00b399] hover:text-[#008f7a] transition-all shrink-0 shadow-xs"
           >
             <span>{t('استعراض لوحة التحكم المرجعية الحية', 'Explore Live Reference Workspace')}</span>
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
-          </a>
+          </TrackedLink>
         </div>
 
         {/* 6 Structured Corporate Project Cards */}
@@ -324,22 +321,21 @@ export function MenassatPropertiesShowcase() {
 
               {/* Action Link: View Operational Architecture in Demo */}
               <div className="p-6 pt-0">
-                <a
+                <TrackedLink
                   href={EXTERNAL_ROUTES.primaryDemo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() =>
-                    trackEvent('aqar_demo_click', {
-                      source: 'reference_project_card',
-                      project_id: project.id,
-                    })
-                  }
+                  eventName="aqar_demo_click"
+                  eventParams={{
+                    source: 'reference_project_card',
+                    project_id: project.id,
+                  }}
                   className="flex w-full items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 py-3 text-xs font-bold text-slate-800 hover:border-[#00b399] hover:bg-[#00b399] hover:text-white transition-all shadow-xs"
                 >
                   <Layers className="h-4 w-4" aria-hidden="true" />
                   <span>{t('استعراض نموذج التشغيل والأدوار الحية', 'Inspect Operating Architecture Live')}</span>
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-                </a>
+                </TrackedLink>
               </div>
             </article>
           ))}

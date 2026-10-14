@@ -5,11 +5,11 @@ export default function manifest(): MetadataRoute.Manifest {
     name: 'نوفكسا عقار | Novixa Aqar — Configurable Real-Estate Platform',
     short_name: 'Novixa Aqar',
     description:
-      'نظام عقاري متكامل يُشكَّل على مقاس شركتك — بوابة عامة و8 لوحات تشغيل متعددة الأدوار.',
+      'نظام عقاري متكامل يشكل على مقاس شركتك — بوابة عامة و8 لوحات تشغيل متعددة الأدوار.',
     start_url: '/ar',
     display: 'standalone',
-    background_color: '#020617',
-    theme_color: '#2563EB',
+    background_color: '#070e17',
+    theme_color: '#008f7a',
     icons: [
       {
         src: '/icons/icon-192.png',

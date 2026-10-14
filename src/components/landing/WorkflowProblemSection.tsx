@@ -1,12 +1,11 @@
-'use client';
-
 import React from 'react';
 import { AlertCircle, CheckCircle2 } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import { getDictionary } from '@/lib/i18n';
 import { PROBLEM_OUTCOME_ITEMS } from '@/content/aqar-content';
+import { Language } from '@/types';
 
-export function WorkflowProblemSection() {
-  const { t, pick } = useLanguage();
+export function WorkflowProblemSection({ lang = 'ar' }: { lang?: Language }) {
+  const { t, pick } = getDictionary(lang);
 
   return (
     <section
