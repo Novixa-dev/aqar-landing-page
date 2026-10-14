@@ -1,0 +1,49 @@
+# Production stack for aqar-landing-page.novixa.dev
+# Lives on the VPS at /opt/aqar-landing/docker-compose.yml (synced by the deploy workflow).
+name: aqar-landing
+
+services:
+  app:
+    image: ${APP_IMAGE:-ghcr.io/novixa-dev/aqar-landing-page}:${APP_TAG:-latest}
+    container_name: aqar-landing-app
+    restart: unless-stopped
+    init: true
+    env_file: .env
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: 0.0.0.0
+      LEADS_STORAGE_PATH: /app/data/leads.jsonl
+    ports:
+      # Loopback only, for on-host checks. Public traffic arrives through mailcow's
+      # nginx over the aqar-edge network (deploy/nginx/aqar-landing.mailcow.conf).
+      - "127.0.0.1:${APP_PORT:-3077}:3000"
+    networks:
+      - edge
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      start_period: 30s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "5"
+
+networks:
+  # Existing network already attached to mailcow's nginx (persisted in its override file).
+  edge:
+    external: true
+    name: aqar-edge

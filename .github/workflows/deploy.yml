@@ -1,0 +1,154 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Redeploy an existing image tag (e.g. sha-1a2b3c4) instead of building"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+env:
+  APP_URL: https://aqar-landing-page.novixa.dev
+  # Origin server (Contabo VPS). Override with AQAR_LANDING_HOST / AQAR_LANDING_USER secrets if it moves.
+  DEPLOY_HOST: 161.97.75.64
+  DEPLOY_USER: root
+
+jobs:
+  verify:
+    name: Lint · Typecheck · Test
+    if: github.event.inputs.image_tag == ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+
+  image:
+    name: Build & publish image
+    needs: verify
+    if: github.event.inputs.image_tag == ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      image: ${{ steps.meta.outputs.image }}
+      tag: ${{ steps.meta.outputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Image coordinates
+        id: meta
+        run: |
+          echo "image=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_OUTPUT"
+          echo "tag=sha-${GITHUB_SHA::7}" >> "$GITHUB_OUTPUT"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          build-args: |
+            NEXT_PUBLIC_SITE_URL=${{ env.APP_URL }}
+            NEXT_PUBLIC_CONTACT_EMAIL=${{ vars.NEXT_PUBLIC_CONTACT_EMAIL || 'hello@novixa.dev' }}
+            NEXT_PUBLIC_WHATSAPP_NUMBER=${{ vars.NEXT_PUBLIC_WHATSAPP_NUMBER }}
+          tags: |
+            ${{ steps.meta.outputs.image }}:${{ steps.meta.outputs.tag }}
+            ${{ steps.meta.outputs.image }}:latest
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.title=aqar-landing-page
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    name: Deploy to VPS
+    needs: [image]
+    if: always() && (needs.image.result == 'success' || github.event.inputs.image_tag != '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: ${{ env.APP_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check server credentials
+        env:
+          SSH_KEY: ${{ secrets.AQAR_LANDING_SSH_KEY }}
+        run: |
+          if ! printf '%s' "$SSH_KEY" | grep -q 'BEGIN OPENSSH PRIVATE KEY'; then
+            echo "::error title=Missing secret::AQAR_LANDING_SSH_KEY must hold the deploy private key (whole BEGIN/END block)."
+            exit 1
+          fi
+
+      - name: Resolve release
+        id: release
+        run: |
+          echo "image=${{ needs.image.outputs.image || format('ghcr.io/{0}', github.repository) }}" | tr '[:upper:]' '[:lower:]' >> "$GITHUB_OUTPUT"
+          echo "tag=${{ github.event.inputs.image_tag || needs.image.outputs.tag }}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload compose stack
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.AQAR_LANDING_HOST || env.DEPLOY_HOST }}
+          username: ${{ secrets.AQAR_LANDING_USER || env.DEPLOY_USER }}
+          key: ${{ secrets.AQAR_LANDING_SSH_KEY }}
+          port: ${{ secrets.AQAR_LANDING_PORT || 22 }}
+          source: deploy/docker-compose.yml,deploy/scripts/remote-deploy.sh,deploy/nginx/aqar-landing.mailcow.conf
+          target: /opt/aqar-landing
+          strip_components: 1
+          overwrite: true
+
+      - name: Roll out (auto-rollback on failed health check)
+        uses: appleboy/ssh-action@v1.2.0
+        env:
+          IMAGE: ${{ steps.release.outputs.image }}
+          TAG: ${{ steps.release.outputs.tag }}
+          GHCR_USER: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          host: ${{ secrets.AQAR_LANDING_HOST || env.DEPLOY_HOST }}
+          username: ${{ secrets.AQAR_LANDING_USER || env.DEPLOY_USER }}
+          key: ${{ secrets.AQAR_LANDING_SSH_KEY }}
+          port: ${{ secrets.AQAR_LANDING_PORT || 22 }}
+          envs: IMAGE,TAG,GHCR_USER,GHCR_TOKEN
+          command_timeout: 10m
+          script: bash /opt/aqar-landing/scripts/remote-deploy.sh "$IMAGE" "$TAG"
+
+      - name: Public smoke test
+        run: |
+          for i in $(seq 1 12); do
+            if curl -fsS --max-time 10 "$APP_URL/api/health" | tee /dev/stderr | grep -q '"ok":true'; then
+              curl -fsSL -o /dev/null --max-time 15 "$APP_URL/ar" && curl -fsSL -o /dev/null --max-time 15 "$APP_URL/en"
+              echo "✅ $APP_URL is live"; exit 0
+            fi
+            sleep 10
+          done
+          echo "::error::$APP_URL did not become healthy (check DNS/Cloudflare/nginx)"; exit 1

@@ -6,7 +6,7 @@ import { trackEvent, AqarAnalyticsEvent } from '@/lib/analytics';
 interface TrackedLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
   eventName?: AqarAnalyticsEvent;
-  eventParams?: Record<string, any>;
+  eventParams?: Record<string, string | number | boolean | undefined>;
   children: React.ReactNode;
 }
 
