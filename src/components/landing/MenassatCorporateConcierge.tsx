@@ -138,7 +138,7 @@ export function MenassatCorporateConcierge() {
           <div className="p-5 space-y-2.5">
             {/* WhatsApp Direct */}
             <a
-              href="https://novixa.dev/ar/contact"
+              href="https://wa.me/967776248526?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D9%86%D9%88%D9%81%D9%83%D8%B3%D8%A7%20%D8%B9%D9%82%D8%A7%D8%B1"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between p-3.5 rounded-2xl border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100/70 text-emerald-950 transition-all group"
