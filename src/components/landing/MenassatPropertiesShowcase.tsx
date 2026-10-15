@@ -53,7 +53,7 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       { ar: 'ربط مباشر مع شبكة إيجار', en: 'Direct Ejar network integration' },
       { ar: 'لوحة تحكم خاصة لمالك العقار', en: 'Dedicated landlord visibility panel' },
     ],
-    complianceBadge: { ar: 'موثق فال • معتمد نظامياً', en: 'Fal Verified • Compliant' },
+    complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80',
   },
   {
@@ -80,7 +80,7 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       { ar: 'إدارة ومتابعة عقود الشركات الكبرى', en: 'Enterprise tenant lease workflows' },
       { ar: 'جدولة الصيانة عبر لوحة المقاولين', en: 'Contractor dispatch maintenance' },
     ],
-    complianceBadge: { ar: 'كود البناء السعودي • معتمد', en: 'Saudi Building Code Standard' },
+    complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
   },
   {
@@ -95,7 +95,7 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       en: 'North Riyadh, Al-Malqa',
     },
     managementScope: {
-      ar: 'تسويق حصري برخص فال، فحص الجودة المعمارية، وإفراغ فوري',
+      ar: 'تسويق حصري، فحص الجودة المعمارية، وإفراغ فوري',
       en: 'Exclusive brokerage, quality audit inspection, & immediate deed handover',
     },
     metrics: {
@@ -107,7 +107,7 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       { ar: 'توثيق تراخيص الإعلانات العقارية', en: 'Compliant Fal ad license verification' },
       { ar: 'حجز مواعيد المعاينة عبر المنصة', en: 'Direct inspection booking scheduling' },
     ],
-    complianceBadge: { ar: 'رخصة إعلان فال: 72001844', en: 'Fal Ad License: 72001844' },
+    complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=800&q=80',
   },
   {
@@ -134,7 +134,7 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       { ar: 'مطابقة لمعايير الدفاع المدني', en: 'Civil Defense safety certified' },
       { ar: 'فوترة إلكترونية ونظام دفعات دوري', en: 'Automated periodic invoicing & zatca' },
     ],
-    complianceBadge: { ar: 'معتمد دفاع مدني وصناعي', en: 'Safety & Industrial Certified' },
+    complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
   },
   {
@@ -161,7 +161,7 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       { ar: 'لوحة تفاعلية لجمعية الملاك', en: 'Owners association management dashboard' },
       { ar: 'سندات قبض وصرف فورية ومؤتمتة', en: 'Automated receipts and expenditure ledgers' },
     ],
-    complianceBadge: { ar: 'معتمد ملاك • الهيئة العامة للعقار', en: 'Mullak Certified • REGA' },
+    complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80',
   },
   {
@@ -188,7 +188,7 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       { ar: 'إشراف لجنة المزادات المعتمدة', en: 'Supervised by licensed auction board' },
       { ar: 'توثيق المزايدات والتأمين المالي', en: 'Bidding assurance & bank guarantee flow' },
     ],
-    complianceBadge: { ar: 'ترخيص مزاد فال: 44000136', en: 'Fal Auction Permit: 44000136' },
+    complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
   },
 ];

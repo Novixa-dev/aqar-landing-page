@@ -60,9 +60,7 @@ export function constructMetadata({
         'برنامج إدارة أملاك',
         'وساطة عقارية',
         'مزادات عقارية',
-        'رخصة فال',
         'تسويق عقاري',
-        'منصات العقارية',
         'فلترة وبحث عقاري',
         'نظام وساطة وإيجار',
         'السعودية',
@@ -75,7 +73,6 @@ export function constructMetadata({
         'Property Management System',
         'Real Estate Auctions',
         'Brokerage CRM',
-        'Fal License Compliant',
         'Saudi Arabia Real Estate',
         'Rental and Leasing Management',
       ];

@@ -117,11 +117,11 @@ export function MenassatCorporateConcierge() {
               </div>
               <div>
                 <div className="text-xs font-bold text-slate-900">
-                  {t('فريق الاستشارات العقارية المرخص', 'Licensed Advisory Team')}
+                  {t('فريق نوڤيكسا للحلول العقارية', 'Novixa PropTech Team')}
                 </div>
                 <div className="text-[11px] text-slate-500 flex items-center gap-1.5 mt-0.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-[#00b399]" />
-                  <span>{t('مرخص من الهيئة العامة للعقار (فال)', 'Licensed by REGA (Fal)')}</span>
+                  <span>{t('مزوّد تقني — لسنا وسيطاً عقارياً', 'Technology provider — not a brokerage')}</span>
                 </div>
               </div>
             </div>
@@ -138,7 +138,7 @@ export function MenassatCorporateConcierge() {
           <div className="p-5 space-y-2.5">
             {/* WhatsApp Direct */}
             <a
-              href="https://wa.me/966550000000?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D8%B3%D8%AA%D9%81%D8%B3%D8%A7%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%B8%D9%88%D9%85%D8%A9%20%D9%86%D9%88%D9%81%D9%83%D8%B3%D8%A7%20%D8%B9%D9%82%D8%A7%D8%B1"
+              href="https://wa.me/967776248526?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D9%86%D9%88%D9%81%D9%83%D8%B3%D8%A7%20%D8%B9%D9%82%D8%A7%D8%B1"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between p-3.5 rounded-2xl border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100/70 text-emerald-950 transition-all group"
@@ -152,7 +152,7 @@ export function MenassatCorporateConcierge() {
                     {t('محادثة واتساب مباشرة', 'Direct WhatsApp')}
                   </div>
                   <div className="text-[11px] text-emerald-700">
-                    {t('تواصل فوري مع مستشار عقاري', 'Instant chat with advisor')}
+                    {t('تواصل مع فريق نوڤيكسا', 'Talk to the Novixa team')}
                   </div>
                 </div>
               </div>
@@ -163,7 +163,7 @@ export function MenassatCorporateConcierge() {
 
             {/* Direct Phone Call */}
             <a
-              href="tel:920010094"
+              href="mailto:info@novixa.dev"
               className="flex items-center justify-between p-3.5 rounded-2xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 transition-all group"
             >
               <div className="flex items-center gap-3">
@@ -172,10 +172,10 @@ export function MenassatCorporateConcierge() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-slate-900">
-                    {t('الهاتف الموحد المجاني', 'Toll-Free Phone')}
+                    {t('البريد الإلكتروني', 'Email')}
                   </div>
                   <div className="text-[11px] text-slate-500 font-latin" dir="ltr">
-                    920010094
+                    info@novixa.dev
                   </div>
                 </div>
               </div>

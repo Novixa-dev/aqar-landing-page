@@ -1,38 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Award,
   Building2,
   ExternalLink,
   Globe,
   Mail,
   MapPin,
   Phone,
-  ShieldCheck,
 } from 'lucide-react';
 import { getDictionary } from '@/lib/i18n';
 import { BRAND_NAME, DEMO_OPTIONS, NAV_LINKS, PARENT_BRAND } from '@/content/aqar-content';
 import { CONTACT_EMAIL } from '@/lib/site';
 import { Language } from '@/types';
-
-const FAL_LICENSES = [
-  {
-    title: { ar: 'رخصة فال للوساطة والتسويق', en: 'Fal Brokerage & Marketing' },
-    num: '1200014094',
-  },
-  {
-    title: { ar: 'رخصة فال لإدارة الأملاك', en: 'Fal Property Management' },
-    num: '2200003259',
-  },
-  {
-    title: { ar: 'رخصة فال للمزادات العقارية', en: 'Fal Real-Estate Auctions' },
-    num: '4200000136',
-  },
-  {
-    title: { ar: 'رخصة فال لإدارة المرافق', en: 'Fal Facility Management' },
-    num: '3200000617',
-  },
-];
 
 export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
   const { t, pick } = getDictionary(lang);
@@ -68,18 +47,12 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
             <div className="space-y-2 pt-2 text-xs text-slate-600">
               <div className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-[#00b399] shrink-0" aria-hidden="true" />
-                <a href="tel:920010094" className="font-bold text-slate-900 hover:text-[#008f7a]" dir="ltr">
-                  920010094
+                <a href="https://novixa.dev/ar/contact" target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-[#008f7a]">
+                  {t('تواصل مع فريق نوڤيكسا', 'Contact the Novixa team')}
                 </a>
                 <span className="text-slate-300">|</span>
-                <a
-                  href="https://wa.me/966508404422"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#008f7a]"
-                  dir="ltr"
-                >
-                  +966 50 840 4422
+                <a href="https://wa.me/967776248526?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D9%86%D9%88%D9%81%D9%83%D8%B3%D8%A7%20%D8%B9%D9%82%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" className="hover:text-[#008f7a]" dir="ltr">
+                  +967 776 248 526
                 </a>
               </div>
 
@@ -96,7 +69,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
 
               <div className="flex items-center gap-2 text-slate-500">
                 <MapPin className="h-3.5 w-3.5 text-[#00b399] shrink-0" aria-hidden="true" />
-                <span>{t('طريق عمر بن عبدالعزيز، الربوة، الرياض 12816', 'Omar Bin Abdulaziz Rd, Al-Rabwah, Riyadh')}</span>
+                <span>{t('اليمن • المملكة العربية السعودية • الخليج العربي', 'Yemen • Saudi Arabia • Gulf region')}</span>
               </div>
             </div>
           </div>
@@ -180,49 +153,10 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
           </div>
         </div>
 
-        {/* Menassat Real Estate Authority (فال - Fal) License Badges Row */}
-        <div className="mt-12 pt-8 border-t border-slate-200">
-          <div className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-4 flex items-center gap-2">
-            <Award className="h-4 w-4 text-[#00b399]" aria-hidden="true" />
-            <span>{t('تراخيص الهيئة العامة للعقار (فال) والاعتماد القانوني', 'Real Estate Authority (Fal) Licenses & Accreditation')}</span>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {FAL_LICENSES.map((lic, idx) => (
-              <div
-                key={idx}
-                className="rounded-2xl border border-slate-200 bg-white p-3.5 flex items-center gap-3 shadow-xs hover:border-[#00b399]/40 transition-colors"
-              >
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#00b399]/15 text-[#008f7a]">
-                  <ShieldCheck className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <div className="min-w-0">
-                  <h4 className="text-xs font-bold text-slate-900 truncate">
-                    {pick(lic.title)}
-                  </h4>
-                  <span className="text-[11px] font-latin font-bold text-[#008f7a] block" dir="ltr">
-                    {lic.num}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-[11px] text-slate-500">
-            <span>{t('صفة المعلن: مفوض', 'Advertiser Status: Authorized')}</span>
-            <span>•</span>
-            <span>{t('رقم المعلن: 4120227', 'Advertiser No: 4120227')}</span>
-            <span>•</span>
-            <span>{t('ترخيص وكيل البيع: 44020072', 'Sales Agent License: 44020072')}</span>
-            <span>•</span>
-            <span>{t('الاسم القانوني: شركة منصات العقارية', 'Legal Entity: Menassat Realty Co.')}</span>
-          </div>
-        </div>
-
         {/* Bottom Copyright & Scope Reminder (Preserved Exactly for Tests) */}
         <div className="mt-8 border-t border-slate-200 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            © {new Date().getFullYear()} Novixa (نوفكسا) & Menassat Realty.{' '}
+            © {new Date().getFullYear()} Novixa (نوفكسا).{' '}
             {t('جميع الحقوق محفوظة.', 'All rights reserved.')}
           </p>
           <p>

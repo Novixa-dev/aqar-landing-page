@@ -39,7 +39,7 @@ export async function generateMetadata({
   if (lang === 'ar') {
     return constructMetadata({
       lang: 'ar',
-      title: 'نوفكسا عقار | منصة عقارية متكاملة على طراز منصات العقارية تبدأ من 500$',
+      title: 'نوفكسا عقار | منصة عقارية متكاملة بهوية شركتك تبدأ من 500$',
       description:
         'منصة عقارية متكاملة للمكاتب والشركات العقارية وإدارة الأملاك والمزادات: بوابة عامة + محرك بحث وفلترة + 8 لوحات تشغيل حسب الدور — يبدأ من 500$.',
       path: '',
@@ -48,7 +48,7 @@ export async function generateMetadata({
 
   return constructMetadata({
     lang: 'en',
-    title: 'Novixa Aqar | Menassat-Style Configurable Real-Estate Platform Starting at $500',
+    title: 'Novixa Aqar | White-Label Real-Estate Platform Starting at $500',
     description:
       'Comprehensive PropTech platform for real-estate agencies, auctions, and property managers: public portal + 8 role workspaces + search engine — starting at $500.',
     path: '',
