@@ -19,7 +19,7 @@ export function MenassatPromoBanner({ lang = 'ar' }: { lang?: Language }) {
           <div className="max-w-2xl">
             <h3 className="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight leading-snug">
               {t(
-                'عملاء موثوقون، ضمان كامل وثقة.',
+                'منصتك العقارية بهويتك، جاهزة خلال أيام.',
                 'Trusted clients, complete guarantee, and verified reliability.'
               )}
             </h3>

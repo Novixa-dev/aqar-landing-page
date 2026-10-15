@@ -20,37 +20,37 @@ export function MenassatStatsWhyUs({ lang = 'ar' }: { lang?: Language }) {
       <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
           <span className="font-display text-3xl sm:text-4xl font-black text-[#008f7a] font-latin">
-            99,000+
+            8
           </span>
           <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
-            {t('تقييمات واستفسارات', 'Valuations & Inquiries')}
+            {t('لوحات تشغيل حسب الدور', 'Role-based workspaces')}
           </h4>
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
           <span className="font-display text-3xl sm:text-4xl font-black text-slate-900 font-latin">
-            9,514+
+            2
           </span>
           <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
-            {t('عقار ووحدة مدارة', 'Properties Managed')}
+            {t('لغتان أصيلتان (RTL / LTR)', 'Native languages (RTL / LTR)')}
           </h4>
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
           <span className="font-display text-3xl sm:text-4xl font-black text-[#008f7a] font-latin">
-            2,200+
+            3–5
           </span>
           <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
-            {t('عملاء وملاك موثوقون', 'Satisfied Clients')}
+            {t('أيام عمل للتهيئة بهويتك', 'Business days to brand & launch')}
           </h4>
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
           <span className="font-display text-3xl sm:text-4xl font-black text-slate-900 font-latin">
-            384+
+            100%
           </span>
           <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
-            {t('مدينة وحي مخدوم', 'Cities & Districts')}
+            {t('ملكية بياناتك ونطاقك', 'Ownership of your data & domain')}
           </h4>
         </div>
       </div>
@@ -61,16 +61,16 @@ export function MenassatStatsWhyUs({ lang = 'ar' }: { lang?: Language }) {
     <div>
       <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-4xl">
         {t(
-          'منظومة تقنية عقارية رائدة ترسم للمكاتب والشركات العقارية مستقبلاً تشغيلياً حديثاً وتبني حلولكم على أسس تقنية متينة. نقدم حلولاً مخصصة لاحتياجات نموذج عملك، ونرشدك خلال كل مرحلة من الإطلاق، مع توفير الدعم الفني والمعرفة المتخصصة لضمان نجاح أعمالك.',
-          'A leading PropTech ecosystem shaping a modern operational future for real-estate brokerages and portfolio managers. We build custom solutions tailored to your workflow, guiding you through launch with expert support.'
+          'منظومة تقنية عقارية ترسم للمكاتب والشركات العقارية مستقبلاً تشغيلياً حديثاً وتبني حلولكم على أسس تقنية متينة. نقدم حلولاً مخصصة لاحتياجات نموذج عملك، ونرشدك خلال كل مرحلة من الإطلاق، مع توفير الدعم الفني والمعرفة المتخصصة لضمان نجاح أعمالك.',
+          'A PropTech platform shaping a modern operational future for real-estate brokerages and portfolio managers. We build custom solutions tailored to your workflow, guiding you through launch with expert support.'
         )}
       </p>
 
       {/* Checklist Grid */}
       <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {[
-          { ar: 'ضمان كامل 100% على جودة الأداء', en: '100% Performance Guarantee' },
-          { ar: 'جديرون بالثقة والتزام تعاقدي كامل', en: 'Trusted with verified contractual scope' },
+          { ar: 'نسخة حية تجربها قبل التعاقد', en: 'Live demo you can try before signing' },
+          { ar: 'نطاق وسعر مكتوبان قبل البدء', en: 'Written scope & price before we start' },
           { ar: 'بوابة متقدمة وسريعة متوافقة مع محركات البحث', en: 'Fast SEO-optimized public portal' },
           { ar: 'تخصيص الهوية والاسم التجاري بالكامل', en: 'Full white-label branding configuration' },
           { ar: '8 لوحات تحكم مستقلة تعزل الصلاحيات', en: '8 isolated role workspaces' },

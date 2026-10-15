@@ -23,7 +23,7 @@ const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
     id: 'hittin-villa',
     name: { ar: 'فلل حطين المودرن الفاخرة', en: 'Modern Hittin Luxury Villas' },
     location: { ar: 'شمال الرياض • حي حطين', en: 'North Riyadh • Hittin' },
-    badge: { ar: 'إدارة أملاك سكنية • موثق فال', en: 'Residential Asset Management • Fal Verified' },
+    badge: { ar: 'إدارة أملاك سكنية • بيانات تجريبية', en: 'Residential Asset Management • Demo data' },
     scopeTag: { ar: 'إدارة محافظ سكنية فاخرة', en: 'Luxury Portfolio Governance' },
     imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2400&q=90',
   },
@@ -48,7 +48,7 @@ const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
     name: { ar: 'بنتهاوس وشقق الملقا ديلوكس', en: 'Al-Malqa Deluxe Penthouse & Suites' },
     location: { ar: 'شمال الرياض • حي الملقا', en: 'North Riyadh • Al-Malqa' },
     badge: { ar: 'عقود موحدة • إفراغ فوري معتمد', en: 'Standard Leases • Immediate Deed' },
-    scopeTag: { ar: 'وساطة وتسويق حصري برخص فال', en: 'Exclusive Regulated Mandate' },
+    scopeTag: { ar: 'وساطة وتسويق حصري', en: 'Exclusive Marketing Mandate' },
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90',
   },
   {
