@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { CheckCircle2, Shield, Users } from 'lucide-react';
 import { getDictionary } from '@/lib/i18n';
