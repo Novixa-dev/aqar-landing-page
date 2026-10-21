@@ -3,7 +3,7 @@ import { getSiteUrl } from '@/lib/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getSiteUrl();
-  const lastModified = new Date('2026-04-01T00:00:00.000Z');
+  const lastModified = new Date('2026-10-21T00:00:00.000Z');
 
   const routes = ['', '/legal/privacy', '/legal/terms'];
 

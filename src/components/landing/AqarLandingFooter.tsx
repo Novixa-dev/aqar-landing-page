@@ -38,8 +38,8 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm">
               {t(
-                'في ظل الثورة الهائلة لتكنولوجيا المعلومات والتحول الرقمي العقاري، تقدم المنصة حلولاً متكاملة بأعلى المعايير، تدمج البوابة العامة و8 لوحات تشغيل حسب الدور بهوية شركتك.',
-                'Empowering modern real-estate businesses with verified PropTech solutions: combining a branded public property portal with 8 dedicated role-based operational panels.'
+                'نوفكسا عقار نظام برمجي متكامل قابل للتخصيص، يربط البوابة العامة ولوحات التشغيل متعددة الأدوار لتمكين المكاتب العقارية وشركات إدارة الأملاك من تنظيم عملها تحت هويتها الخاصة.',
+                'Novixa Aqar is a configurable B2B PropTech platform combining a branded public property portal with 8 role-based workspaces to help agencies and property managers streamline their operations.'
               )}
             </p>
 
@@ -47,12 +47,8 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
             <div className="space-y-2 pt-2 text-xs text-slate-600">
               <div className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-[#00b399] shrink-0" aria-hidden="true" />
-                <a href="https://novixa.dev/ar/contact" target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 hover:text-[#008f7a]">
-                  {t('تواصل مع فريق نوڤيكسا', 'Contact the Novixa team')}
-                </a>
-                <span className="text-slate-300">|</span>
-                <a href="https://wa.me/967776248526?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D9%86%D9%88%D9%81%D9%83%D8%B3%D8%A7%20%D8%B9%D9%82%D8%A7%D8%B1" target="_blank" rel="noopener noreferrer" className="hover:text-[#008f7a]" dir="ltr">
-                  +967 776 248 526
+                <a href={`/${lang}#demo-form`} className="font-bold text-slate-900 hover:text-[#008f7a]">
+                  {t('تواصل مع فريق نوفكسا', 'Contact the Novixa team')}
                 </a>
               </div>
 

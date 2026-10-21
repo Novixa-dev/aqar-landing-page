@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CheckCircle2, Shield, Users } from 'lucide-react';
 import { getDictionary } from '@/lib/i18n';
 import { ROLE_MATRIX_ITEMS } from '@/content/aqar-content';
@@ -6,6 +6,10 @@ import { Language } from '@/types';
 
 export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
   const { t, pick } = getDictionary(lang);
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const filteredRoles = activeFilter
+    ? ROLE_MATRIX_ITEMS.filter((role) => role.roleKey === activeFilter)
+    : ROLE_MATRIX_ITEMS;
 
   return (
     <section
@@ -26,9 +30,38 @@ export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
           </h2>
         </div>
 
+        {/* Role Filter Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mt-8 mb-10">
+          <button
+            type="button"
+            onClick={() => setActiveFilter(null)}
+            className={`rounded-full px-4 py-1.5 text-xs font-bold transition-all ${
+              activeFilter === null
+                ? 'bg-[#008f7a] text-white'
+                : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+            }`}
+          >
+            {t('8', '8')} {t('أدوار', 'Roles')}
+          </button>
+          {ROLE_MATRIX_ITEMS.map((role) => (
+            <button
+              key={role.roleKey}
+              type="button"
+              onClick={() => setActiveFilter(role.roleKey)}
+              className={`rounded-full px-4 py-1.5 text-xs font-bold transition-all ${
+                activeFilter === role.roleKey
+                  ? 'bg-[#008f7a] text-white'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+              }`}
+            >
+              {pick(role.name)}
+            </button>
+          ))}
+        </div>
+
         {/* Role Cards Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {ROLE_MATRIX_ITEMS.map((role) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {filteredRoles.map((role) => {
             const workflows =
               lang === 'ar' ? role.verifiedWorkflows.ar : role.verifiedWorkflows.en;
 

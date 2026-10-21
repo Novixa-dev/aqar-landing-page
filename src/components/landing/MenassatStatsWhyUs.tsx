@@ -11,8 +11,8 @@ export function MenassatStatsWhyUs({ lang = 'ar' }: { lang?: Language }) {
     <div>
       <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-4xl">
         {t(
-          'لأننا نقدم حلاً عقارياً متكاملاً بخبرة واحترافية تقنية تجمع البوابة العامة و8 لوحات تشغيل حسب الدور، ونلتزم بتوفير أفضل البنى البرمجية التي تمنح مكتبك أو شركتك السيطرة الكاملة على عروض الملاك، طلبات الباحثين، وعقود الإيجار والصيانة تحت علامتك التجارية دون قيود.',
-          'Because we provide a comprehensive real-estate software solution combining a public discovery portal with 8 dedicated role workspaces. We empower your agency or property management firm with full control over inventory, leads, leases, and maintenance under your own brand.'
+          'نقدم حلاً عقارياً متكاملاً يجمع البوابة العامة و8 لوحات تشغيل حسب الدور، لتمكين المكاتب العقارية وشركات إدارة الأملاك من تنظيم عروض الملاك، وطلبات الباحثين، والعقود والإيجار والصيانة تحت علامتها التجارية، مع صلاحيات معزولة وبيانات تحت سيطرتها.',
+          'We deliver a practical B2B real-estate platform that combines a branded public portal with 8 dedicated role-based workspaces, giving agencies and property managers controlled access to listings, leads, leases, and maintenance under their own brand.'
         )}
       </p>
 

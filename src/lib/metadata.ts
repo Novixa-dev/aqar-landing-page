@@ -39,7 +39,7 @@ export function constructMetadata({
 }: MetadataProps): Metadata {
   const isAr = lang === 'ar';
   const siteName = isAr ? 'نوفكسا عقار | Novixa Aqar' : 'Novixa Aqar | نوفكسا عقار';
-  const fullTitle = title.includes('نوفكسا') || title.includes('Novixa') ? title : `${title} | ${siteName}`;
+  const fullTitle = title.includes('نوفكسا') || title.includes('Novixa') || title.includes('نوفكسا') ? title : `${title} | ${siteName}`;
   const baseUrl = getSiteUrl();
   const cleanPath = path.startsWith('/') ? path : path ? `/${path}` : '';
   const url = `${baseUrl}/${lang}${cleanPath}`;

@@ -64,7 +64,7 @@ const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
 const GUARANTEE_ICONS = [ShieldCheck, Layers, Globe, Sliders];
 
 const GUARANTEE_BADGES = [
-  { ar: 'شفافية التكاليف 100%', en: '100% Cost Transparency' },
+  { ar: 'شفافية في النطاق والسعر', en: 'Clear Scope & Pricing' },
   { ar: '8 لوحات مستقلة', en: '8 Independent Panels' },
   { ar: 'ثنائي اللغة (RTL/LTR)', en: 'Bilingual Native (RTL/LTR)' },
   { ar: 'تخصيص ومرونة', en: 'Fully Configurable' },

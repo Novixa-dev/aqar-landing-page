@@ -93,15 +93,12 @@ export function MenassatServicesGrid({ lang = 'ar' }: { lang?: Language }) {
         {/* Centered Heading Matching Menassat "ماذا تجد في منصات العقارية" */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight">
-            {t('ماذا تجد في ', 'What Do You Find in ')}
-            <span className="text-[#008f7a]">
-              {t('منصة عقار المتكاملة', 'Our Real-Estate Platform')}
-            </span>
+            {t('ماذا تجد في المنصة العقارية المتكاملة', 'What You Get in the Platform')}
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
             {t(
-              'خدمات عقارية رائدة وأكثر ثقة. تجربة التميز والخبرة في حلول العقارات الرقمية تحت هوية شركتك.',
-              'Leading and trusted real-estate services. Experience digital excellence and expertise customized under your brand.'
+              'حلول عقارية متكاملة ومتكئة على معايير مهنية لتمكين مكاتبكم وشركاتكم من العمل بكفاءة تحت هويتكم الخاصة.',
+              'Pragmatic real-estate operations software designed to help agencies and property managers work more efficiently under their own brand.'
             )}
           </p>
         </div>

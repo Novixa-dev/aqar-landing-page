@@ -26,10 +26,13 @@ export function MenassatCorporateConcierge() {
   const [showHint, setShowHint] = useState(false);
   const [showGoTop, setShowGoTop] = useState(false);
 
-  // Show subtle greeting hint after 3 seconds, hide after 12 seconds
+  // Show subtle greeting hint after delay, hide after 12 seconds
   useEffect(() => {
-    const hintTimer = setTimeout(() => setShowHint(true), 3000);
-    const hideTimer = setTimeout(() => setShowHint(false), 12000);
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+    const hintTimer = setTimeout(() => setShowHint(true), 5000);
+    const hideTimer = setTimeout(() => setShowHint(false), 17000);
     return () => {
       clearTimeout(hintTimer);
       clearTimeout(hideTimer);
@@ -73,6 +76,7 @@ export function MenassatCorporateConcierge() {
       {isOpen && (
         <div
           role="dialog"
+          aria-modal="true"
           aria-labelledby="concierge-dialog-title"
           className="fixed end-6 bottom-24 z-50 w-[92vw] sm:w-[400px] rounded-3xl border border-slate-200 bg-white shadow-2xl overflow-hidden animate-in fade-in slide-in-from-bottom-5 duration-300"
         >
@@ -117,7 +121,7 @@ export function MenassatCorporateConcierge() {
               </div>
               <div>
                 <div className="text-xs font-bold text-slate-900">
-                  {t('فريق نوڤيكسا للحلول العقارية', 'Novixa PropTech Team')}
+                  {t('فريق نوفكسا للحلول العقارية', 'Novixa PropTech Team')}
                 </div>
                 <div className="text-[11px] text-slate-500 flex items-center gap-1.5 mt-0.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-[#00b399]" />
@@ -138,9 +142,8 @@ export function MenassatCorporateConcierge() {
           <div className="p-5 space-y-2.5">
             {/* WhatsApp Direct */}
             <a
-              href="https://wa.me/967776248526?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%B9%D8%B1%D8%B6%20%D9%86%D9%88%D9%81%D9%83%D8%B3%D8%A7%20%D8%B9%D9%82%D8%A7%D8%B1"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#demo-form"
+              onClick={() => setIsOpen(false)}
               className="flex items-center justify-between p-3.5 rounded-2xl border border-emerald-200 bg-emerald-50/70 hover:bg-emerald-100/70 text-emerald-950 transition-all group"
             >
               <div className="flex items-center gap-3">
@@ -152,8 +155,8 @@ export function MenassatCorporateConcierge() {
                     {t('محادثة واتساب مباشرة', 'Direct WhatsApp')}
                   </div>
                   <div className="text-[11px] text-emerald-700">
-                    {t('تواصل مع فريق نوڤيكسا', 'Talk to the Novixa team')}
-                  </div>
+                  {t('تواصل مع فريق نوفكسا', 'Talk to the Novixa team')}
+                </div>
                 </div>
               </div>
               <span className="text-xs font-bold text-emerald-700 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
