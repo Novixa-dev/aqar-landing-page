@@ -892,7 +892,7 @@ export function DemoRequestForm() {
                     <Lock className="h-3.5 w-3.5 text-[#00b399] shrink-0" />
                     <span>
                       {t(
-                        'بياناتك مشفرة ومحمية بالكامل — تُستخدم حصرياً للتواصل معك وفق سياسة الخصوصية.',
+                        'بياناتك تُستخدم حصرياً للتواصل معك وفق سياسة الخصوصية.',
                         'Your details are encrypted and private — strictly used to respond under our Privacy Policy.'
                       )}
                     </span>
