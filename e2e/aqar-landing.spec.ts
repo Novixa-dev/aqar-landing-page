@@ -40,7 +40,7 @@ test.describe('Novixa Aqar B2B Landing Page — Full E2E, Responsive & Accessibi
     await page.goto('/ar');
 
     // Product Preview interactive tabs
-    const previewTabs = page.locator('[role="tablist"] [role="tab"]');
+    const previewTabs = page.locator('#preview [role="tablist"] [role="tab"]');
     await expect(previewTabs).toHaveCount(4);
     await previewTabs.nth(1).click();
     await expect(previewTabs.nth(1)).toHaveAttribute('aria-selected', 'true');
