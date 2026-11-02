@@ -170,30 +170,30 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       ar: 'مخطط ربوة الشرق الاستثماري',
       en: 'Rabwat Al-Sharq Masterplan Estates',
     },
-    category: { ar: 'تنظيم مزادات ومخططات أراضي', en: 'Auctions & Masterplan Lands' },
+    category: { ar: 'مخططات أراضٍ وقطع استثمارية', en: 'Masterplan Land Plots' },
     location: {
       ar: 'المنطقة الشرقية، الدمام',
       en: 'Eastern Province, Dammam',
     },
     managementScope: {
-      ar: 'طرح القطع السكنية والتجارية عبر منصة المزادات العلنية المنظمة إلكترونياً',
-      en: 'Subdivided land plots offered via compliant electronic public auction engine',
+      ar: 'حصر القطع السكنية والتجارية وحالة كل قطعة: متاحة أو محجوزة أو مباعة',
+      en: 'Inventory of residential and commercial plots with per-plot status: available, reserved, or sold',
     },
     metrics: {
       unitsCount: '62 قطعة أرض',
       area: '45,000 م²',
-      occupancyOrValuation: 'مزاد بقيمة 54 مليون',
+      occupancyOrValuation: 'مخطط تجريبي',
     },
     operationalHighlights: [
-      { ar: 'إشراف لجنة المزادات المعتمدة', en: 'Supervised by licensed auction board' },
-      { ar: 'توثيق المزايدات والتأمين المالي', en: 'Bidding assurance & bank guarantee flow' },
+      { ar: 'عرض حالة كل قطعة في مكان واحد', en: 'Per-plot status in one place' },
+      { ar: 'طلبات الاهتمام والمعاينة لكل قطعة', en: 'Interest and viewing requests per plot' },
     ],
     complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
-export function MenassatPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
+export function AqarPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
   const { t, pick } = getDictionary(lang);
 
   return (

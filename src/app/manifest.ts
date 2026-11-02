@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'نوفكسا عقار | Novixa Aqar — Configurable Real-Estate Platform',
+    name: 'نوڤيكسا عقار | Novixa Aqar — Configurable Real-Estate Platform',
     short_name: 'Novixa Aqar',
     description:
       'نظام عقاري متكامل يشكل على مقاس شركتك — بوابة عامة و8 لوحات تشغيل متعددة الأدوار.',

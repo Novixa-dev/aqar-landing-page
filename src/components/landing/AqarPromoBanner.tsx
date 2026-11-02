@@ -4,7 +4,7 @@ import { getDictionary } from '@/lib/i18n';
 import { TrackedLink } from '@/components/common/TrackedLink';
 import { Language } from '@/types';
 
-export function MenassatPromoBanner({ lang = 'ar' }: { lang?: Language }) {
+export function AqarPromoBanner({ lang = 'ar' }: { lang?: Language }) {
   const { t, isRtl } = getDictionary(lang);
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 

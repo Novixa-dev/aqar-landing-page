@@ -14,12 +14,12 @@ import {
 import { EXTERNAL_ROUTES } from '@/lib/site';
 
 export const BRAND_NAME: LocalizedText = {
-  ar: 'نوفكسا عقار',
+  ar: 'نوڤيكسا عقار',
   en: 'Novixa Aqar',
 };
 
 export const PARENT_BRAND: LocalizedText = {
-  ar: 'من تطوير نوفكسا (Novixa)',
+  ar: 'من تطوير نوڤيكسا (Novixa)',
   en: 'Engineered by Novixa',
 };
 
@@ -688,7 +688,7 @@ export const DEMO_OPTIONS: DemoOption[] = [
   {
     id: 'primary_generic',
     title: {
-      ar: 'النسخة المرجعية الكاملة — نوفكسا عقار',
+      ar: 'النسخة المرجعية الكاملة — نوڤيكسا عقار',
       en: 'Primary Reference Demo — Novixa Aqar',
     },
     subtitle: {
@@ -935,11 +935,11 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'what_is_aqar',
     category: 'product',
     question: {
-      ar: 'هل نوفكسا عقار موقع إعلانات عقارية مفتوح للجمهور أم نظام خاص بشركتي',
+      ar: 'هل نوڤيكسا عقار موقع إعلانات عقارية مفتوح للجمهور أم نظام خاص بشركتي',
       en: 'Is Novixa Aqar a public classifieds marketplace or a dedicated system for my company',
     },
     answer: {
-      ar: 'نوفكسا عقار هو نظام برمجي متكامل (B2B) يُجهّز ويُسلّم خصيصاً لشركتك العقارية بهويتك واسمك ونطاقك الخاص. تحصل فيه على بوابة عقارية عامة لعملائك، بالإضافة إلى لوحات تشغيل داخلية لإدارة فريقك وعقاراتك وعقودك.',
+      ar: 'نوڤيكسا عقار هو نظام برمجي متكامل (B2B) يُجهّز ويُسلّم خصيصاً لشركتك العقارية بهويتك واسمك ونطاقك الخاص. تحصل فيه على بوابة عقارية عامة لعملائك، بالإضافة إلى لوحات تشغيل داخلية لإدارة فريقك وعقاراتك وعقودك.',
       en: 'Novixa Aqar is a dedicated B2B software platform configured and deployed for your company under your own brand and domain. You get both a public-facing property portal for your clients and private multi-role back-office workspaces for your team.',
     },
   },
@@ -1023,11 +1023,11 @@ export const FORM_SECTION_CONTENT = {
     en: 'Start Your Real-Estate Platform Setup',
   },
   headline: {
-    ar: 'اطلب عرضاً مخصصاً وتحديد نطاق لنسختك من نوفكسا عقار',
+    ar: 'اطلب عرضاً مخصصاً وتحديد نطاق لنسختك من نوڤيكسا عقار',
     en: 'Request a Tailored Demo & Scope Proposal for Your Company',
   },
   subheadline: {
-    ar: 'شاركنا نبذة عن نشاطك العقاري، وسيتواصل معك فريق نوفكسا لاستعراض النظام وتحديد التجهيز الأنسب لشركتك وميزانيتك.',
+    ar: 'شاركنا نبذة عن نشاطك العقاري، وسيتواصل معك فريق نوڤيكسا لاستعراض النظام وتحديد التجهيز الأنسب لشركتك وميزانيتك.',
     en: 'Tell us briefly about your real-estate business. Our team will walk you through the platform and outline the exact setup and pricing for your workflow.',
   },
   directChannelsTitle: {

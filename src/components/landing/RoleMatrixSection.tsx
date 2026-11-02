@@ -130,7 +130,7 @@ export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
           </div>
           <a
             href="#demo-form"
-            className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full btn-menassat-teal px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md"
+            className="inline-flex min-h-11 shrink-0 items-center justify-center rounded-full btn-brand-teal px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md"
           >
             {t('اختر الأدوار المناسبة لشركتك', 'Select Roles for Your Company')}
           </a>

@@ -99,7 +99,7 @@ export function MobileNavDrawer({
                   target: 'demo_form',
                 });
               }}
-              className="flex min-h-11 w-full items-center justify-center gap-2 rounded-full btn-menassat-teal px-4 py-3 text-sm font-bold text-white shadow-md"
+              className="flex min-h-11 w-full items-center justify-center gap-2 rounded-full btn-brand-teal px-4 py-3 text-sm font-bold text-white shadow-md"
             >
               <Briefcase className="h-4 w-4" aria-hidden="true" />
               <span>{requestDemoText}</span>

@@ -10,7 +10,7 @@ describe('SEO Metadata, JSON-LD & Analytics Privacy', () => {
   it('generates reciprocal hreflang and canonical metadata for /ar and /en', () => {
     const arMeta = constructMetadata({
       lang: 'ar',
-      title: 'نوفكسا عقار',
+      title: 'نوڤيكسا عقار',
       description: 'وصف عربي',
       path: '',
     });

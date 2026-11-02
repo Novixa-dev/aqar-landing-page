@@ -1,7 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
 import {
-  Gavel,
   BarChart3,
   Building,
   Megaphone,
@@ -15,17 +14,6 @@ import { EXTERNAL_ROUTES } from '@/lib/site';
 import { Language } from '@/types';
 
 const SERVICES = [
-  {
-    id: 'auctions',
-    title: { ar: 'مزادات عقارية', en: 'Real-Estate Auctions' },
-    desc: {
-      ar: 'إدارة المزادات العقارية الإلكترونية والحضورية مع توثيق المزايدات والمواعيد.',
-      en: 'Electronic and in-person real estate auction management with live bidding schedules.',
-    },
-    icon: Gavel,
-    badge: { ar: 'مزادات حية', en: 'Live Auctions' },
-    imageUrl: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&w=800&q=80',
-  },
   {
     id: 'studies',
     title: { ar: 'دراسات وبحوث عقارية', en: 'Market Studies & Analytics' },
@@ -83,14 +71,14 @@ const SERVICES = [
   },
 ];
 
-export function MenassatServicesGrid({ lang = 'ar' }: { lang?: Language }) {
+export function AqarServicesGrid({ lang = 'ar' }: { lang?: Language }) {
   const { t, pick, isRtl } = getDictionary(lang);
   const ArrowIcon = isRtl ? ArrowLeft : ArrowRight;
 
   return (
     <section className="py-16 sm:py-24 border-b border-slate-200 bg-[#f8fafc] relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Centered Heading Matching Menassat "ماذا تجد في منصات العقارية" */}
+        {/* Centered Heading Matching the section heading */}
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight">
             {t('ماذا تجد في المنصة العقارية المتكاملة', 'What You Get in the Platform')}

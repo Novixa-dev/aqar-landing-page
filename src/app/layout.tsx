@@ -6,7 +6,7 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: {
-    default: 'نوفكسا عقار | Novixa Aqar — نظام عقاري متكامل يشكل على مقاس شركتك',
+    default: 'نوڤيكسا عقار | Novixa Aqar — نظام عقاري متكامل يشكل على مقاس شركتك',
     template: '%s | Novixa Aqar',
   },
   applicationName: 'Novixa Aqar',

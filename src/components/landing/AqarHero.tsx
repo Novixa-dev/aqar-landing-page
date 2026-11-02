@@ -55,8 +55,8 @@ const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
     id: 'east-durra',
     name: { ar: 'قصور ومخططات درة الشرقية وسرايا القصيم', en: 'Eastern Durra & Qassim Palaces & Land' },
     location: { ar: 'المنطقة الشرقية • الخبر والقصيم', en: 'Eastern Province & Qassim' },
-    badge: { ar: 'مزادات علنية وتطوير عمراني', en: 'Regulated Auctions & Masterplans' },
-    scopeTag: { ar: 'تنظيم مزادات عقارية كبرى', en: 'Major Real Estate Auctions' },
+    badge: { ar: 'مخططات أراضٍ وتطوير عمراني', en: 'Land Plots & Masterplans' },
+    scopeTag: { ar: 'حصر مخططات وقطع أراضٍ', en: 'Land Plot Inventory' },
     imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2400&q=90',
   },
 ];
@@ -122,7 +122,7 @@ export function AqarHero({ lang = 'ar' }: { lang?: Language }) {
                   source: 'hero_primary',
                   target: 'demo_form',
                 }}
-                className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full btn-menassat-teal px-8 py-3.5 text-base font-bold text-white shadow-2xl shadow-[#00b399]/50 hover:scale-105 transition-all"
+                className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full btn-brand-teal px-8 py-3.5 text-base font-bold text-white shadow-2xl shadow-[#00b399]/50 hover:scale-105 transition-all"
               >
                 <span>{pick(HERO_CONTENT.primaryCta)}</span>
                 <ArrowIcon className="h-5 w-5" aria-hidden="true" />

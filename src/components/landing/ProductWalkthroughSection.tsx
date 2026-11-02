@@ -28,7 +28,7 @@ export function ProductWalkthroughSection({ lang = 'ar' }: { lang?: Language }) 
             className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
-              'كيف تعمل دورة العقار داخل نوفكسا عقار من الإدراج حتى ما بعد التعاقد',
+              'كيف تعمل دورة العقار داخل نوڤيكسا عقار من الإدراج حتى ما بعد التعاقد',
               'How a Property Moves Through Novixa Aqar from Listing to Post-Lease'
             )}
           </h2>

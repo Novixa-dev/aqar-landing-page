@@ -68,7 +68,7 @@ const CITIES: Record<string, Array<{ id: string; ar: string; en: string }>> = {
   ],
 };
 
-export function MenassatPropertySearch() {
+export function AqarPropertySearch() {
   const { lang, t } = useLanguage();
   const [purpose, setPurpose] = useState<'sale' | 'rent'>('sale');
   const [propertyType, setPropertyType] = useState('all');
@@ -112,7 +112,7 @@ export function MenassatPropertySearch() {
             </span>
           </div>
 
-          {/* Menassat Purpose Toggle (Sale / Rent) */}
+          {/* Purpose Toggle (Sale / Rent) */}
           <div className="inline-flex rounded-full bg-slate-200/80 p-1 border border-slate-300">
             <button
               type="button"
@@ -300,11 +300,11 @@ export function MenassatPropertySearch() {
               </div>
             </div>
 
-            {/* Submit Button (Menassat 3D Rounded) */}
+            {/* Submit Button (3D Rounded) */}
             <div className="md:col-span-4">
               <button
                 type="submit"
-                className="w-full min-h-12 flex items-center justify-center gap-2 rounded-full btn-menassat-teal text-sm sm:text-base font-bold text-white shadow-lg shadow-[#00b399]/30 hover:scale-[1.01] active:scale-[0.99] transition-all"
+                className="w-full min-h-12 flex items-center justify-center gap-2 rounded-full btn-brand-teal text-sm sm:text-base font-bold text-white shadow-lg shadow-[#00b399]/30 hover:scale-[1.01] active:scale-[0.99] transition-all"
               >
                 <Search className="h-4 w-4" aria-hidden="true" />
                 <span>

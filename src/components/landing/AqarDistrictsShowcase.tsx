@@ -43,7 +43,7 @@ const REGIONS = [
   },
 ];
 
-export function MenassatDistrictsShowcase({ lang = 'ar' }: { lang?: Language }) {
+export function AqarDistrictsShowcase({ lang = 'ar' }: { lang?: Language }) {
   const { t, pick } = getDictionary(lang);
 
   return (
@@ -67,7 +67,7 @@ export function MenassatDistrictsShowcase({ lang = 'ar' }: { lang?: Language }) 
           </a>
         </div>
 
-        {/* Regions Grid with Menassat styling */}
+        {/* Regions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
           {REGIONS.map((region) => (
             <a

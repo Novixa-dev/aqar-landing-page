@@ -5,7 +5,7 @@
 
 ## 1. Product identity
 
-- **Product name:** Novixa Aqar / نوفكسا عقار
+- **Product name:** Novixa Aqar / نوڤيكسا عقار
 - **Positioning:** Configurable real-estate software for real-estate offices, property companies, brokerage teams, and property-management businesses.
 - **Business model described by the owner:** Software licence, setup, and customization. No mandatory monthly subscription is part of the current baseline offer; hosting, domain, support, maintenance, updates, integrations, and ongoing services must be quoted and agreed explicitly.
 - **Starting price stated in supplied messages:** USD 500 for a basic version. It is an indicative starting price, not an unconditional fixed quote. Final price depends on scope, number of users, customizations, brand/domain, hosting, deployment, and requested services.

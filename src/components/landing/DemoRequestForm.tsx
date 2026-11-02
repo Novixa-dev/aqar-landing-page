@@ -369,7 +369,7 @@ export function DemoRequestForm() {
                     </h3>
                     <p className="text-sm text-slate-600 leading-relaxed">
                       {t(
-                        'شكراً لتواصلك مع نوفكسا. تم حفظ تفاصيل نشاطك العقاري، وسيتواصل معك مستشارنا المختص لتنسيق العرض التوضيحي وتحديد النطاق الأنسب.',
+                        'شكراً لتواصلك مع نوڤيكسا. تم حفظ تفاصيل نشاطك العقاري، وسيتواصل معك مستشارنا المختص لتنسيق العرض التوضيحي وتحديد النطاق الأنسب.',
                         'Thank you for reaching out to Novixa. Your business requirements have been recorded and our team will follow up via your preferred contact channel.'
                       )}
                     </p>
@@ -866,7 +866,7 @@ export function DemoRequestForm() {
                     <button
                       type="submit"
                       disabled={submitState === 'submitting'}
-                      className="flex min-h-[52px] w-full items-center justify-center gap-2.5 rounded-full btn-menassat-teal px-8 py-3.5 text-base font-bold text-white shadow-xl shadow-[#00b399]/25 hover:shadow-2xl hover:shadow-[#00b399]/40 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:hover:scale-100 transition-all cursor-pointer"
+                      className="flex min-h-[52px] w-full items-center justify-center gap-2.5 rounded-full btn-brand-teal px-8 py-3.5 text-base font-bold text-white shadow-xl shadow-[#00b399]/25 hover:shadow-2xl hover:shadow-[#00b399]/40 hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:hover:scale-100 transition-all cursor-pointer"
                     >
                       {submitState === 'submitting' ? (
                         <>

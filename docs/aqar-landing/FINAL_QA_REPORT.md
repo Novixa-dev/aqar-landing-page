@@ -1,4 +1,4 @@
-# Novixa Aqar (نوفكسا عقار) — Final Implementation & QA Report
+# Novixa Aqar (نوڤيكسا عقار) — Final Implementation & QA Report
 
 **Date:** 2026-10-13  
 **Project Root:** `/home/ahmed-al-kasadi/Ahmed 2026/aqar-landing`  
@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-Built a standalone, bilingual (Arabic-first RTL `/ar` + English LTR `/en`) B2B product marketing and conversion landing application for **Novixa Aqar (نوفكسا عقار)**, engineered by **Novixa**.
+Built a standalone, bilingual (Arabic-first RTL `/ar` + English LTR `/en`) B2B product marketing and conversion landing application for **Novixa Aqar (نوڤيكسا عقار)**, engineered by **Novixa**.
 
 Unlike consumer property portals that advertise individual apartments or villas, this landing application sells **the configurable real-estate software platform itself** to real-estate agencies, brokerages, property/lease management firms, and real-estate marketing teams. It presents:
 - The complete 14-section narrative defined in `03_PRD_AQAR_B2B_LANDING_PAGE.md` and `04_READY_TO_USE_COPY_AR_EN.md`.

@@ -6,7 +6,7 @@ Copy everything between **BEGIN PROMPT** and **END PROMPT** into Claude Code, Co
 
 You are acting as a coordinated senior product team: Product Manager, UX Researcher, Senior Product Designer, Senior Frontend Engineer, SEO Engineer, Accessibility Engineer, Performance Engineer, QA Lead, and release owner.
 
-Your task is to inspect, redesign, implement, test, and prepare a production-quality B2B marketing landing page for **Novixa Aqar | نوفكسا عقار**, the configurable real-estate software product from Novixa.
+Your task is to inspect, redesign, implement, test, and prepare a production-quality B2B marketing landing page for **Novixa Aqar | نوڤيكسا عقار**, the configurable real-estate software product from Novixa.
 
 ## Required source documents
 
