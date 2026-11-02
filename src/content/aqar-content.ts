@@ -741,34 +741,6 @@ export const DEMO_OPTIONS: DemoOption[] = [
       ],
     },
   },
-  {
-    id: 'branded_dexal',
-    title: {
-      ar: 'مثال تخصيص هوية (2) — نطاق وعرض بديل',
-      en: 'Brand Customization Showcase (2) — Alternative Domain & Preset',
-    },
-    subtitle: {
-      ar: 'نموذج إضافي يستعرض تشغيل النظام على نطاق مستقل مع تهيئة مختلفة للواجهة.',
-      en: 'Additional live instance demonstrating deployment on an independent domain with an alternative preset.',
-    },
-    badge: { ar: 'مثال نطاق مستقل', en: 'Independent Domain Example' },
-    url: EXTERNAL_ROUTES.brandedDemoDexal,
-    isPrimary: false,
-    disclaimer: {
-      ar: 'تنبيه: البيانات والهوية في هذا الرابط تجريبية لأغراض العرض فقط وليست إحصائيات عميل فعلي.',
-      en: 'Note: Identity and figures in this link are illustrative demo presets, not production client metrics.',
-    },
-    highlights: {
-      ar: [
-        'توضيح إمكانية النشر على نطاق خاص بشركتك (Custom Domain)',
-        'مرونة تكييف الواجهة مع السوق المحلي المستهدف',
-      ],
-      en: [
-        'Demonstrates deployment on a dedicated custom domain',
-        'Flexible front-end adaptation for local market positioning',
-      ],
-    },
-  },
 ];
 
 export const PRICING_SCOPE_CONTENT = {
