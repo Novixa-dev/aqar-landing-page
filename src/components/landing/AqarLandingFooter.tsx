@@ -22,7 +22,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         {/* Main Columns Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
-          {/* Brand & Corporate Column (Menassat Style) */}
+          {/* Brand & Corporate Column  */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white border border-[#00b399]/30 shadow-sm">
@@ -38,7 +38,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
 
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm">
               {t(
-                'نوفكسا عقار نظام برمجي متكامل قابل للتخصيص، يربط البوابة العامة ولوحات التشغيل متعددة الأدوار لتمكين المكاتب العقارية وشركات إدارة الأملاك من تنظيم عملها تحت هويتها الخاصة.',
+                'نوڤيكسا عقار نظام برمجي متكامل قابل للتخصيص، يربط البوابة العامة ولوحات التشغيل متعددة الأدوار لتمكين المكاتب العقارية وشركات إدارة الأملاك من تنظيم عملها تحت هويتها الخاصة.',
                 'Novixa Aqar is a configurable B2B PropTech platform combining a branded public property portal with 8 role-based workspaces to help agencies and property managers streamline their operations.'
               )}
             </p>
@@ -48,7 +48,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
               <div className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-[#00b399] shrink-0" aria-hidden="true" />
                 <a href={`/${lang}#demo-form`} className="font-bold text-slate-900 hover:text-[#008f7a]">
-                  {t('تواصل مع فريق نوفكسا', 'Contact the Novixa team')}
+                  {t('تواصل مع فريق نوڤيكسا', 'Contact the Novixa team')}
                 </a>
               </div>
 
@@ -152,7 +152,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
         {/* Bottom Copyright & Scope Reminder (Preserved Exactly for Tests) */}
         <div className="mt-8 border-t border-slate-200 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            © {new Date().getFullYear()} Novixa (نوفكسا).{' '}
+            © {new Date().getFullYear()} Novixa (نوڤيكسا).{' '}
             {t('جميع الحقوق محفوظة.', 'All rights reserved.')}
           </p>
           <p>

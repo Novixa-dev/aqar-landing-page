@@ -25,12 +25,12 @@ export function AqarLandingHeader({ lang = 'ar' }: { lang?: Language }) {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between gap-4">
-            {/* Brand Logo - Menassat Clean Style */}
+            {/* Brand Logo - Clean Style */}
             <div className="flex items-center gap-3">
               <Link
                 href={`/${lang}`}
                 className="group flex items-center gap-3 rounded-2xl py-1.5 pe-2 focus:outline-none"
-                aria-label={t('نوفكسا عقار — الصفحة الرئيسية', 'Novixa Aqar — Home')}
+                aria-label={t('نوڤيكسا عقار — الصفحة الرئيسية', 'Novixa Aqar — Home')}
               >
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#00b399]/20 to-[#008f7a]/10 border border-[#00b399]/40 shadow-sm group-hover:border-[#00b399] transition-all">
                   <Building2 className="h-6 w-6 text-[#008f7a]" aria-hidden="true" />
@@ -88,7 +88,7 @@ export function AqarLandingHeader({ lang = 'ar' }: { lang?: Language }) {
                   source: 'header',
                   target: 'demo_form',
                 }}
-                className="whitespace-nowrap inline-flex min-h-10 items-center gap-2 rounded-full btn-menassat-teal px-5 py-2 text-xs sm:text-sm font-bold text-white shadow-md transition-transform"
+                className="whitespace-nowrap inline-flex min-h-10 items-center gap-2 rounded-full btn-brand-teal px-5 py-2 text-xs sm:text-sm font-bold text-white shadow-md transition-transform"
               >
                 <Briefcase className="h-4 w-4 shrink-0 text-white/90" aria-hidden="true" />
                 <span>{t('طلب استشارة وعرض حي', 'Request Live Demo')}</span>

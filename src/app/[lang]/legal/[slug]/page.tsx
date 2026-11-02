@@ -61,7 +61,7 @@ export default async function LegalPage({
 
   const breadcrumbJsonLd = generateBreadcrumbJsonLd([
     {
-      name: isAr ? 'نوفكسا عقار' : 'Novixa Aqar',
+      name: isAr ? 'نوڤيكسا عقار' : 'Novixa Aqar',
       url: `/${lang}`,
     },
     {
@@ -82,7 +82,7 @@ export default async function LegalPage({
           className="inline-flex min-h-10 items-center gap-2 rounded-xl border border-white/10 bg-slate-900 px-3.5 py-2 text-xs sm:text-sm font-semibold text-sky-300 hover:border-sky-400/40 hover:text-white transition-colors mb-8"
         >
           <BackIcon className="h-4 w-4" aria-hidden="true" />
-          <span>{isAr ? 'العودة إلى صفحة نوفكسا عقار' : 'Back to Novixa Aqar'}</span>
+          <span>{isAr ? 'العودة إلى صفحة نوڤيكسا عقار' : 'Back to Novixa Aqar'}</span>
         </Link>
 
         <div className="glass-card rounded-2xl p-6 sm:p-10">

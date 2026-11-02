@@ -3,7 +3,7 @@
 **Version:** 1.0  
 **Date:** 2026-10-12  
 **Status:** Implementation-ready requirements, subject to repository and feature verification  
-**Product:** Novixa Aqar / نوفكسا عقار  
+**Product:** Novixa Aqar / نوڤيكسا عقار  
 **Primary audience:** Real-estate offices, brokerages, property managers, and real-estate businesses  
 **Primary locale:** Arabic (RTL)  
 **Secondary locale:** English (LTR)  

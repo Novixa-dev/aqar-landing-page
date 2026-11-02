@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --menassat-primary: #2C3E50;
-  --menassat-primary-rgb: 44, 62, 80;
-  --menassat-teal: #00b399;
-  --menassat-teal-hover: #008f7a;
-  --menassat-teal-light: #e6f8f5;
-  --menassat-teal-glow: rgba(0, 179, 153, 0.25);
-  --menassat-bg: #f8fafc;
-  --menassat-surface: #ffffff;
-  --menassat-card: #ffffff;
-  --menassat-border: #e2e8f0;
-  --menassat-text-primary: #0f172a;
-  --menassat-text-secondary: #475569;
+  --brand-primary: #2C3E50;
+  --brand-primary-rgb: 44, 62, 80;
+  --brand-teal: #00b399;
+  --brand-teal-hover: #008f7a;
+  --brand-teal-light: #e6f8f5;
+  --brand-teal-glow: rgba(0, 179, 153, 0.25);
+  --brand-bg: #f8fafc;
+  --brand-surface: #ffffff;
+  --brand-card: #ffffff;
+  --brand-border: #e2e8f0;
+  --brand-text-primary: #0f172a;
+  --brand-text-secondary: #475569;
 }
 
 @layer base {
@@ -46,7 +46,7 @@
   }
 
   *:focus-visible {
-    outline: 2px solid var(--menassat-teal);
+    outline: 2px solid var(--brand-teal);
     outline-offset: 2px;
     box-shadow: 0 0 0 2px #ffffff;
     border-radius: inherit;
@@ -105,7 +105,7 @@
   font-family: var(--font-english), system-ui, sans-serif;
 }
 
-/* Menassat Light Theme Cards & Gradients */
+/* Light Theme Cards & Gradients */
 .bg-grid-pattern {
   background-image: radial-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
@@ -163,8 +163,8 @@
   border-color: #cbd5e1;
 }
 
-/* Menassat 3D Rounded Buttons */
-.btn-menassat-teal {
+/* 3D Rounded Buttons */
+.btn-brand-teal {
   background: linear-gradient(135deg, #00b399 0%, #008f7a 100%);
   color: #ffffff;
   border-radius: 9999px;
@@ -173,13 +173,13 @@
   transition: all 0.25s ease;
 }
 
-.btn-menassat-teal:hover {
+.btn-brand-teal:hover {
   background: linear-gradient(135deg, #00cbb0 0%, #009983 100%);
   box-shadow: 0 6px 20px rgba(0, 179, 153, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transform: translateY(-1px);
 }
 
-.btn-menassat-outline {
+.btn-brand-outline {
   border: 1px solid #cbd5e1;
   border-radius: 9999px;
   color: #334155;
@@ -187,14 +187,14 @@
   transition: all 0.25s ease;
 }
 
-.btn-menassat-outline:hover {
+.btn-brand-outline:hover {
   border-color: #00b399;
   background-color: #e6f8f5;
   color: #008f7a;
 }
 
-/* Feature Box / Menassat Light Style */
-.menassat-feature-box {
+/* Feature Box / Light Style */
+.brand-feature-box {
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 1.25rem;
@@ -202,7 +202,7 @@
   transition: all 0.3s ease;
 }
 
-.menassat-feature-box:hover {
+.brand-feature-box:hover {
   border-color: rgba(0, 179, 153, 0.5);
   box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.08), 0 0 20px -5px rgba(0, 179, 153, 0.15);
   transform: translateY(-4px);

@@ -89,14 +89,14 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       ar: 'فلل سرايا الملقا المودرن',
       en: 'Saraya Al-Malqa Modern Estates',
     },
-    category: { ar: 'وساطة وتسويق معتمد', en: 'Certified Brokerage & Marketing' },
+    category: { ar: 'وساطة وتسويق', en: 'Brokerage & Marketing' },
     location: {
       ar: 'شمال الرياض، حي الملقا',
       en: 'North Riyadh, Al-Malqa',
     },
     managementScope: {
-      ar: 'تسويق حصري، فحص الجودة المعمارية، وإفراغ فوري',
-      en: 'Exclusive brokerage, quality audit inspection, & immediate deed handover',
+      ar: 'تسويق حصري، جدولة المعاينات، ومتابعة طلبات المشترين',
+      en: 'Exclusive brokerage, viewing scheduling, and buyer request follow-up',
     },
     metrics: {
       unitsCount: '8 فلل مستقلة',
@@ -131,8 +131,8 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       occupancyOrValuation: 'نسبة إشغال 100%',
     },
     operationalHighlights: [
-      { ar: 'مطابقة لمعايير الدفاع المدني', en: 'Civil Defense safety certified' },
-      { ar: 'فوترة إلكترونية ونظام دفعات دوري', en: 'Automated periodic invoicing & zatca' },
+      { ar: 'طلبات صيانة وأوامر عمل للمقاولين', en: 'Maintenance requests and contractor work orders' },
+      { ar: 'تسجيل الفواتير والدفعات الدورية', en: 'Periodic invoice and payment records' },
     ],
     complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
@@ -170,30 +170,30 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       ar: 'مخطط ربوة الشرق الاستثماري',
       en: 'Rabwat Al-Sharq Masterplan Estates',
     },
-    category: { ar: 'تنظيم مزادات ومخططات أراضي', en: 'Auctions & Masterplan Lands' },
+    category: { ar: 'مخططات أراضٍ وقطع استثمارية', en: 'Masterplan Land Plots' },
     location: {
       ar: 'المنطقة الشرقية، الدمام',
       en: 'Eastern Province, Dammam',
     },
     managementScope: {
-      ar: 'طرح القطع السكنية والتجارية عبر منصة المزادات العلنية المنظمة إلكترونياً',
-      en: 'Subdivided land plots offered via compliant electronic public auction engine',
+      ar: 'حصر القطع السكنية والتجارية وحالة كل قطعة: متاحة أو محجوزة أو مباعة',
+      en: 'Inventory of residential and commercial plots with per-plot status: available, reserved, or sold',
     },
     metrics: {
       unitsCount: '62 قطعة أرض',
       area: '45,000 م²',
-      occupancyOrValuation: 'مزاد بقيمة 54 مليون',
+      occupancyOrValuation: 'مخطط تجريبي',
     },
     operationalHighlights: [
-      { ar: 'إشراف لجنة المزادات المعتمدة', en: 'Supervised by licensed auction board' },
-      { ar: 'توثيق المزايدات والتأمين المالي', en: 'Bidding assurance & bank guarantee flow' },
+      { ar: 'عرض حالة كل قطعة في مكان واحد', en: 'Per-plot status in one place' },
+      { ar: 'طلبات الاهتمام والمعاينة لكل قطعة', en: 'Interest and viewing requests per plot' },
     ],
     complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
   },
 ];
 
-export function MenassatPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
+export function AqarPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
   const { t, pick } = getDictionary(lang);
 
   return (

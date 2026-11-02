@@ -33,13 +33,13 @@ export function AqarProductPreview() {
             <span className="h-3 w-3 rounded-full bg-amber-400/80" aria-hidden="true" />
             <span className="h-3 w-3 rounded-full bg-emerald-400/80" aria-hidden="true" />
             <span className="ms-2 text-xs font-bold text-slate-700">
-              {t('معاينة حية لنظام نوفكسا عقار', 'Novixa Aqar Live System Preview')}
+              {t('معاينة حية لنظام نوڤيكسا عقار', 'Novixa Aqar Live System Preview')}
             </span>
           </div>
 
           <div className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-1 text-xs text-slate-700 font-latin" dir="ltr">
             <span className="h-2 w-2 rounded-full bg-[#00b399]" aria-hidden="true" />
-            <span>aqar-demo2.novixa.dev</span>
+            <span>aqar-demo.novixa.dev</span>
           </div>
 
           <a
@@ -66,7 +66,7 @@ export function AqarProductPreview() {
               <Image
                 src="/images/aqar-portal-screenshot.png"
                 alt={t(
-                  'لقطة شاشة حقيقية لبوابة نوفكسا عقار تعرض الواجهة العقارية والبحث والعروض',
+                  'لقطة شاشة حقيقية لبوابة نوڤيكسا عقار تعرض الواجهة العقارية والبحث والعروض',
                   'Authentic screenshot of the Novixa Aqar property portal interface showing search and property listings'
                 )}
                 width={1280}

@@ -14,12 +14,12 @@ import {
 import { EXTERNAL_ROUTES } from '@/lib/site';
 
 export const BRAND_NAME: LocalizedText = {
-  ar: 'نوفكسا عقار',
+  ar: 'نوڤيكسا عقار',
   en: 'Novixa Aqar',
 };
 
 export const PARENT_BRAND: LocalizedText = {
-  ar: 'من تطوير نوفكسا (Novixa)',
+  ar: 'من تطوير نوڤيكسا (Novixa)',
   en: 'Engineered by Novixa',
 };
 
@@ -688,7 +688,7 @@ export const DEMO_OPTIONS: DemoOption[] = [
   {
     id: 'primary_generic',
     title: {
-      ar: 'النسخة المرجعية الكاملة — نوفكسا عقار',
+      ar: 'النسخة المرجعية الكاملة — نوڤيكسا عقار',
       en: 'Primary Reference Demo — Novixa Aqar',
     },
     subtitle: {
@@ -738,34 +738,6 @@ export const DEMO_OPTIONS: DemoOption[] = [
       en: [
         'Customized color palette, typography, and hero messaging',
         'Powered by the same core engine with a distinct brand identity',
-      ],
-    },
-  },
-  {
-    id: 'branded_dexal',
-    title: {
-      ar: 'مثال تخصيص هوية (2) — نطاق وعرض بديل',
-      en: 'Brand Customization Showcase (2) — Alternative Domain & Preset',
-    },
-    subtitle: {
-      ar: 'نموذج إضافي يستعرض تشغيل النظام على نطاق مستقل مع تهيئة مختلفة للواجهة.',
-      en: 'Additional live instance demonstrating deployment on an independent domain with an alternative preset.',
-    },
-    badge: { ar: 'مثال نطاق مستقل', en: 'Independent Domain Example' },
-    url: EXTERNAL_ROUTES.brandedDemoDexal,
-    isPrimary: false,
-    disclaimer: {
-      ar: 'تنبيه: البيانات والهوية في هذا الرابط تجريبية لأغراض العرض فقط وليست إحصائيات عميل فعلي.',
-      en: 'Note: Identity and figures in this link are illustrative demo presets, not production client metrics.',
-    },
-    highlights: {
-      ar: [
-        'توضيح إمكانية النشر على نطاق خاص بشركتك (Custom Domain)',
-        'مرونة تكييف الواجهة مع السوق المحلي المستهدف',
-      ],
-      en: [
-        'Demonstrates deployment on a dedicated custom domain',
-        'Flexible front-end adaptation for local market positioning',
       ],
     },
   },
@@ -935,11 +907,11 @@ export const FAQ_ITEMS: FaqItem[] = [
     id: 'what_is_aqar',
     category: 'product',
     question: {
-      ar: 'هل نوفكسا عقار موقع إعلانات عقارية مفتوح للجمهور أم نظام خاص بشركتي',
+      ar: 'هل نوڤيكسا عقار موقع إعلانات عقارية مفتوح للجمهور أم نظام خاص بشركتي',
       en: 'Is Novixa Aqar a public classifieds marketplace or a dedicated system for my company',
     },
     answer: {
-      ar: 'نوفكسا عقار هو نظام برمجي متكامل (B2B) يُجهّز ويُسلّم خصيصاً لشركتك العقارية بهويتك واسمك ونطاقك الخاص. تحصل فيه على بوابة عقارية عامة لعملائك، بالإضافة إلى لوحات تشغيل داخلية لإدارة فريقك وعقاراتك وعقودك.',
+      ar: 'نوڤيكسا عقار هو نظام برمجي متكامل (B2B) يُجهّز ويُسلّم خصيصاً لشركتك العقارية بهويتك واسمك ونطاقك الخاص. تحصل فيه على بوابة عقارية عامة لعملائك، بالإضافة إلى لوحات تشغيل داخلية لإدارة فريقك وعقاراتك وعقودك.',
       en: 'Novixa Aqar is a dedicated B2B software platform configured and deployed for your company under your own brand and domain. You get both a public-facing property portal for your clients and private multi-role back-office workspaces for your team.',
     },
   },
@@ -999,8 +971,8 @@ export const FAQ_ITEMS: FaqItem[] = [
       en: 'Are the properties and statistics shown in the live demo links real',
     },
     answer: {
-      ar: 'لا. جميع العقارات والأسماء التجارية والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo2.novixa.dev` والنسخ المستعرضة للهوية) هي بيانات افتراضية لأغراض التجربة وتوضيح قابلية التخصيص فقط.',
-      en: 'No. All listings, company names, and figures inside the live demo environments (`aqar-demo2.novixa.dev` and the branded showcase presets) are illustrative sample data created strictly to demonstrate product workflows and visual customization.',
+      ar: 'لا. جميع العقارات والأسماء التجارية والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo.novixa.dev`, `aqar-demo2.novixa.dev` والنسخ المستعرضة للهوية) هي بيانات افتراضية لأغراض التجربة وتوضيح قابلية التخصيص فقط.',
+      en: 'No. All listings, company names, and figures inside the live demo environments (`aqar-demo.novixa.dev`, `aqar-demo2.novixa.dev` and the branded showcase presets) are illustrative sample data created strictly to demonstrate product workflows and visual customization.',
     },
   },
   {
@@ -1023,11 +995,11 @@ export const FORM_SECTION_CONTENT = {
     en: 'Start Your Real-Estate Platform Setup',
   },
   headline: {
-    ar: 'اطلب عرضاً مخصصاً وتحديد نطاق لنسختك من نوفكسا عقار',
+    ar: 'اطلب عرضاً مخصصاً وتحديد نطاق لنسختك من نوڤيكسا عقار',
     en: 'Request a Tailored Demo & Scope Proposal for Your Company',
   },
   subheadline: {
-    ar: 'شاركنا نبذة عن نشاطك العقاري، وسيتواصل معك فريق نوفكسا لاستعراض النظام وتحديد التجهيز الأنسب لشركتك وميزانيتك.',
+    ar: 'شاركنا نبذة عن نشاطك العقاري، وسيتواصل معك فريق نوڤيكسا لاستعراض النظام وتحديد التجهيز الأنسب لشركتك وميزانيتك.',
     en: 'Tell us briefly about your real-estate business. Our team will walk you through the platform and outline the exact setup and pricing for your workflow.',
   },
   directChannelsTitle: {

@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
     searchParams.get('title') ||
       searchParams.get('t') ||
       (isAr
-        ? 'نوفكسا عقار — نظام عقاري متكامل يشكل على مقاس شركتك'
+        ? 'نوڤيكسا عقار — نظام عقاري متكامل يشكل على مقاس شركتك'
         : 'Novixa Aqar — Configurable Real-Estate Platform for Your Business'),
     110
   );
@@ -64,15 +64,15 @@ export async function GET(request: NextRequest) {
     searchParams.get('subtitle') ||
       searchParams.get('d') ||
       (isAr
-        ? 'بوابة عقارية عامة + 8 لوحات تشغيل متعددة الأدوار للمبيعات والتأجير وإدارة الأملاك والمزادات — يبدأ من 500$.'
-        : 'Public property portal + 8 role-based workspaces for sales, leasing, property management & auctions — starting at $500.'),
+        ? 'بوابة عقارية عامة + 8 لوحات تشغيل متعددة الأدوار للمبيعات والتأجير وإدارة الأملاك — يبدأ من 500$.'
+        : 'Public property portal + 8 role-based workspaces for sales, leasing, & property management — starting at $500.'),
     170
   );
 
   const eyebrow = clamp(
     searchParams.get('tag') ||
       searchParams.get('k') ||
-      (isAr ? 'نوفكسا عقار | يبدأ من 500$' : 'NOVIXA AQAR | STARTS AT $500'),
+      (isAr ? 'نوڤيكسا عقار | يبدأ من 500$' : 'NOVIXA AQAR | STARTS AT $500'),
     44
   );
 

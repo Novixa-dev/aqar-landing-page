@@ -30,11 +30,11 @@ describe('Novixa Aqar Content & Verified Claims Integrity', () => {
     ]);
   });
 
-  it('configures the 3 live demo options with primary generic demo and explicit disclaimers', () => {
-    expect(DEMO_OPTIONS).toHaveLength(3);
+  it('configures the 2 live demo options with primary generic demo and explicit disclaimers', () => {
+    expect(DEMO_OPTIONS).toHaveLength(2);
     const primary = DEMO_OPTIONS.find((d) => d.isPrimary);
     expect(primary).toBeDefined();
-    expect(primary?.url).toBe('https://aqar-demo2.novixa.dev/');
+    expect(primary?.url).toBe('https://aqar-demo.novixa.dev/');
 
     for (const demo of DEMO_OPTIONS) {
       expect(demo.disclaimer.ar.length).toBeGreaterThan(20);

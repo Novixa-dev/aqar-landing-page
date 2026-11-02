@@ -78,7 +78,7 @@ export function PricingScopeSection({ lang = 'ar' }: { lang?: Language }) {
                     source: 'pricing_card',
                     target: 'demo_form',
                   }}
-                  className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-full btn-menassat-teal px-8 py-3.5 text-sm sm:text-base font-bold text-white shadow-lg shadow-[#00b399]/25 transition-transform"
+                  className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2 rounded-full btn-brand-teal px-8 py-3.5 text-sm sm:text-base font-bold text-white shadow-lg shadow-[#00b399]/25 transition-transform"
                 >
                   <span>
                     {t(

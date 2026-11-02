@@ -26,7 +26,7 @@ export function FaqSection({ lang = 'ar' }: { lang?: Language }) {
             className="font-display text-2xl sm:text-4xl lg:text-4xl font-black text-slate-900 leading-tight"
           >
             {t(
-              'الأسئلة الشائعة حول نوفكسا',
+              'الأسئلة الشائعة حول نوڤيكسا',
               'Frequently Asked Questions About Novixa'
             )}
           </h2>

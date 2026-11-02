@@ -4,7 +4,7 @@ import { getDictionary } from '@/lib/i18n';
 import { StatsWhyUsTabs } from './StatsWhyUsTabs';
 import { Language } from '@/types';
 
-export function MenassatStatsWhyUs({ lang = 'ar' }: { lang?: Language }) {
+export function AqarStatsWhyUs({ lang = 'ar' }: { lang?: Language }) {
   const { t, pick } = getDictionary(lang);
 
   const whyContent = (

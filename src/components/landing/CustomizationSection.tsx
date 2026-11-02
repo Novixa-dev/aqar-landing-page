@@ -34,7 +34,7 @@ export function CustomizationSection({ lang = 'ar' }: { lang?: Language }) {
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
             {t(
-              'صممنا نوفكسا عقار ليكون قابلاً للتشكيل بسرعة حسب هوية مكتبك وطريقة عملك، دون أن تدفع تكلفة بناء نظام من الصفر.',
+              'صممنا نوڤيكسا عقار ليكون قابلاً للتشكيل بسرعة حسب هوية مكتبك وطريقة عملك، دون أن تدفع تكلفة بناء نظام من الصفر.',
               'Novixa Aqar is engineered to be rapidly branded and configured around your agency’s identity and market rules without custom-from-scratch delays.'
             )}
           </p>
@@ -162,7 +162,7 @@ export function CustomizationSection({ lang = 'ar' }: { lang?: Language }) {
                       }}
                       className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-bold transition-all ${
                         demo.isPrimary
-                          ? 'btn-menassat-teal text-white shadow-lg shadow-[#00b399]/20'
+                          ? 'btn-brand-teal text-white shadow-lg shadow-[#00b399]/20'
                           : 'border border-slate-300 bg-white text-slate-800 hover:border-[#00b399] hover:text-[#008f7a]'
                       }`}
                     >

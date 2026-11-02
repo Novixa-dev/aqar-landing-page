@@ -20,7 +20,7 @@ import {
 import { useLanguage } from '@/context/LanguageContext';
 import { EXTERNAL_ROUTES } from '@/lib/site';
 
-export function MenassatCorporateConcierge() {
+export function AqarCorporateConcierge() {
   const { lang, t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [showHint, setShowHint] = useState(false);
@@ -121,7 +121,7 @@ export function MenassatCorporateConcierge() {
               </div>
               <div>
                 <div className="text-xs font-bold text-slate-900">
-                  {t('فريق نوفكسا للحلول العقارية', 'Novixa PropTech Team')}
+                  {t('فريق نوڤيكسا للحلول العقارية', 'Novixa PropTech Team')}
                 </div>
                 <div className="text-[11px] text-slate-500 flex items-center gap-1.5 mt-0.5">
                   <ShieldCheck className="h-3.5 w-3.5 text-[#00b399]" />
@@ -155,7 +155,7 @@ export function MenassatCorporateConcierge() {
                     {t('محادثة واتساب مباشرة', 'Direct WhatsApp')}
                   </div>
                   <div className="text-[11px] text-emerald-700">
-                  {t('تواصل مع فريق نوفكسا', 'Talk to the Novixa team')}
+                  {t('تواصل مع فريق نوڤيكسا', 'Talk to the Novixa team')}
                 </div>
                 </div>
               </div>

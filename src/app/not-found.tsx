@@ -15,7 +15,7 @@ export default function NotFound() {
           الصفحة غير موجودة | Page Not Found
         </h1>
         <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
-          الرابط الذي تبحث عنه غير متوفر. يمكنك العودة إلى الصفحة الرئيسية لنظام نوفكسا عقار.
+          الرابط الذي تبحث عنه غير متوفر. يمكنك العودة إلى الصفحة الرئيسية لنظام نوڤيكسا عقار.
         </p>
         <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link

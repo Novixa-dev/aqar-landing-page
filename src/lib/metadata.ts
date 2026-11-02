@@ -38,8 +38,8 @@ export function constructMetadata({
   noIndex = false,
 }: MetadataProps): Metadata {
   const isAr = lang === 'ar';
-  const siteName = isAr ? 'نوفكسا عقار | Novixa Aqar' : 'Novixa Aqar | نوفكسا عقار';
-  const fullTitle = title.includes('نوفكسا') || title.includes('Novixa') || title.includes('نوفكسا') ? title : `${title} | ${siteName}`;
+  const siteName = isAr ? 'نوڤيكسا عقار | Novixa Aqar' : 'Novixa Aqar | نوڤيكسا عقار';
+  const fullTitle = title.includes('نوڤيكسا') || title.includes('Novixa') || title.includes('نوڤيكسا') ? title : `${title} | ${siteName}`;
   const baseUrl = getSiteUrl();
   const cleanPath = path.startsWith('/') ? path : path ? `/${path}` : '';
   const url = `${baseUrl}/${lang}${cleanPath}`;
@@ -54,12 +54,11 @@ export function constructMetadata({
 
   const keywords = isAr
     ? [
-        'نوفكسا عقار',
+        'نوڤيكسا عقار',
         'منصة عقارية متكاملة',
         'نظام عقاري',
         'برنامج إدارة أملاك',
         'وساطة عقارية',
-        'مزادات عقارية',
         'تسويق عقاري',
         'فلترة وبحث عقاري',
         'نظام وساطة وإيجار',
@@ -71,14 +70,15 @@ export function constructMetadata({
         'Real Estate Platform',
         'PropTech Software',
         'Property Management System',
-        'Real Estate Auctions',
         'Brokerage CRM',
         'Saudi Arabia Real Estate',
         'Rental and Leasing Management',
       ];
 
   return {
-    title: fullTitle,
+    // `absolute` because fullTitle already carries the brand; letting the root
+    // layout template append "| Novixa Aqar" again doubled it in every tab.
+    title: { absolute: fullTitle },
     description,
     keywords,
     metadataBase: new URL(baseUrl),
@@ -109,7 +109,7 @@ export function constructMetadata({
           height: 800,
           type: 'image/png',
           alt: isAr
-            ? 'لقطة شاشة حقيقية لبوابة نوفكسا عقار'
+            ? 'لقطة شاشة حقيقية لبوابة نوڤيكسا عقار'
             : 'Authentic screenshot of Novixa Aqar portal',
         },
       ],
@@ -147,8 +147,8 @@ export function generateOrganizationJsonLd(lang: Language) {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     '@id': `${baseUrl}/#organization`,
-    name: isAr ? 'نوفكسا (Novixa)' : 'Novixa',
-    alternateName: isAr ? 'Novixa' : 'نوفكسا',
+    name: isAr ? 'نوڤيكسا (Novixa)' : 'Novixa',
+    alternateName: isAr ? 'Novixa' : 'نوڤيكسا',
     url: baseUrl,
     logo: {
       '@type': 'ImageObject',
@@ -170,7 +170,7 @@ export function generateWebSiteJsonLd(lang: Language) {
     '@type': 'WebSite',
     '@id': `${baseUrl}/${lang}#website`,
     url: `${baseUrl}/${lang}`,
-    name: isAr ? 'نوفكسا عقار | Novixa Aqar' : 'Novixa Aqar | Configurable Real-Estate Software',
+    name: isAr ? 'نوڤيكسا عقار | Novixa Aqar' : 'Novixa Aqar | Configurable Real-Estate Software',
     inLanguage: isAr ? 'ar' : 'en',
     publisher: {
       '@id': `${baseUrl}/#organization`,
@@ -186,7 +186,7 @@ export function generateAqarSoftwareJsonLd(lang: Language) {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     '@id': `${baseUrl}/${lang}#software`,
-    name: isAr ? 'نوفكسا عقار (Novixa Aqar)' : 'Novixa Aqar',
+    name: isAr ? 'نوڤيكسا عقار (Novixa Aqar)' : 'Novixa Aqar',
     applicationCategory: 'BusinessApplication',
     applicationSubCategory: 'Real Estate Management & Portal Software',
     operatingSystem: 'Web, Cloud, Self-Hosted Linux',

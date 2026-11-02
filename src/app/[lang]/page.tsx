@@ -9,12 +9,11 @@ import {
 } from '@/lib/metadata';
 import { FAQ_ITEMS } from '@/content/aqar-content';
 import { AqarHero } from '@/components/landing/AqarHero';
-import { MenassatServicesGrid } from '@/components/landing/MenassatServicesGrid';
-import { MenassatPropertiesShowcase } from '@/components/landing/MenassatPropertiesShowcase';
-import { MenassatPromoBanner } from '@/components/landing/MenassatPromoBanner';
-import { MenassatDistrictsShowcase } from '@/components/landing/MenassatDistrictsShowcase';
-import { MenassatAuctionsShowcase } from '@/components/landing/MenassatAuctionsShowcase';
-import { MenassatStatsWhyUs } from '@/components/landing/MenassatStatsWhyUs';
+import { AqarServicesGrid } from '@/components/landing/AqarServicesGrid';
+import { AqarPropertiesShowcase } from '@/components/landing/AqarPropertiesShowcase';
+import { AqarPromoBanner } from '@/components/landing/AqarPromoBanner';
+import { AqarDistrictsShowcase } from '@/components/landing/AqarDistrictsShowcase';
+import { AqarStatsWhyUs } from '@/components/landing/AqarStatsWhyUs';
 import { BusinessAudienceSection } from '@/components/landing/BusinessAudienceSection';
 import { WorkflowProblemSection } from '@/components/landing/WorkflowProblemSection';
 import { CapabilityGroupsSection } from '@/components/landing/CapabilityGroupsSection';
@@ -25,7 +24,7 @@ import { PricingScopeSection } from '@/components/landing/PricingScopeSection';
 import { DeliveryProcessSection } from '@/components/landing/DeliveryProcessSection';
 import { FaqSection } from '@/components/landing/FaqSection';
 import { DemoRequestForm } from '@/components/landing/DemoRequestForm';
-import { MenassatCorporateConcierge } from '@/components/landing/MenassatCorporateConcierge';
+import { AqarCorporateConcierge } from '@/components/landing/AqarCorporateConcierge';
 import { Language } from '@/types';
 
 export async function generateMetadata({
@@ -39,7 +38,7 @@ export async function generateMetadata({
   if (lang === 'ar') {
     return constructMetadata({
       lang: 'ar',
-      title: 'نوفكسا عقار | منصة عقارية متكاملة بهوية شركتك تبدأ من 500$',
+      title: 'نوڤيكسا عقار | منصة عقارية متكاملة بهوية شركتك تبدأ من 500$',
       description:
         'منصة عقارية متكاملة للمكاتب والشركات العقارية وشركات إدارة الأملاك: بوابة عامة + بحث وفلترة + 8 لوحات تشغيل حسب الدور + مسارات الاستقبال والموافقات — يبدأ تجهيزها من 500$.',
       path: '',
@@ -95,39 +94,34 @@ export default async function LocalizedLandingPage({
       {/* Hero Section with Server-rendered H1 & Background Slider */}
       <AqarHero lang={lang} />
 
-      {/* Menassat Feature Boxes: ماذا تجد في منصات العقارية */}
+      {/* Feature Boxes: ماذا تجد في منصة عقار */}
       <div className="defer-offscreen">
-        <MenassatServicesGrid lang={lang} />
+        <AqarServicesGrid lang={lang} />
       </div>
 
-      {/* Menassat Latest Properties Showcase with Riyal Currency */}
+      {/* Latest Properties Showcase with Riyal Currency */}
       <div className="defer-offscreen">
-        <MenassatPropertiesShowcase lang={lang} />
+        <AqarPropertiesShowcase lang={lang} />
       </div>
 
-      {/* Menassat Dark Teal Promo Banner */}
+      {/* Dark Teal Promo Banner */}
       <div className="defer-offscreen">
-        <MenassatPromoBanner lang={lang} />
+        <AqarPromoBanner lang={lang} />
       </div>
 
-      {/* Menassat Kingdom Regions Showcase */}
+      {/* Kingdom Regions Showcase */}
       <div className="defer-offscreen">
-        <MenassatDistrictsShowcase lang={lang} />
+        <AqarDistrictsShowcase lang={lang} />
       </div>
 
-      {/* Menassat Stats & Why Us / About Us Tabs */}
+      {/* Stats & Why Us / About Us Tabs */}
       <div className="defer-offscreen">
-        <MenassatStatsWhyUs lang={lang} />
+        <AqarStatsWhyUs lang={lang} />
       </div>
 
       {/* Core Business Audiences Section */}
       <div className="defer-offscreen">
         <BusinessAudienceSection lang={lang} />
-      </div>
-
-      {/* Menassat Real Estate Auctions Showcase with Live Countdown */}
-      <div className="defer-offscreen">
-        <MenassatAuctionsShowcase lang={lang} />
       </div>
 
       {/* Core Workflow & Problem Outcomes */}
@@ -176,7 +170,7 @@ export default async function LocalizedLandingPage({
       </div>
 
       {/* Floating Corporate Consultation & Back To Top Desk */}
-      <MenassatCorporateConcierge />
+      <AqarCorporateConcierge />
     </>
   );
 }

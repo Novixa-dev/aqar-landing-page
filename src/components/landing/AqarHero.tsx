@@ -39,7 +39,7 @@ const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
     id: 'narjis-compound',
     name: { ar: 'مجمعات النرجس والسليمانية السكنية', en: 'Al-Narjis & Sulaymaniyah Communities' },
     location: { ar: 'شمال الرياض • حي النرجس', en: 'North Riyadh • Al-Narjis' },
-    badge: { ar: 'كمباوند مغلق • كود البناء السعودي', en: 'Gated Compound • SBC Standard' },
+    badge: { ar: 'كمباوند مغلق • بيانات تجريبية', en: 'Gated Compound • Demo data' },
     scopeTag: { ar: 'حوكمة مجتمعات سكنية متكاملة', en: 'Gated Community Governance' },
     imageUrl: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=90',
   },
@@ -47,7 +47,7 @@ const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
     id: 'malqa-penthouse',
     name: { ar: 'بنتهاوس وشقق الملقا ديلوكس', en: 'Al-Malqa Deluxe Penthouse & Suites' },
     location: { ar: 'شمال الرياض • حي الملقا', en: 'North Riyadh • Al-Malqa' },
-    badge: { ar: 'عقود موحدة • إفراغ فوري معتمد', en: 'Standard Leases • Immediate Deed' },
+    badge: { ar: 'عقود إيجار موحدة • بيانات تجريبية', en: 'Standard Leases • Demo data' },
     scopeTag: { ar: 'وساطة وتسويق حصري', en: 'Exclusive Marketing Mandate' },
     imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=90',
   },
@@ -55,8 +55,8 @@ const HERO_BACKGROUND_SLIDES: HeroBackgroundSlide[] = [
     id: 'east-durra',
     name: { ar: 'قصور ومخططات درة الشرقية وسرايا القصيم', en: 'Eastern Durra & Qassim Palaces & Land' },
     location: { ar: 'المنطقة الشرقية • الخبر والقصيم', en: 'Eastern Province & Qassim' },
-    badge: { ar: 'مزادات علنية وتطوير عمراني', en: 'Regulated Auctions & Masterplans' },
-    scopeTag: { ar: 'تنظيم مزادات عقارية كبرى', en: 'Major Real Estate Auctions' },
+    badge: { ar: 'مخططات أراضٍ وتطوير عمراني', en: 'Land Plots & Masterplans' },
+    scopeTag: { ar: 'حصر مخططات وقطع أراضٍ', en: 'Land Plot Inventory' },
     imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2400&q=90',
   },
 ];
@@ -122,7 +122,7 @@ export function AqarHero({ lang = 'ar' }: { lang?: Language }) {
                   source: 'hero_primary',
                   target: 'demo_form',
                 }}
-                className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full btn-menassat-teal px-8 py-3.5 text-base font-bold text-white shadow-2xl shadow-[#00b399]/50 hover:scale-105 transition-all"
+                className="inline-flex min-h-12 w-full sm:w-auto items-center justify-center gap-2.5 rounded-full btn-brand-teal px-8 py-3.5 text-base font-bold text-white shadow-2xl shadow-[#00b399]/50 hover:scale-105 transition-all"
               >
                 <span>{pick(HERO_CONTENT.primaryCta)}</span>
                 <ArrowIcon className="h-5 w-5" aria-hidden="true" />

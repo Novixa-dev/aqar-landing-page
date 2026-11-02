@@ -18,11 +18,11 @@ export const LEGAL_PAGES: Record<'privacy' | 'terms', LegalPageContent> = {
   privacy: {
     slug: 'privacy',
     title: {
-      ar: 'سياسة الخصوصية وحماية البيانات — نوفكسا عقار',
+      ar: 'سياسة الخصوصية وحماية البيانات — نوڤيكسا عقار',
       en: 'Privacy Policy & Data Protection — Novixa Aqar',
     },
     subtitle: {
-      ar: 'كيف نتعامل مع البيانات التي تشاركها معنا عند طلب عرض تجريبي أو عرض سعر لنظام نوفكسا عقار.',
+      ar: 'كيف نتعامل مع البيانات التي تشاركها معنا عند طلب عرض تجريبي أو عرض سعر لنظام نوڤيكسا عقار.',
       en: 'How we handle information submitted when requesting a demo or scope proposal for Novixa Aqar.',
     },
     lastUpdated: '2026-04-01',
@@ -34,7 +34,7 @@ export const LEGAL_PAGES: Record<'privacy' | 'terms', LegalPageContent> = {
         },
         paragraphs: {
           ar: [
-            'عند تعبئة نموذج طلب العرض التوضيحي أو تحديد النطاق في صفحة نوفكسا عقار، نجمع البيانات التجارية الأساسية التي تزودنا بها طوعاً: الاسم، اسم المكتب أو الشركة العقارية، نوع النشاط، وسيلة التواصل المفضلة (البريد الإلكتروني أو الهاتف/واتساب)، المدينة/الدولة، والملاحظات المتعلقة بنطاق مشروعك.',
+            'عند تعبئة نموذج طلب العرض التوضيحي أو تحديد النطاق في صفحة نوڤيكسا عقار، نجمع البيانات التجارية الأساسية التي تزودنا بها طوعاً: الاسم، اسم المكتب أو الشركة العقارية، نوع النشاط، وسيلة التواصل المفضلة (البريد الإلكتروني أو الهاتف/واتساب)، المدينة/الدولة، والملاحظات المتعلقة بنطاق مشروعك.',
             'نجمع أيضاً بيانات تقنية غير شخصية لأغراض الأمان ومنع الرسائل المزعجة (مثل حماية معدل الإرسال Rate Limiting) دون بيع أو مشاركة بياناتك الشخصية مع أي أطراف إعلانية.',
           ],
           en: [
@@ -50,7 +50,7 @@ export const LEGAL_PAGES: Record<'privacy' | 'terms', LegalPageContent> = {
         },
         paragraphs: {
           ar: [
-            'تُستخدم بيانات طلبك حصرياً للتواصل معك بشأن نظام نوفكسا عقار، ترتيب جولة تعريفية على النسخة التجريبية، وإعداد عرض فني ومالي يناسب احتياجات شركتك العقارية.',
+            'تُستخدم بيانات طلبك حصرياً للتواصل معك بشأن نظام نوڤيكسا عقار، ترتيب جولة تعريفية على النسخة التجريبية، وإعداد عرض فني ومالي يناسب احتياجات شركتك العقارية.',
             'لا نرسل رسائل تسويقية عشوائية، ويمكنك في أي وقت طلب حذف بيانات التواصل الخاصة بك عبر مراسلتنا على البريد الرسمي.',
           ],
           en: [
@@ -80,11 +80,11 @@ export const LEGAL_PAGES: Record<'privacy' | 'terms', LegalPageContent> = {
   terms: {
     slug: 'terms',
     title: {
-      ar: 'شروط الاستخدام وتوضيح النطاق التجاري — نوفكسا عقار',
+      ar: 'شروط الاستخدام وتوضيح النطاق التجاري — نوڤيكسا عقار',
       en: 'Terms of Use & Commercial Scope Disclosure — Novixa Aqar',
     },
     subtitle: {
-      ar: 'الأحكام المنظمة لاستخدام هذه الصفحة والنسخ التجريبية وحدود التسعير الأساسي لنظام نوفكسا عقار.',
+      ar: 'الأحكام المنظمة لاستخدام هذه الصفحة والنسخ التجريبية وحدود التسعير الأساسي لنظام نوڤيكسا عقار.',
       en: 'Terms governing the use of this marketing site, live demo environments, and baseline software scope.',
     },
     lastUpdated: '2026-04-01',
@@ -96,7 +96,7 @@ export const LEGAL_PAGES: Record<'privacy' | 'terms', LegalPageContent> = {
         },
         paragraphs: {
           ar: [
-            'نوفكسا عقار (Novixa Aqar) هو نظام برمجي لإدارة وتسويق العقارات موجه للشركات والمكاتب العقارية (B2B)، من تطوير فريق نوفكسا (Novixa).',
+            'نوڤيكسا عقار (Novixa Aqar) هو نظام برمجي لإدارة وتسويق العقارات موجه للشركات والمكاتب العقارية (B2B)، من تطوير فريق نوڤيكسا (Novixa).',
             'تهدف هذه الصفحة إلى التعريف بقدرات النظام الأساسية وإتاحة طلب نسخة مخصصة للشركات، ولا تُعد هذه الصفحة بوابة وساطة عقارية مباشرة لبيع أو تأجير عقارات فعلية.',
           ],
           en: [
@@ -128,10 +128,10 @@ export const LEGAL_PAGES: Record<'privacy' | 'terms', LegalPageContent> = {
         },
         paragraphs: {
           ar: [
-            'جميع الأسماء التجارية، الشعارات، العقارات، الأسعار، والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo2.novixa.dev` و`aqar-demo.dexal.net`) هي بيانات تجريبية افتراضية لأغراض العرض التوضيحي واستعراض قابلية التخصيص فقط.',
+            'جميع الأسماء التجارية، الشعارات، العقارات، الأسعار، والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo.novixa.dev` و`aqar-demo2.novixa.dev`) هي بيانات تجريبية افتراضية لأغراض العرض التوضيحي واستعراض قابلية التخصيص فقط.',
           ],
           en: [
-            'All brand names, logos, property listings, prices, and statistics displayed inside the live demo environments (`aqar-demo2.novixa.dev` and `aqar-demo.dexal.net`) are illustrative sample presets created strictly to demonstrate software capabilities and theme customization.',
+            'All brand names, logos, property listings, prices, and statistics displayed inside the live demo environments (`aqar-demo.novixa.dev` and `aqar-demo2.novixa.dev`) are illustrative sample presets created strictly to demonstrate software capabilities and theme customization.',
           ],
         },
       },
