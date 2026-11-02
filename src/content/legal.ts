@@ -128,10 +128,10 @@ export const LEGAL_PAGES: Record<'privacy' | 'terms', LegalPageContent> = {
         },
         paragraphs: {
           ar: [
-            'جميع الأسماء التجارية، الشعارات، العقارات، الأسعار، والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo.novixa.dev`, `aqar-demo2.novixa.dev` و`aqar-demo.dexal.net`) هي بيانات تجريبية افتراضية لأغراض العرض التوضيحي واستعراض قابلية التخصيص فقط.',
+            'جميع الأسماء التجارية، الشعارات، العقارات، الأسعار، والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo.novixa.dev` و`aqar-demo2.novixa.dev`) هي بيانات تجريبية افتراضية لأغراض العرض التوضيحي واستعراض قابلية التخصيص فقط.',
           ],
           en: [
-            'All brand names, logos, property listings, prices, and statistics displayed inside the live demo environments (`aqar-demo.novixa.dev`, `aqar-demo2.novixa.dev` and `aqar-demo.dexal.net`) are illustrative sample presets created strictly to demonstrate software capabilities and theme customization.',
+            'All brand names, logos, property listings, prices, and statistics displayed inside the live demo environments (`aqar-demo.novixa.dev` and `aqar-demo2.novixa.dev`) are illustrative sample presets created strictly to demonstrate software capabilities and theme customization.',
           ],
         },
       },
