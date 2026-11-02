@@ -999,8 +999,8 @@ export const FAQ_ITEMS: FaqItem[] = [
       en: 'Are the properties and statistics shown in the live demo links real',
     },
     answer: {
-      ar: 'لا. جميع العقارات والأسماء التجارية والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo2.novixa.dev` والنسخ المستعرضة للهوية) هي بيانات افتراضية لأغراض التجربة وتوضيح قابلية التخصيص فقط.',
-      en: 'No. All listings, company names, and figures inside the live demo environments (`aqar-demo2.novixa.dev` and the branded showcase presets) are illustrative sample data created strictly to demonstrate product workflows and visual customization.',
+      ar: 'لا. جميع العقارات والأسماء التجارية والأرقام المعروضة داخل روابط النسخ التجريبية (`aqar-demo.novixa.dev`, `aqar-demo2.novixa.dev` والنسخ المستعرضة للهوية) هي بيانات افتراضية لأغراض التجربة وتوضيح قابلية التخصيص فقط.',
+      en: 'No. All listings, company names, and figures inside the live demo environments (`aqar-demo.novixa.dev`, `aqar-demo2.novixa.dev` and the branded showcase presets) are illustrative sample data created strictly to demonstrate product workflows and visual customization.',
     },
   },
   {

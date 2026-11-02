@@ -89,14 +89,14 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       ar: 'فلل سرايا الملقا المودرن',
       en: 'Saraya Al-Malqa Modern Estates',
     },
-    category: { ar: 'وساطة وتسويق معتمد', en: 'Certified Brokerage & Marketing' },
+    category: { ar: 'وساطة وتسويق', en: 'Brokerage & Marketing' },
     location: {
       ar: 'شمال الرياض، حي الملقا',
       en: 'North Riyadh, Al-Malqa',
     },
     managementScope: {
-      ar: 'تسويق حصري، فحص الجودة المعمارية، وإفراغ فوري',
-      en: 'Exclusive brokerage, quality audit inspection, & immediate deed handover',
+      ar: 'تسويق حصري، جدولة المعاينات، ومتابعة طلبات المشترين',
+      en: 'Exclusive brokerage, viewing scheduling, and buyer request follow-up',
     },
     metrics: {
       unitsCount: '8 فلل مستقلة',
@@ -131,8 +131,8 @@ const REFERENCE_PROJECTS: ReferenceProject[] = [
       occupancyOrValuation: 'نسبة إشغال 100%',
     },
     operationalHighlights: [
-      { ar: 'مطابقة لمعايير الدفاع المدني', en: 'Civil Defense safety certified' },
-      { ar: 'فوترة إلكترونية ونظام دفعات دوري', en: 'Automated periodic invoicing & zatca' },
+      { ar: 'طلبات صيانة وأوامر عمل للمقاولين', en: 'Maintenance requests and contractor work orders' },
+      { ar: 'تسجيل الفواتير والدفعات الدورية', en: 'Periodic invoice and payment records' },
     ],
     complianceBadge: { ar: 'مثال تجريبي', en: 'Demo example' },
     imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',

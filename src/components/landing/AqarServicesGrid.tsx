@@ -49,10 +49,10 @@ const SERVICES = [
   },
   {
     id: 'evaluation',
-    title: { ar: 'التقييم العقاري المعتمد', en: 'Real-Estate Valuation' },
+    title: { ar: 'تقييم العقارات', en: 'Real-Estate Valuation' },
     desc: {
-      ar: 'نماذج تقييم وحاسبات عقارية متوافقة مع معايير الهيئات المعتمدة والمقاييس.',
-      en: 'Valuation models and financial calculators aligned with real estate standards.',
+      ar: 'سجلات تقييم وحاسبات عقارية تساعد فريقك على تقدير قيمة العقار ومتابعتها.',
+      en: 'Valuation records and property calculators that help your team estimate and track value.',
     },
     icon: Calculator,
     badge: { ar: 'تقييم وحسابات', en: 'Valuation' },
