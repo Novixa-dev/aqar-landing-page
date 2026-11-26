@@ -29,7 +29,7 @@ export function StatsWhyUsTabs({
           onClick={() => setActiveTab('why')}
           className={`pb-4 px-6 text-base sm:text-lg font-bold border-b-2 transition-all ${
             activeTab === 'why'
-              ? 'border-[#00b399] text-[#008f7a]'
+              ? 'border-[#00b399] text-[#00715f]'
               : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
@@ -43,7 +43,7 @@ export function StatsWhyUsTabs({
           onClick={() => setActiveTab('about')}
           className={`pb-4 px-6 text-base sm:text-lg font-bold border-b-2 transition-all ${
             activeTab === 'about'
-              ? 'border-[#00b399] text-[#008f7a]'
+              ? 'border-[#00b399] text-[#00715f]'
               : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >

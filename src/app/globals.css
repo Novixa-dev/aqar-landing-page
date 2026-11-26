@@ -4,7 +4,7 @@
   --brand-primary: #2C3E50;
   --brand-primary-rgb: 44, 62, 80;
   --brand-teal: #00b399;
-  --brand-teal-hover: #008f7a;
+  --brand-teal-hover: #00715f;
   --brand-teal-light: #e6f8f5;
   --brand-teal-glow: rgba(0, 179, 153, 0.25);
   --brand-bg: #f8fafc;
@@ -165,7 +165,7 @@
 
 /* 3D Rounded Buttons */
 .btn-brand-teal {
-  background: linear-gradient(135deg, #00b399 0%, #008f7a 100%);
+  background: linear-gradient(135deg, #00846f 0%, #00715f 100%);
   color: #ffffff;
   border-radius: 9999px;
   font-weight: 700;
@@ -174,7 +174,7 @@
 }
 
 .btn-brand-teal:hover {
-  background: linear-gradient(135deg, #00cbb0 0%, #009983 100%);
+  background: linear-gradient(135deg, #007f6b 0%, #006b5b 100%);
   box-shadow: 0 6px 20px rgba(0, 179, 153, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
   transform: translateY(-1px);
 }
@@ -190,7 +190,7 @@
 .btn-brand-outline:hover {
   border-color: #00b399;
   background-color: #e6f8f5;
-  color: #008f7a;
+  color: #00715f;
 }
 
 /* Feature Box / Light Style */

@@ -53,18 +53,18 @@ export function PricingScopeSection({ lang = 'ar' }: { lang?: Language }) {
         <div className="mt-10 rounded-3xl border-2 border-[#00b399] bg-white p-6 sm:p-10 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 flex flex-col items-start">
-              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#008f7a]">
+              <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#00715f]">
                 {pick(PRICING_SCOPE_CONTENT.startingPriceCard.priceLabel)}
               </span>
               <div className="mt-2 flex items-baseline gap-3">
                 <span className="font-display font-latin text-5xl sm:text-6xl font-black text-slate-900">
                   {PRICING_SCOPE_CONTENT.startingPriceCard.priceValue}
                 </span>
-                <span className="font-latin text-lg font-bold text-[#008f7a]">
+                <span className="font-latin text-lg font-bold text-[#00715f]">
                   {PRICING_SCOPE_CONTENT.startingPriceCard.priceCurrency}
                 </span>
               </div>
-              <p className="mt-2 text-sm sm:text-base font-bold text-[#008f7a]">
+              <p className="mt-2 text-sm sm:text-base font-bold text-[#00715f]">
                 {pick(PRICING_SCOPE_CONTENT.startingPriceCard.priceSuffix)}
               </p>
               <p className="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -118,7 +118,7 @@ export function PricingScopeSection({ lang = 'ar' }: { lang?: Language }) {
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Scoped Add-ons */}
           <div className="rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8 shadow-sm">
-            <div className="inline-flex items-center gap-2 rounded-lg bg-[#00b399]/15 border border-[#00b399]/30 px-3 py-1 text-xs font-bold text-[#008f7a] mb-4">
+            <div className="inline-flex items-center gap-2 rounded-lg bg-[#00b399]/15 border border-[#00b399]/30 px-3 py-1 text-xs font-bold text-[#00715f] mb-4">
               <SlidersHorizontal className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
               <span>{t('إضافات وتخصيصات حسب الطلب', 'Optional Scoped Add-Ons')}</span>
             </div>

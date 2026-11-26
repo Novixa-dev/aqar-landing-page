@@ -57,7 +57,7 @@ export function ProductWalkthroughSection({ lang = 'ar' }: { lang?: Language }) 
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent" />
                     
                     <div className="absolute top-3 start-3 flex items-center gap-2">
-                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399] to-[#008f7a] font-latin text-sm font-black text-white shadow-md shadow-[#00b399]/40">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399] to-[#00715f] font-latin text-sm font-black text-white shadow-md shadow-[#00b399]/40">
                         {step.stepNumber}
                       </span>
                       <span className="rounded-full border border-white/20 bg-slate-900/80 backdrop-blur-md px-3 py-1 text-xs font-bold text-teal-300">
@@ -66,7 +66,7 @@ export function ProductWalkthroughSection({ lang = 'ar' }: { lang?: Language }) 
                     </div>
                   </div>
 
-                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors leading-snug">
+                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#00715f] transition-colors leading-snug">
                     {pick(step.title)}
                   </h3>
                   <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">

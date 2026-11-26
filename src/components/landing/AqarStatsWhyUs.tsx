@@ -19,7 +19,7 @@ export function AqarStatsWhyUs({ lang = 'ar' }: { lang?: Language }) {
       {/* 4 Large Stats Counters */}
       <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
-          <span className="font-display text-3xl sm:text-4xl font-black text-[#008f7a] font-latin">
+          <span className="font-display text-3xl sm:text-4xl font-black text-[#00715f] font-latin">
             8
           </span>
           <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">
@@ -37,7 +37,7 @@ export function AqarStatsWhyUs({ lang = 'ar' }: { lang?: Language }) {
         </div>
 
         <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-2xs">
-          <span className="font-display text-3xl sm:text-4xl font-black text-[#008f7a] font-latin">
+          <span className="font-display text-3xl sm:text-4xl font-black text-[#00715f] font-latin">
             3–5
           </span>
           <h4 className="mt-2 text-sm sm:text-base font-bold text-slate-900">

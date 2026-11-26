@@ -48,7 +48,7 @@ export function WorkflowProblemSection({ lang = 'ar' }: { lang?: Language }) {
 
               {/* After: Outcome */}
               <div className="p-6 sm:p-7 bg-teal-50/30 flex-1">
-                <div className="inline-flex items-center gap-2 rounded-lg bg-[#00b399]/15 border border-[#00b399]/40 px-3 py-1 text-xs font-bold text-[#008f7a] mb-3">
+                <div className="inline-flex items-center gap-2 rounded-lg bg-[#00b399]/15 border border-[#00b399]/40 px-3 py-1 text-xs font-bold text-[#00715f] mb-3">
                   <CheckCircle2 className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                   <span>{t('مع منظومة عقار المتكاملة', 'With Our Real-Estate Platform')}</span>
                 </div>

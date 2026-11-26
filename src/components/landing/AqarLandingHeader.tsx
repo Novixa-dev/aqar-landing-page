@@ -18,7 +18,7 @@ export function AqarLandingHeader({ lang = 'ar' }: { lang?: Language }) {
       <header className="w-full bg-white/95 backdrop-blur-md border-b border-slate-200">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-[60] focus:px-4 focus:py-2.5 focus:rounded-full focus:bg-[#00b399] focus:text-white focus:font-semibold"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:start-3 focus:z-[60] focus:px-4 focus:py-2.5 focus:rounded-full focus:bg-[#00715f] focus:text-white focus:font-semibold"
         >
           {t('تخطي إلى المحتوى الرئيسي', 'Skip to main content')}
         </a>
@@ -32,8 +32,8 @@ export function AqarLandingHeader({ lang = 'ar' }: { lang?: Language }) {
                 className="group flex items-center gap-3 rounded-2xl py-1.5 pe-2 focus:outline-none"
                 aria-label={t('نوڤيكسا عقار — الصفحة الرئيسية', 'Novixa Aqar — Home')}
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#00b399]/20 to-[#008f7a]/10 border border-[#00b399]/40 shadow-sm group-hover:border-[#00b399] transition-all">
-                  <Building2 className="h-6 w-6 text-[#008f7a]" aria-hidden="true" />
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#00b399]/20 to-[#00715f]/10 border border-[#00b399]/40 shadow-sm group-hover:border-[#00b399] transition-all">
+                  <Building2 className="h-6 w-6 text-[#00715f]" aria-hidden="true" />
                 </div>
                 <div className="flex flex-col min-w-0">
                   <div className="flex items-center gap-1.5 sm:gap-2">
@@ -57,7 +57,7 @@ export function AqarLandingHeader({ lang = 'ar' }: { lang?: Language }) {
                 <a
                   key={item.href}
                   href={`/${lang}${item.href}`}
-                  className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#008f7a] hover:bg-slate-100 transition-all"
+                  className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#00715f] hover:bg-slate-100 transition-all"
                 >
                   {pick(item.label)}
                 </a>
@@ -70,15 +70,16 @@ export function AqarLandingHeader({ lang = 'ar' }: { lang?: Language }) {
                 href={switchHref}
                 eventName="aqar_language_switch"
                 eventParams={{ to: otherLang }}
-                className="whitespace-nowrap inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-semibold text-slate-700 hover:border-[#00b399] hover:text-[#008f7a] transition-colors"
+                className="whitespace-nowrap inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 text-xs font-semibold text-slate-700 hover:border-[#00b399] hover:text-[#00715f] transition-colors"
+                hrefLang={otherLang}
                 aria-label={
                   lang === 'ar'
-                    ? 'Switch language to English'
-                    : 'تغيير اللغة إلى العربية'
+                    ? 'English — switch language'
+                    : 'العربية — تغيير اللغة'
                 }
               >
                 <Globe className="h-3.5 w-3.5 text-[#00b399] shrink-0" aria-hidden="true" />
-                <span>{lang === 'ar' ? 'English' : 'العربية'}</span>
+                <span lang={otherLang}>{lang === 'ar' ? 'English' : 'العربية'}</span>
               </TrackedLink>
 
               <TrackedLink
