@@ -104,7 +104,7 @@ export function AqarPropertySearch() {
         {/* Top Tab Header */}
         <div className="flex items-center justify-between border-b border-slate-100 bg-slate-50/90 px-6 py-3.5">
           <div className="flex items-center gap-2">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#00b399]/15 text-[#008f7a]">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#00b399]/15 text-[#00715f]">
               <Search className="h-4 w-4" aria-hidden="true" />
             </span>
             <span className="font-display text-sm sm:text-base font-extrabold text-slate-900">
@@ -258,7 +258,7 @@ export function AqarPropertySearch() {
             <div className="md:col-span-4">
               <div className="flex items-center justify-between text-xs font-bold text-slate-700 mb-1.5">
                 <span>{t('السعر حتى:', 'Price up to:')}</span>
-                <span className="font-latin text-[#008f7a] font-extrabold" dir="ltr">
+                <span className="font-latin text-[#00715f] font-extrabold" dir="ltr">
                   {maxPrice.toLocaleString()} {t('ر.س', 'SAR')}
                 </span>
               </div>
@@ -281,7 +281,7 @@ export function AqarPropertySearch() {
             <div className="md:col-span-4">
               <div className="flex items-center justify-between text-xs font-bold text-slate-700 mb-1.5">
                 <span>{t('المساحة حتى:', 'Area up to:')}</span>
-                <span className="font-latin text-[#008f7a] font-extrabold" dir="ltr">
+                <span className="font-latin text-[#00715f] font-extrabold" dir="ltr">
                   {maxArea.toLocaleString()} {t('م²', 'm²')}
                 </span>
               </div>

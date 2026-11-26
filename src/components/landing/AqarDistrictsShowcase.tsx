@@ -60,7 +60,7 @@ export function AqarDistrictsShowcase({ lang = 'ar' }: { lang?: Language }) {
             href={EXTERNAL_ROUTES.primaryDemo}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:border-[#00b399] hover:text-[#008f7a] transition-all self-start sm:self-auto shadow-xs"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:border-[#00b399] hover:text-[#00715f] transition-all self-start sm:self-auto shadow-xs"
           >
             <span>{t('استعراض الخريطة التفاعلية', 'View Interactive Map')}</span>
             <ExternalLink className="h-4 w-4" aria-hidden="true" />

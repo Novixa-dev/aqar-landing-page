@@ -47,7 +47,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
             <div className="space-y-2 pt-2 text-xs text-slate-600">
               <div className="flex items-center gap-2">
                 <Phone className="h-3.5 w-3.5 text-[#00b399] shrink-0" aria-hidden="true" />
-                <a href={`/${lang}#demo-form`} className="font-bold text-slate-900 hover:text-[#008f7a]">
+                <a href={`/${lang}#demo-form`} className="font-bold text-slate-900 hover:text-[#00715f]">
                   {t('تواصل مع فريق نوڤيكسا', 'Contact the Novixa team')}
                 </a>
               </div>
@@ -56,7 +56,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
                 <Mail className="h-3.5 w-3.5 text-[#00b399] shrink-0" aria-hidden="true" />
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="font-latin text-[#008f7a] hover:text-[#00b399] underline underline-offset-4"
+                  className="font-latin text-[#00715f] hover:text-[#00846f] underline underline-offset-4"
                   dir="ltr"
                 >
                   {CONTACT_EMAIL}
@@ -81,7 +81,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
                 <li key={link.href}>
                   <a
                     href={`/${lang}${link.href}`}
-                    className="text-slate-600 hover:text-[#008f7a] transition-colors"
+                    className="text-slate-600 hover:text-[#00715f] transition-colors"
                   >
                     {pick(link.label)}
                   </a>
@@ -103,7 +103,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
                     href={demo.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-slate-600 hover:text-[#008f7a] transition-colors"
+                    className="inline-flex items-center gap-1.5 text-slate-600 hover:text-[#00715f] transition-colors"
                   >
                     <span>{pick(demo.badge)}</span>
                     <ExternalLink className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
@@ -123,7 +123,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
               <li>
                 <Link
                   href={`/${lang}/legal/privacy`}
-                  className="text-slate-600 hover:text-[#008f7a] transition-colors"
+                  className="text-slate-600 hover:text-[#00715f] transition-colors"
                 >
                   {t('سياسة الخصوصية', 'Privacy Policy')}
                 </Link>
@@ -131,7 +131,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
               <li>
                 <Link
                   href={`/${lang}/legal/terms`}
-                  className="text-slate-600 hover:text-[#008f7a] transition-colors"
+                  className="text-slate-600 hover:text-[#00715f] transition-colors"
                 >
                   {t('شروط الاستخدام والنطاق', 'Terms & Scope')}
                 </Link>
@@ -139,7 +139,7 @@ export function AqarLandingFooter({ lang = 'ar' }: { lang?: Language }) {
               <li className="pt-2">
                 <Link
                   href={`/${otherLang}`}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-[#008f7a] hover:border-[#00b399] shadow-xs"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-[#00715f] hover:border-[#00b399] shadow-xs"
                 >
                   <Globe className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>{lang === 'ar' ? 'English Version' : 'النسخة العربية'}</span>

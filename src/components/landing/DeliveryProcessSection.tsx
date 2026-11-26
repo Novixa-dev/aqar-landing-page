@@ -40,14 +40,14 @@ export function DeliveryProcessSection({ lang = 'ar' }: { lang?: Language }) {
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#00b399]/15 border border-[#00b399]/40 font-latin text-base font-black text-[#008f7a]">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#00b399]/15 border border-[#00b399]/40 font-latin text-base font-black text-[#00715f]">
                     {item.step}
                   </span>
                   <span className="rounded-full bg-slate-100 border border-slate-200 px-2.5 py-0.5 text-[10px] font-semibold text-slate-600">
                     {t('مرحلة تنفيذ', 'Delivery Stage')}
                   </span>
                 </div>
-                <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-[#00b399] transition-colors leading-snug">
+                <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-[#00846f] transition-colors leading-snug">
                   {pick(item.title)}
                 </h3>
                 <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">
@@ -55,7 +55,7 @@ export function DeliveryProcessSection({ lang = 'ar' }: { lang?: Language }) {
                 </p>
               </div>
 
-              <div className="mt-5 pt-4 border-t border-slate-200 flex items-start gap-2 text-xs font-semibold text-[#008f7a]">
+              <div className="mt-5 pt-4 border-t border-slate-200 flex items-start gap-2 text-xs font-semibold text-[#00715f]">
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-[#00b399] mt-0.5" aria-hidden="true" />
                 <span>{pick(item.deliverable)}</span>
               </div>

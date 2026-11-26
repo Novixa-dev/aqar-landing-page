@@ -205,7 +205,7 @@ export function DemoRequestForm() {
             <div className="space-y-3.5">
               <div className="group rounded-2xl border border-slate-200/90 bg-white/90 p-4 sm:p-5 shadow-xs hover:border-[#00b399]/40 hover:shadow-md transition-all duration-300">
                 <div className="flex items-start gap-3.5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#008f7a]/10 text-[#008f7a] border border-[#00b399]/20 shadow-2xs">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#00715f]/10 text-[#00715f] border border-[#00b399]/20 shadow-2xs">
                     <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
@@ -227,7 +227,7 @@ export function DemoRequestForm() {
 
               <div className="group rounded-2xl border border-slate-200/90 bg-white/90 p-4 sm:p-5 shadow-xs hover:border-[#00b399]/40 hover:shadow-md transition-all duration-300">
                 <div className="flex items-start gap-3.5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#008f7a]/10 text-[#008f7a] border border-[#00b399]/20 shadow-2xs">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#00715f]/10 text-[#00715f] border border-[#00b399]/20 shadow-2xs">
                     <ShieldCheck className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
@@ -249,7 +249,7 @@ export function DemoRequestForm() {
 
               <div className="group rounded-2xl border border-slate-200/90 bg-white/90 p-4 sm:p-5 shadow-xs hover:border-[#00b399]/40 hover:shadow-md transition-all duration-300">
                 <div className="flex items-start gap-3.5">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#008f7a]/10 text-[#008f7a] border border-[#00b399]/20 shadow-2xs">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#00b399]/15 to-[#00715f]/10 text-[#00715f] border border-[#00b399]/20 shadow-2xs">
                     <Zap className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <div>
@@ -276,7 +276,7 @@ export function DemoRequestForm() {
                 <span className="text-xs font-bold text-slate-800">
                   {pick(FORM_SECTION_CONTENT.directChannelsTitle)}
                 </span>
-                <span className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
+                <span className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   {t('رد سريع', 'Fast Response')}
                 </span>
@@ -294,7 +294,7 @@ export function DemoRequestForm() {
                       demo_id: 'primary_generic',
                     })
                   }
-                  className="group flex min-h-11 items-center justify-between rounded-2xl border border-[#00b399]/40 bg-gradient-to-r from-[#00b399]/10 via-[#00b399]/5 to-transparent px-4 py-2.5 text-xs sm:text-sm font-bold text-[#008f7a] hover:bg-[#00b399] hover:text-white transition-all shadow-2xs"
+                  className="group flex min-h-11 items-center justify-between rounded-2xl border border-[#00b399]/40 bg-gradient-to-r from-[#00b399]/10 via-[#00b399]/5 to-transparent px-4 py-2.5 text-xs sm:text-sm font-bold text-[#00715f] hover:bg-[#00846f] hover:text-white transition-all shadow-2xs"
                 >
                   <span className="flex items-center gap-2">
                     <ExternalLink className="h-4 w-4 shrink-0 transition-transform group-hover:scale-110" aria-hidden="true" />
@@ -326,7 +326,7 @@ export function DemoRequestForm() {
                 {/* Email Direct */}
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="flex min-h-11 items-center justify-between rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#00b399] hover:text-[#008f7a] hover:bg-white transition-colors"
+                  className="flex min-h-11 items-center justify-between rounded-2xl border border-slate-200 bg-slate-50/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-slate-700 hover:border-[#00b399] hover:text-[#00715f] hover:bg-white transition-colors"
                 >
                   <span className="flex items-center gap-2">
                     <Mail className="h-4 w-4 text-[#00b399]" aria-hidden="true" />
@@ -345,7 +345,7 @@ export function DemoRequestForm() {
             <div className="relative rounded-3xl border border-slate-200/90 bg-white p-6 sm:p-9 lg:p-10 shadow-xl shadow-slate-200/70 overflow-hidden">
               {/* Top Accent Gradient Line */}
               <div
-                className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#008f7a] via-[#00b399] to-emerald-400"
+                className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#00715f] via-[#00b399] to-emerald-400"
                 aria-hidden="true"
               />
 
@@ -356,8 +356,8 @@ export function DemoRequestForm() {
                   aria-live="polite"
                   className="py-8 text-center space-y-6"
                 >
-                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-tr from-[#00b399]/20 to-emerald-100 border border-[#00b399]/40 text-[#008f7a] shadow-lg shadow-[#00b399]/20">
-                    <CheckCircle2 className="h-10 w-10 text-[#008f7a]" aria-hidden="true" />
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-tr from-[#00b399]/20 to-emerald-100 border border-[#00b399]/40 text-[#00715f] shadow-lg shadow-[#00b399]/20">
+                    <CheckCircle2 className="h-10 w-10 text-[#00715f]" aria-hidden="true" />
                   </div>
 
                   <div className="space-y-2 max-w-md mx-auto">
@@ -383,7 +383,7 @@ export function DemoRequestForm() {
                       </div>
                       <div
                         dir="ltr"
-                        className="font-latin text-lg sm:text-xl font-extrabold text-[#008f7a] tracking-wider mt-0.5"
+                        className="font-latin text-lg sm:text-xl font-extrabold text-[#00715f] tracking-wider mt-0.5"
                       >
                         {referenceId}
                       </div>
@@ -391,7 +391,7 @@ export function DemoRequestForm() {
                     <button
                       type="button"
                       onClick={handleCopyReference}
-                      className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-800 shadow-2xs hover:border-[#00b399] hover:text-[#008f7a] transition-all"
+                      className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-800 shadow-2xs hover:border-[#00b399] hover:text-[#00715f] transition-all"
                     >
                       {copiedRef ? (
                         <>
@@ -424,7 +424,7 @@ export function DemoRequestForm() {
                   <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
                       href={buildMailtoHref(referenceId)}
-                      className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-[#00b399]/40 bg-[#00b399]/10 px-5 py-2.5 text-xs sm:text-sm font-bold text-[#008f7a] hover:bg-[#00b399] hover:text-white transition-all shadow-xs"
+                      className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-[#00b399]/40 bg-[#00b399]/10 px-5 py-2.5 text-xs sm:text-sm font-bold text-[#00715f] hover:bg-[#00846f] hover:text-white transition-all shadow-xs"
                     >
                       <Mail className="h-4 w-4" aria-hidden="true" />
                       <span>
@@ -456,11 +456,11 @@ export function DemoRequestForm() {
                       <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900">
                         {t('بيانات الطلب وتخصيص المنصة', 'Platform Specification Details')}
                       </h3>
-                      <p className="text-xs text-slate-500 mt-0.5">
+                      <p className="text-xs text-slate-600 mt-0.5">
                         {t('املأ التفاصيل وسيتواصل معك مستشارنا العقاري والتقني.', 'Fill in your details and our specialist will reach out shortly.')}
                       </p>
                     </div>
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full">
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-600 bg-slate-100 px-2.5 py-1 rounded-full">
                       <Clock className="h-3.5 w-3.5 text-[#00b399]" />
                       <span>{t('يستغرق دقيقة واحدة', 'Takes 1 min')}</span>
                     </div>
@@ -847,7 +847,7 @@ export function DemoRequestForm() {
                       <div>
                         <a
                           href={buildMailtoHref()}
-                          className="inline-flex items-center gap-1.5 font-bold text-[#008f7a] underline underline-offset-4 hover:text-[#00b399]"
+                          className="inline-flex items-center gap-1.5 font-bold text-[#00715f] underline underline-offset-4 hover:text-[#00846f]"
                         >
                           <Mail className="h-3.5 w-3.5" aria-hidden="true" />
                           <span>

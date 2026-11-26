@@ -41,11 +41,11 @@ export function BusinessAudienceSection({ lang = 'ar' }: { lang?: Language }) {
                     <span className="inline-flex items-center rounded-lg bg-slate-200/70 px-2.5 py-1 text-xs font-bold text-slate-700">
                       {pick(item.tag)}
                     </span>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00b399]/15 border border-[#00b399]/30 text-[#008f7a] group-hover:scale-105 group-hover:bg-[#00b399] group-hover:text-white transition-all">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#00b399]/15 border border-[#00b399]/30 text-[#00715f] group-hover:scale-105 group-hover:bg-[#00b399] group-hover:text-white transition-all">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </div>
                   </div>
-                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors leading-snug">
+                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#00715f] transition-colors leading-snug">
                     {pick(item.title)}
                   </h3>
                   <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">

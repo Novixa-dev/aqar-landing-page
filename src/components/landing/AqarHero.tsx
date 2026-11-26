@@ -218,7 +218,7 @@ export function AqarHero({ lang = 'ar' }: { lang?: Language }) {
                 >
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-5">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white border border-slate-200 text-[#008f7a] shadow-xs group-hover:border-[#00b399] group-hover:bg-[#00b399]/10 transition-colors">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white border border-slate-200 text-[#00715f] shadow-xs group-hover:border-[#00b399] group-hover:bg-[#00b399]/10 transition-colors">
                         <IconComp className="h-6 w-6" aria-hidden="true" />
                       </div>
                       <span className="rounded-full bg-slate-200/60 px-3 py-1 text-[11px] font-bold text-slate-700">
@@ -226,7 +226,7 @@ export function AqarHero({ lang = 'ar' }: { lang?: Language }) {
                       </span>
                     </div>
 
-                    <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors leading-snug">
+                    <h3 className="font-display text-base font-bold text-slate-900 group-hover:text-[#00715f] transition-colors leading-snug">
                       {pick(title)}
                     </h3>
 
@@ -235,7 +235,7 @@ export function AqarHero({ lang = 'ar' }: { lang?: Language }) {
                     </p>
                   </div>
 
-                  <div className="mt-5 pt-4 border-t border-slate-200/70 flex items-center gap-2 text-xs font-bold text-[#008f7a]">
+                  <div className="mt-5 pt-4 border-t border-slate-200/70 flex items-center gap-2 text-xs font-bold text-[#00715f]">
                     <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                     <span>{t('ضمان معتمد في النسخة', 'Verified Core Guarantee')}</span>
                   </div>
@@ -249,7 +249,11 @@ export function AqarHero({ lang = 'ar' }: { lang?: Language }) {
       {/* ============================================================== */}
       {/* 3. PRODUCT PREVIEW FRAME: ON CLEAN LIGHT BACKGROUND */}
       {/* ============================================================== */}
-      <section className="py-12 sm:py-16 bg-[#f8fafc] border-b border-slate-200">
+      <section
+        id="preview"
+        aria-label={t('معاينة حية للنظام', 'Live system preview')}
+        className="py-12 sm:py-16 bg-[#f8fafc] border-b border-slate-200"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AqarProductPreview />
         </div>

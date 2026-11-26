@@ -3,6 +3,9 @@ name: Deploy
 on:
   push:
     branches: [main]
+  # PRs run the verify job only (image + deploy are skipped below).
+  pull_request:
+    branches: [main]
   workflow_dispatch:
     inputs:
       image_tag:
@@ -29,7 +32,7 @@ jobs:
     name: Lint · Typecheck · Test
     if: github.event.inputs.image_tag == ''
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -43,10 +46,16 @@ jobs:
       - run: npm run typecheck
       - run: npm test
 
+      # Browser suite: RTL/LTR, interactive sections, the lead form against
+      # /api/leads, link/OG audit, overflow at 5 viewports and axe WCAG AA.
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npx playwright test --trace off
+
   image:
     name: Build & publish image
     needs: verify
-    if: github.event.inputs.image_tag == ''
+    if: github.event_name != 'pull_request' && github.event.inputs.image_tag == ''
     runs-on: ubuntu-latest
     timeout-minutes: 30
     outputs:
@@ -90,7 +99,7 @@ jobs:
   deploy:
     name: Deploy to VPS
     needs: [image]
-    if: always() && (needs.image.result == 'success' || github.event.inputs.image_tag != '')
+    if: always() && github.event_name != 'pull_request' && (needs.image.result == 'success' || github.event.inputs.image_tag != '')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:

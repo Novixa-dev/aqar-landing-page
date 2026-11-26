@@ -133,7 +133,7 @@ export async function GET(request: NextRequest) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'linear-gradient(135deg, #00b399 0%, #008f7a 100%)',
+                background: 'linear-gradient(135deg, #00b399 0%, #00715f 100%)',
                 boxShadow: '0 8px 24px rgba(0,179,153,0.3)',
                 border: '1px solid rgba(0,203,176,0.4)',
               }}

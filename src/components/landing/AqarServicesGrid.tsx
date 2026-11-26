@@ -115,7 +115,7 @@ export function AqarServicesGrid({ lang = 'ar' }: { lang?: Language }) {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
                     
-                    <div className="absolute top-3 start-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 text-[#008f7a] group-hover:bg-[#00b399] group-hover:text-white transition-all shadow-md">
+                    <div className="absolute top-3 start-3 flex h-11 w-11 items-center justify-center rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 text-[#00715f] group-hover:bg-[#00b399] group-hover:text-white transition-all shadow-md">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </div>
 
@@ -124,7 +124,7 @@ export function AqarServicesGrid({ lang = 'ar' }: { lang?: Language }) {
                     </span>
                   </div>
 
-                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors">
+                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#00715f] transition-colors">
                     {pick(service.title)}
                   </h3>
                   <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">
@@ -132,7 +132,7 @@ export function AqarServicesGrid({ lang = 'ar' }: { lang?: Language }) {
                   </p>
                 </div>
 
-                <div className="mt-6 flex items-center gap-1.5 text-xs font-bold text-[#008f7a] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform pt-4 border-t border-slate-100">
+                <div className="mt-6 flex items-center gap-1.5 text-xs font-bold text-[#00715f] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform pt-4 border-t border-slate-100">
                   <span>{t('استعرض في النسخة الحية', 'Explore in Live Demo')}</span>
                   <ArrowIcon className="h-4 w-4" aria-hidden="true" />
                 </div>

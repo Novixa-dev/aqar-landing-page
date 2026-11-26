@@ -58,7 +58,7 @@ export function MobileNavDrawer({
             ? (lang === 'ar' ? 'إغلاق القائمة' : 'Close navigation menu')
             : (lang === 'ar' ? 'فتح القائمة' : 'Open navigation menu')
         }
-        className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-slate-700 hover:text-[#008f7a]"
+        className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-100 text-slate-700 hover:text-[#00715f]"
       >
         {mobileMenuOpen ? (
           <X className="h-5 w-5" aria-hidden="true" />
@@ -82,7 +82,7 @@ export function MobileNavDrawer({
                 key={item.href}
                 href={`/${lang}${item.href}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex min-h-11 items-center rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100 hover:text-[#008f7a]"
+                className="flex min-h-11 items-center rounded-xl px-3.5 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-100 hover:text-[#00715f]"
               >
                 {lang === 'ar' ? item.label.ar : item.label.en}
               </a>
@@ -116,7 +116,7 @@ export function MobileNavDrawer({
                   demo_id: 'primary_generic',
                 });
               }}
-              className="flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-[#00b399]/40 bg-[#00b399]/10 px-4 py-3 text-sm font-bold text-[#008f7a]"
+              className="flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-[#00b399]/40 bg-[#00b399]/10 px-4 py-3 text-sm font-bold text-[#00715f]"
             >
               <span>{exploreDemoText}</span>
               <ExternalLink className="h-4 w-4" aria-hidden="true" />

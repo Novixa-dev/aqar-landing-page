@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#008f7a',
+  themeColor: '#00715f',
 };
 
 const SET_LANG_DIR_SCRIPT = `

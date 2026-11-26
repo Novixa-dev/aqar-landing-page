@@ -222,7 +222,7 @@ export function AqarPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
               source: 'reference_portfolio_header',
               demo_id: 'primary_generic',
             }}
-            className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:border-[#00b399] hover:text-[#008f7a] transition-all shrink-0 shadow-xs"
+            className="inline-flex items-center gap-2 rounded-full border border-slate-300 bg-slate-50 px-5 py-2.5 text-xs sm:text-sm font-bold text-slate-800 hover:border-[#00b399] hover:text-[#00715f] transition-all shrink-0 shadow-xs"
           >
             <span>{t('استعراض لوحة التحكم المرجعية الحية', 'Explore Live Reference Workspace')}</span>
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
@@ -273,7 +273,7 @@ export function AqarPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
                   </div>
 
                   {/* Project Title */}
-                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#008f7a] transition-colors leading-snug">
+                  <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-[#00715f] transition-colors leading-snug">
                     {pick(project.title)}
                   </h3>
 
@@ -288,19 +288,19 @@ export function AqarPropertiesShowcase({ lang = 'ar' }: { lang?: Language }) {
                   {/* Key Operational Metrics */}
                   <div className="grid grid-cols-3 gap-2 text-center rounded-2xl bg-slate-50 p-3 border border-slate-200">
                     <div>
-                      <span className="text-[10px] text-slate-400 block">{t('الوحدات', 'Units')}</span>
+                      <span className="text-[10px] text-slate-600 block">{t('الوحدات', 'Units')}</span>
                       <span className="text-xs font-bold text-slate-900 font-latin block mt-0.5">
                         {project.metrics.unitsCount}
                       </span>
                     </div>
                     <div className="border-x border-slate-200">
-                      <span className="text-[10px] text-slate-400 block">{t('المساحة', 'Area')}</span>
-                      <span className="text-xs font-bold text-[#008f7a] font-latin block mt-0.5">
+                      <span className="text-[10px] text-slate-600 block">{t('المساحة', 'Area')}</span>
+                      <span className="text-xs font-bold text-[#00715f] font-latin block mt-0.5">
                         {project.metrics.area}
                       </span>
                     </div>
                     <div>
-                      <span className="text-[10px] text-slate-400 block">{t('الحالة', 'Status')}</span>
+                      <span className="text-[10px] text-slate-600 block">{t('الحالة', 'Status')}</span>
                       <span className="text-[11px] font-bold text-slate-800 block mt-0.5 truncate">
                         {project.metrics.occupancyOrValuation}
                       </span>

@@ -10,7 +10,7 @@ export function AqarPromoBanner({ lang = 'ar' }: { lang?: Language }) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 my-10">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#00b399] via-[#008f7a] to-[#15283f] p-8 sm:p-10 shadow-2xl shadow-[#00b399]/20 text-white">
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#00b399] via-[#00715f] to-[#15283f] p-8 sm:p-10 shadow-2xl shadow-[#00b399]/20 text-white">
         {/* Subtle Background Pattern */}
         <div className="absolute -end-10 -bottom-10 h-64 w-64 rounded-full bg-white/10 blur-3xl pointer-events-none" />
         <div className="absolute start-1/3 -top-10 h-40 w-40 rounded-full bg-[#00b399]/30 blur-2xl pointer-events-none" />

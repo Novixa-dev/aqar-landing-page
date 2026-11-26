@@ -52,7 +52,7 @@ export function AqarProductPreview() {
                 demo_id: 'primary_generic',
               })
             }
-            className="inline-flex items-center gap-1.5 rounded-lg bg-[#00b399]/10 border border-[#00b399]/30 px-3 py-1.5 text-xs font-bold text-[#008f7a] hover:bg-[#00b399] hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-[#00b399]/10 border border-[#00b399]/30 px-3 py-1.5 text-xs font-bold text-[#00715f] hover:bg-[#00b399] hover:text-white transition-colors"
           >
             <span>{t('فتح النسخة التفاعلية', 'Open Interactive Demo')}</span>
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -77,7 +77,7 @@ export function AqarProductPreview() {
                 className="w-full h-auto object-cover object-top"
               />
               <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-200 bg-slate-50 px-3.5 py-2.5 text-xs text-slate-700">
-                <span className="inline-flex items-center gap-1.5 text-[#008f7a] font-bold">
+                <span className="inline-flex items-center gap-1.5 text-[#00715f] font-bold">
                   <CheckCircle2 className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
                   {t(
                     'لقطة حقيقية من النظام الفعلي (بيانات العقارات المعروضة تجريبية للعرض فقط)',
@@ -94,7 +94,7 @@ export function AqarProductPreview() {
           {/* Right/End Column: Interactive System Architecture Inspector */}
           <div className="lg:col-span-4 flex flex-col justify-between p-4 sm:p-6 bg-white">
             <div>
-              <div className="text-xs font-bold uppercase tracking-wider text-[#008f7a] mb-2">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#00715f] mb-2">
                 {t('مكونات المنصة المتكاملة', 'Verified Platform Architecture')}
               </div>
               <h2 className="font-display text-lg font-bold text-slate-900 leading-snug mb-4">
@@ -128,12 +128,12 @@ export function AqarProductPreview() {
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2">
-                        <span className="text-xs font-semibold text-slate-500">
+                        <span className="text-xs font-semibold text-slate-600">
                           {pick(fact.label)}
                         </span>
                         <Icon
                           className={`h-4 w-4 shrink-0 ${
-                            isSelected ? 'text-[#008f7a]' : 'text-slate-400'
+                            isSelected ? 'text-[#00715f]' : 'text-slate-400'
                           }`}
                           aria-hidden="true"
                         />

@@ -54,7 +54,7 @@ export function CustomizationSection({ lang = 'ar' }: { lang?: Language }) {
                     <span
                       className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold border ${
                         isBaseline
-                          ? 'bg-[#00b399]/15 border-[#00b399]/40 text-[#008f7a]'
+                          ? 'bg-[#00b399]/15 border-[#00b399]/40 text-[#00715f]'
                           : 'bg-amber-50 border-amber-300 text-amber-800'
                       }`}
                     >
@@ -66,7 +66,7 @@ export function CustomizationSection({ lang = 'ar' }: { lang?: Language }) {
                       <Sliders className="h-4 w-4 text-amber-600" aria-hidden="true" />
                     )}
                   </div>
-                  <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-[#00b399] transition-colors leading-snug">
+                  <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-[#00846f] transition-colors leading-snug">
                     {pick(pillar.title)}
                   </h3>
                   <p className="mt-2.5 text-sm text-slate-600 leading-relaxed">
@@ -110,7 +110,7 @@ export function CustomizationSection({ lang = 'ar' }: { lang?: Language }) {
                       <span
                         className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-bold border ${
                           demo.isPrimary
-                            ? 'bg-[#00b399] text-white border-transparent'
+                            ? 'bg-[#00846f] text-white border-transparent'
                             : 'bg-slate-100 border-slate-200 text-slate-700'
                         }`}
                       >
@@ -163,7 +163,7 @@ export function CustomizationSection({ lang = 'ar' }: { lang?: Language }) {
                       className={`inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-bold transition-all ${
                         demo.isPrimary
                           ? 'btn-brand-teal text-white shadow-lg shadow-[#00b399]/20'
-                          : 'border border-slate-300 bg-white text-slate-800 hover:border-[#00b399] hover:text-[#008f7a]'
+                          : 'border border-slate-300 bg-white text-slate-800 hover:border-[#00b399] hover:text-[#00715f]'
                       }`}
                     >
                       <span>
