@@ -3,25 +3,20 @@
 import React, { useEffect, useState } from 'react';
 import {
   ArrowUp,
-  Building2,
   Calendar,
-  CheckCircle2,
   Clock,
   Headphones,
-  Mail,
   MapPin,
   MessageCircle,
-  Phone,
   PhoneCall,
   ShieldCheck,
   UserCheck,
   X,
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
-import { EXTERNAL_ROUTES } from '@/lib/site';
 
 export function AqarCorporateConcierge() {
-  const { lang, t } = useLanguage();
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [showGoTop, setShowGoTop] = useState(false);
@@ -63,7 +58,7 @@ export function AqarCorporateConcierge() {
         type="button"
         onClick={scrollToTop}
         aria-label={t('العودة لأعلى الصفحة', 'Back to top')}
-        className={`fixed start-6 bottom-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-800 shadow-xl border border-slate-200 transition-all duration-300 hover:bg-slate-50 hover:text-[#008f7a] hover:border-[#00b399] ${
+        className={`fixed start-6 bottom-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-800 shadow-xl border border-slate-200 transition-all duration-300 hover:bg-slate-50 hover:text-[#00715f] hover:border-[#00b399] ${
           showGoTop
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 translate-y-4 pointer-events-none'
@@ -116,7 +111,7 @@ export function AqarCorporateConcierge() {
           {/* Corporate Representative Card */}
           <div className="p-5 border-b border-slate-100 bg-slate-50">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-[#008f7a] font-bold text-sm">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-teal-100 text-[#00715f] font-bold text-sm">
                 <UserCheck className="h-5 w-5" />
               </div>
               <div>
@@ -182,7 +177,7 @@ export function AqarCorporateConcierge() {
                   </div>
                 </div>
               </div>
-              <span className="text-xs font-bold text-[#008f7a] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
+              <span className="text-xs font-bold text-[#00715f] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
                 →
               </span>
             </a>
@@ -206,7 +201,7 @@ export function AqarCorporateConcierge() {
                   </div>
                 </div>
               </div>
-              <span className="text-xs font-bold text-[#008f7a] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
+              <span className="text-xs font-bold text-[#00715f] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform">
                 →
               </span>
             </a>
@@ -260,7 +255,7 @@ export function AqarCorporateConcierge() {
             setShowHint(false);
           }}
           aria-label={t('فتح مكتب الاستشارات العقارية', 'Open Corporate Advisory')}
-          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#00b399] text-white shadow-2xl hover:bg-[#008f7a] hover:scale-105 transition-all duration-300 ring-4 ring-white/80"
+          className="relative flex h-14 w-14 items-center justify-center rounded-full bg-[#00b399] text-white shadow-2xl hover:bg-[#00715f] hover:scale-105 transition-all duration-300 ring-4 ring-white/80"
         >
           {isOpen ? (
             <X className="h-6 w-6" aria-hidden="true" />

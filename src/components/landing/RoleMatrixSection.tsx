@@ -39,7 +39,7 @@ export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
             onClick={() => setActiveFilter(null)}
             className={`rounded-full px-4 py-1.5 text-xs font-bold transition-all ${
               activeFilter === null
-                ? 'bg-[#008f7a] text-white'
+                ? 'bg-[#00715f] text-white'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -52,7 +52,7 @@ export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
               onClick={() => setActiveFilter(role.roleKey)}
               className={`rounded-full px-4 py-1.5 text-xs font-bold transition-all ${
                 activeFilter === role.roleKey
-                  ? 'bg-[#008f7a] text-white'
+                  ? 'bg-[#00715f] text-white'
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >
@@ -74,13 +74,13 @@ export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
-                    <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#00b399]/15 border border-[#00b399]/30 px-2.5 py-1 text-xs font-bold text-[#008f7a]">
+                    <span className="inline-flex items-center gap-1.5 rounded-lg bg-[#00b399]/15 border border-[#00b399]/30 px-2.5 py-1 text-xs font-bold text-[#00715f]">
                       <Shield className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                      <span className="font-latin">{role.roleKey}</span>
+                      <span className="font-latin" dir="ltr">/{role.roleKey}</span>
                     </span>
                   </div>
 
-                  <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-[#00b399] transition-colors leading-snug">
+                  <h3 className="font-display text-lg font-bold text-slate-900 group-hover:text-[#00846f] transition-colors leading-snug">
                     {pick(role.name)}
                   </h3>
                   <p className="mt-2 text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -110,7 +110,7 @@ export function RoleMatrixSection({ lang = 'ar' }: { lang?: Language }) {
         {/* Public Portal Callout Banner */}
         <div className="mt-8 rounded-3xl border border-[#00b399]/30 bg-slate-50 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-sm">
           <div className="flex items-start gap-3.5">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#00b399]/15 border border-[#00b399]/30 text-[#008f7a]">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#00b399]/15 border border-[#00b399]/30 text-[#00715f]">
               <Users className="h-6 w-6" aria-hidden="true" />
             </div>
             <div>
