@@ -61,7 +61,8 @@ export function HeroBackgroundSlider({ slides, lang = 'ar' }: HeroBackgroundSlid
             alt={lang === 'ar' ? slide.name.ar : slide.name.en}
             fill
             priority={idx === 0}
-            quality={90}
+            fetchPriority={idx === 0 ? 'high' : 'low'}
+            quality={75}
             sizes="100vw"
             className="object-cover object-center"
           />

@@ -40,7 +40,7 @@ export async function generateMetadata({
       lang: 'ar',
       title: 'نوڤيكسا عقار | منصة عقارية متكاملة بهوية شركتك تبدأ من 500$',
       description:
-        'منصة عقارية متكاملة للمكاتب والشركات العقارية وشركات إدارة الأملاك: بوابة عامة + بحث وفلترة + 8 لوحات تشغيل حسب الدور + مسارات الاستقبال والموافقات — يبدأ تجهيزها من 500$.',
+        'منصة عقارية بهوية شركتك للمكاتب وشركات إدارة الأملاك: بوابة عامة، بحث وفلترة، 8 لوحات حسب الدور، ومسارات طلبات وموافقات — من 500$.',
       path: '',
     });
   }
@@ -49,7 +49,7 @@ export async function generateMetadata({
     lang: 'en',
     title: 'Novixa Aqar | White-Label Real-Estate Platform Starting at $500',
       description:
-        'Configurable B2B PropTech platform for real-estate agencies and property managers: branded public portal + search and filters + 8 role-based workspaces + intake and approval flows — setup from $500.',
+        'White-label real-estate platform for agencies and property managers: branded portal, search, 8 role-based workspaces and approval flows — setup from $500.',
     path: '',
   });
 }
